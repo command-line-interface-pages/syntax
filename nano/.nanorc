@@ -2,16 +2,29 @@
 syntax btldr "\.btldr$"
 header "^# [^ ].*"
 
-color blue "^[#>-] "
+color lagoon "^# .*"
+color blue "^#"
+
+color teal "^> .*"
+color blue "^>"
 color cyan "\<(See also|Aliases|More information):"
 color blue ","
-color cyan "\<https://[^ ]+"
+color plum "\<https://[^ ]+"
 
+color brick "^- .*"
+color blue "^-"
 color red "\[[^ ]+\]"
-color blue "[{}:]"
+color brown "\<std(in|out|err)\>"
+color brown ":$"
+
+color black "^`.*`$"
+color blue "^`|`$"
+
 color cyan "-?[[:digit:]]+\.\.-?[[:digit:]]+"
-color cyan "\<(bool|int|float|char|string|command|file|directory|path)\>"
-color red "(/file|/directory|/path)\>"
-color green "(/\?file|/\?directory|/\?path)\>"
-color magenta "\<any\>"
-color yellow "--?[^ {}]+
+color cyan "\{ *(bool|int|float|char|string|command|file|directory|path)\>[^{}]+}"
+color red "\{ *(/file|/directory|/path)\>[^{}]+}"
+color green "\{ *(/\?file|/\?directory|/\?path)\>[^{}]+}"
+color magenta "\{ *any\>[^{}]+}"
+color ocher "[{}]"
+color orange "--?[^ {}]+=?"
+color magenta "@(shuffle|random-bool|random-int|random-float|random-char|random-string)\>"
