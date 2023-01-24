@@ -13,14 +13,14 @@
 ;;; [b]etter [tldr]
 
 (setq better-tldr-highlights
-      '(("\\<\\(bool\\|int\\|float\\|char\\|string\\|command\\|file\\|directory\\|path\\|any\\)\\>" . 'font-lock-keyword-face)
+      '(("--?[^ =]+=?" . 'font-lock-builtin-face)
+	("\\<\\(bool\\|int\\|float\\|char\\|string\\|command\\|file\\|directory\\|path\\|any\\)\\>" . 'font-lock-keyword-face)
 	("\\<\\(See also\\|Aliases\\|More information\\)\\>" . 'font-lock-type-face)
 	("\\<https:.+" . 'font-lock-constant-face)
 	("/\\??\\|\\+\\|\\*" . 'font-lock-constant-face)
 	("\\[[^ ]+\\]" . 'font-lock-comment-face)
 	("\\<stdin\\|stdout\\|stderr\\>" . 'font-lock-builtin-face)
-	("^#.*$" . 'font-lock-comment-face)
-	("^>.*$" . 'font-lock-string-face)))
+	("^[-#>]" . 'font-lock-string-face)))
 
 (define-derived-mode better-tldr-mode fundamental-mode "better-tldr"
   "Major mode for Better TlDr pages."
