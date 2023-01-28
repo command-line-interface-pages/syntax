@@ -379,7 +379,7 @@ How to interpret it? Does `excluded` correspond to just file or to both terms? U
 Better TlDr and don't have such problems:
 
 ```md
-{{file+ excluded file|directory+ excluded file}}
+{{file+ excluded file|directory+ excluded directory}}
 ```
 
 which is equivalent to:
