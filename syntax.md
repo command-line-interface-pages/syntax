@@ -73,7 +73,7 @@ To write:
 and let render to process page correctly instead of:
 
 ```md
-> See also: `grep`, `awk`, or `sed`
+> See also: `grep`, `awk`, or `sed`.
 ```
 
 To write:
