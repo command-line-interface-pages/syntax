@@ -60,6 +60,34 @@ The following list like tags are supported:
 - `Aliases: command1, command2, ...`: comma-separated alias list where
   `command1`, `command2` and `...` are commands like `Aliases: egrep, fgrep.`
 
+#### Why not TlDr?
+
+To use validated and simplified summary syntax.
+
+To write:
+
+```md
+> See also: grep, awk, sed
+```
+
+and let render to process page correctly instead of:
+
+```md
+> See also: `grep`, `awk`, or `sed`
+```
+
+To write:
+
+```md
+> More information: https://www.gnu.org/software/coreutils/sleep
+```
+
+and let render to process page correctly instead of:
+
+```md
+> More information: <https://www.gnu.org/software/coreutils/sleep>.
+```
+
 ## Code examples
 
 Code examples are combinations of code descriptions and actual commands like:
@@ -312,6 +340,61 @@ arguments instead of placeholders.
 
 Complex placeholders rendering are rendered as several primitive placeholders
 delimited by a pipe `|` character colored in a unique color by default.
+
+#### Why not TlDr?
+
+To use validated and simplified and more expressive placeholder syntax.
+
+To write:
+
+```md
+{{/?file* image}}
+```
+
+and let render to process page correctly instead of:
+
+```md
+{{path/to/image1 path/to/image2 ...}}
+```
+
+To be able specify how many arguments are expected for a placeholder, to focus on
+valid command syntax and not just provide concrete examples. To write:
+
+```md
+{{/?file+ image}}
+```
+
+and let render to process page correctly instead of:
+
+```md
+{{path/to/image1}} {{path/to/image2 path/to/image3 ...}}
+```
+
+Not to be confused with not standardized syntax like `{{path/to/excluded_file_or_directory}}`.
+How to interpret it? Does `excluded` correspond to just file or to both terms? Use
+Better TlDr and don't have such problems:
+
+```md
+{{/?file+ excluded file|/?directory+ excluded file}}
+```
+
+which is equivalent to:
+
+```md
+{{path/to/excluded_file1 path/to/excluded_file2 ...|path/to/excluded_directory1 path/to/excluded_directory2 ...}}
+```
+
+To be able exactly tell user whether relative, absolute or both path cases are accepted:
+
+```md
+{{/?file image}}
+```
+
+which is equivalent to:
+
+```md
+{{/path/to/image_file|path/to/image_file}}
+```
 
 ## Best practices
 
