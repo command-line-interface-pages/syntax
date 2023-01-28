@@ -422,6 +422,25 @@ or:
 {file+ excluded file|directory+ directory}
 ```
 
+##### Not used generalized command syntax
+
+TlDr contributors sometimes prefer write concrete placeholders and not to use
+ellipsis construct available for such purposeses like:
+
+```md
+tar cf {{target.tar}} {{file1}} {{file2}} {{file3}}
+```
+
+The problem it's not possible to tell how much file broken (invalid syntax is used,
+it should begin with `path/to/`) arguments are expected: 1, 2, 3 or more? Better TlDr
+solves this problem by mandating describing general command syntax:
+
+```md
+`tar cf {/?file archive: target.tar} {/?path+ input}`
+```
+
+while providing sample values too.
+
 ## Best practices
 
 - Always add mnemonics when you know where to add them.
