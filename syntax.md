@@ -357,71 +357,69 @@ delimited by a pipe `|` character colored in a unique color by default.
 
 To use validated and simplified and more expressive placeholder syntax.
 
-To clearly separate possible placeholder values and their semantic. To write:
+##### Lost semantic or lost sample values
+
+In TlDr some placeholders can contain notes about what placeholder actually represents
+and others not. For instance it's possible to write `{{path/to/image_file}}` to
+tell user that file is an image and not anything else. On the other hand with integer
+placeholders it's not the case `{{4}}`. What is 4? Such placeholders make code examples
+not self-contained, user have to read description to understand placeholder semantic.
+
+Better TlDr solves this issue by requiring semantic to be always present, while
+sample values are optional:
 
 ```md
 {int seconds: 2}
 ```
 
-and let render to process page correctly instead of:
+instead of
 
 ```md
 {{2}}
 ```
 
-To write:
+with lost placeholder description or:
+
+```md
+{{seconds}}
+```
+
+with missed example value.
+
+##### Long combination of ellipsis and possibly absolute path
+
+To write a placeholder which accepts variadic number of arguments in TlDr you
+should use long ellipsis construct:
+
+```md
+{{path/to/image_file1 path/to/image_file2 ...}}
+```
+
+while here the same thing can be rewritten in a much shorter way:
 
 ```md
 {/?file* image}
 ```
 
-and let render to process page correctly instead of:
+and explicitly tells user that file path can be relative or absolute. Note that in TlDr
+it's impossible to require just relative path, as placeholders without a leading slash
+permit both absolute and relative paths.
 
-```md
-{{path/to/image_file1 path/to/image_file2 ...|/path/to/image_file1 /path/to/image_file2 ...}}
-```
+##### Not used pipe character
 
-To be able specify how many arguments are expected for a placeholder, to focus on
-valid command syntax and not just provide concrete examples. To write:
-
-```md
-{/?file+ image}
-```
-
-This can't be translated to TlDr pages without sacrificing some placeholder information.
-If you write:
-
-```md
-{{path/to/image_file1}} {{path/to/image_file2 path/to/image_file3 ...}}
-```
-
-You tell user that relative paths are expected but not absolute. It's impossible
-both allow relative and absolute path and also permit 1 or more path arguments.
-
-Not to be confused with not standardized syntax like `{{path/to/excluded_file_or_directory}}`.
-How to interpret it? Does `excluded` correspond to just file or to both terms? Use
-Better TlDr and don't have such problems:
+TlDr pages sometimes violate their own style guide. For instance they can provide
+`{{path/to/excluded_file_or_directory}}` placeholders in code examples. But how to
+interpret it? Does `excluded` correspond to just file or to both terms? Such syntax
+is unavailable in Better TlDr and maintainers must use one of the following equivalents:
 
 ```md
 {file+ excluded file|directory+ excluded directory}
 ```
 
-which is equivalent to:
+or:
 
 ```md
-{{path/to/excluded_file1 path/to/excluded_file2 ...|path/to/excluded_directory1 path/to/excluded_directory2 ...}}
-```
-
-To be able exactly tell user whether relative, absolute or both path cases are accepted:
-
-```md
-{/?file image}
-```
-
-which is equivalent to:
-
-```md
-{{/path/to/image_file|path/to/image_file}}
+{file+ excluded file|directory+ directory}
 ```
 
 ## Best practices
