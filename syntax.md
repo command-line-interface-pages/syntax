@@ -64,25 +64,37 @@ The following list like tags are supported:
 
 To use validated and simplified summary syntax.
 
-To write:
+##### Redundant backticks and `or`
+
+Due to missing smart TlDr clients TlDr pages themselved should be written in a way
+they should be rendered. It means than contributors have to write more than they could.
+To compare in Better TlDr it's possible to list similar commands just via comma
+and let render decide how to display such list:
 
 ```md
 > See also: grep, awk, sed
 ```
 
-and let render to process page correctly instead of:
+But in TlDr it's not possible and you encouraged to write this:
 
 ```md
 > See also: `grep`, `awk`, or `sed`.
 ```
 
-To write:
+And if maintainers decide to change syntax of `See also`, let's say not to use `or`
+before the last term they should remove it in all pages. It contradicts DRY principle.
+
+##### Redundant angle brackets
+
+Almost the same applies to `More information` tag. TlDr contributors want to use
+standard Markdown syntax while adding some extenions (like placehodlers) and restrictions
+to it. It results in more keystrokes. While in Better TlDr you just write:
 
 ```md
 > More information: https://www.gnu.org/software/coreutils/sleep
 ```
 
-and let render to process page correctly instead of:
+in TlDr the only one correct way to do the same thing is:
 
 ```md
 > More information: <https://www.gnu.org/software/coreutils/sleep>.
