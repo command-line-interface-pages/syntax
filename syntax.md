@@ -360,7 +360,7 @@ and let render to process page correctly instead of:
 To write:
 
 ```md
-{{/?file* image}}
+{/?file* image}
 ```
 
 and let render to process page correctly instead of:
@@ -373,7 +373,7 @@ To be able specify how many arguments are expected for a placeholder, to focus o
 valid command syntax and not just provide concrete examples. To write:
 
 ```md
-{{/?file+ image}}
+{/?file+ image}
 ```
 
 This can't be translated to TlDr pages without sacrificing some placeholder information.
@@ -391,7 +391,7 @@ How to interpret it? Does `excluded` correspond to just file or to both terms? U
 Better TlDr and don't have such problems:
 
 ```md
-{{file+ excluded file|directory+ excluded directory}}
+{file+ excluded file|directory+ excluded directory}
 ```
 
 which is equivalent to:
@@ -403,7 +403,7 @@ which is equivalent to:
 To be able exactly tell user whether relative, absolute or both path cases are accepted:
 
 ```md
-{{/?file image}}
+{/?file image}
 ```
 
 which is equivalent to:
