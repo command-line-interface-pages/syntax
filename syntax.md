@@ -354,7 +354,7 @@ To write:
 and let render to process page correctly instead of:
 
 ```md
-{{path/to/image1 path/to/image2 ...}}
+{{path/to/image1 path/to/image2 ...|/path/to/image1 /path/to/image2 ...}}
 ```
 
 To be able specify how many arguments are expected for a placeholder, to focus on
@@ -364,18 +364,22 @@ valid command syntax and not just provide concrete examples. To write:
 {{/?file+ image}}
 ```
 
-and let render to process page correctly instead of:
+This can't be translated to TlDr pages without sacrificing some placeholder information.
+If you write:
 
 ```md
-{{path/to/image1}} {{path/to/image2 path/to/image3 ...}}
+{{path/to/image_file1}} {{path/to/image_file2 path/to/image_file3 ...}}
 ```
+
+You tell user that relative paths are expected but not absolute. It's impossible
+both allow relative and absolute path and also permit 1 or more path arguments.
 
 Not to be confused with not standardized syntax like `{{path/to/excluded_file_or_directory}}`.
 How to interpret it? Does `excluded` correspond to just file or to both terms? Use
 Better TlDr and don't have such problems:
 
 ```md
-{{/?file+ excluded file|/?directory+ excluded file}}
+{{file+ excluded file|directory+ excluded file}}
 ```
 
 which is equivalent to:
