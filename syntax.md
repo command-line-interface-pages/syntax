@@ -345,6 +345,18 @@ delimited by a pipe `|` character colored in a unique color by default.
 
 To use validated and simplified and more expressive placeholder syntax.
 
+To clearly separate possible placeholder values and their semantic. To write:
+
+```md
+{int seconds: 2}
+```
+
+and let render to process page correctly instead of:
+
+```md
+{{2}}
+```
+
 To write:
 
 ```md
