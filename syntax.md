@@ -354,7 +354,7 @@ To write:
 and let render to process page correctly instead of:
 
 ```md
-{{path/to/image1 path/to/image2 ...|/path/to/image1 /path/to/image2 ...}}
+{{path/to/image_file1 path/to/image_file2 ...|/path/to/image_file1 /path/to/image_file2 ...}}
 ```
 
 To be able specify how many arguments are expected for a placeholder, to focus on
