@@ -276,6 +276,8 @@ experience as it was before placeholder standardization:
 - `{/?path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory`
 - `{any some text}` is rendered as `some_text`
 
+Spaces can be left as they were, without replacing with underscores.
+
 #### Primitive placeholder directives
 
 Directives are contructs used to modify written examples while page rendering.
