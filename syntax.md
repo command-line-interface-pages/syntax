@@ -270,9 +270,9 @@ experience as it was before placeholder standardization:
 - `{/file some text}` is rendered as `/path/to/some_text_file`
 - `{/directory some text}` is rendered as `/path/to/some_text_directory`
 - `{/path some text}` is rendered as `/path/to/some_text_file|/path/to/some_text_directory`
-- `{/?file some text}` is rendered as `path/to/some_text_file|/path/to/some_text_file`
-- `{/?directory some text}` is rendered as `path/to/some_text_directory|/path/to/some_text_directory`
-- `{/?path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory|/path/to/some_text_file|/path/to/some_text_directory`
+- `{/?file some text}` is rendered as `path/to/some_text_file`
+- `{/?directory some text}` is rendered as `path/to/some_text_directory`
+- `{/?path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory`
 - `{any some text}` is rendered as `some_text`
 
 #### Primitive placeholder directives
