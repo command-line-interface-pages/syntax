@@ -8,7 +8,7 @@ All unrecognized escape sequences are treated literally.
 
 ## Command summary
 
-> Compatibility note: trailing dot and angle brackets for url are not supported.
+> :bell: Compatibility note: trailing dot and angle brackets for url are not supported.
 
 Command summary is a combination of command description, documentation link and
 other information about command like:
@@ -29,7 +29,7 @@ explained.
 
 #### General syntax
 
-> Escape sequences: unavailable.
+> :bookmark_tabs: Escape sequences: unavailable.
 
 All tags begin with a tag name, followed by a colon with a tag value:
 
@@ -51,7 +51,7 @@ The following singular value tags are supported:
 
 #### List like tags
 
-> Compatibility note: `or` is not supported for `See also`.
+> :bell: Compatibility note: `or` is not supported for `See also`.
 
 The following list like tags are supported:
 
@@ -122,7 +122,7 @@ Mnemonics are constructs used to refer to options or subcommands.
 
 #### General syntax
 
-> Escape sequences: `\[`, `\]`.
+> :bookmark_tabs: Escape sequences: `\[`, `\]`.
 
 All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
@@ -170,8 +170,8 @@ Placeholders are contructs used to substitute some user entered data.
 
 #### General syntax
 
-> Compatibility note: double braces are not used.  
-> Escape sequences: `\{`, `\}`, `\:`, `\.`, `\,`, `\<space>`.
+> :bell: Compatibility note: double braces are not used.  
+> :bookmark_tabs: Escape sequences: `\{`, `\}`, `\:`, `\.`, `\,`, `\<space>`.
 
 All placeholder begin with a single opening curly brace `{` and end with a
 closing one `}`:
@@ -285,7 +285,7 @@ make pages unreadable after rendering even knowing that fact that just the first
 
 #### Primitive placeholder rendering
 
-> Compatibility note: `path/to/file_or_directory` and `/path/to/file_or_directory`
+> :bell: Compatibility note: `path/to/file_or_directory` and `/path/to/file_or_directory`
 > are not used.
 
 All placeholders rendered a little bit differently to keep almost the same user
@@ -328,7 +328,7 @@ from the operating system or examples.
 
 ##### General syntax
 
-> Escape sequences: `\@`.
+> :bookmark_tabs: Escape sequences: `\@`.
 
 All directives begin with a single `@` character followed by a directive name:
 
@@ -362,7 +362,7 @@ different coloring by default.
 
 #### Repeated primitive placeholders
 
-> Compatibility note: `...` is not used.
+> :bell: Compatibility note: `...` is not used.
 
 Primitive placeholders also can accept more than one argument. For this purpose
 repetition syntax was created. The following quantifiers are supported:
