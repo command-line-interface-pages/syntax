@@ -306,7 +306,17 @@ experience as it was before placeholder standardization:
 - `{/?file some text}` is rendered as `path/to/some_text_file`
 - `{/?directory some text}` is rendered as `path/to/some_text_directory`
 - `{/?path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory`
+- `{remote-file some text}` is rendered as `remote/path/to/some_text_file`
+- `{remote-directory some text}` is rendered as `remote/path/to/some_text_directory`
+- `{remote-path some text}` is rendered as `remote/path/to/some_text_file|remote/path/to/some_text_directory`
+- `{/remote-file some text}` is rendered as `/remote/path/to/some_text_file`
+- `{/remote-directory some text}` is rendered as `/remote/path/to/some_text_directory`
+- `{/remote-path some text}` is rendered as `/remote/path/to/some_text_file|/remote/path/to/some_text_directory`
+- `{/?remote-file some text}` is rendered as `remote/path/to/some_text_file`
+- `{/?remote-directory some text}` is rendered as `remote/path/to/some_text_directory`
+- `{/?remote-path some text}` is rendered as `remote/path/to/some_text_file|remote/path/to/some_text_directory`
 - `{any some text}` is rendered as `some_text`
+- `{remote-any some text}` is rendered as `remote some_text`
 
 Spaces can be left as they were, without replacing with underscores.
 
