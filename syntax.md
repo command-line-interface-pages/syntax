@@ -29,7 +29,7 @@ explained.
 
 #### General syntax
 
-> Escape sequences: unavailable.
+> :bookmark_tabs: Escape sequences: unavailable.
 
 All tags begin with a tag name, followed by a colon with a tag value:
 
@@ -122,7 +122,7 @@ Mnemonics are constructs used to refer to options or subcommands.
 
 #### General syntax
 
-> Escape sequences: `\[`, `\]`.
+> :bookmark_tabs: Escape sequences: `\[`, `\]`.
 
 All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
@@ -171,7 +171,7 @@ Placeholders are contructs used to substitute some user entered data.
 #### General syntax
 
 > :bell: Compatibility note: double braces are not used.  
-> Escape sequences: `\{`, `\}`, `\:`, `\.`, `\,`, `\<space>`.
+> :bookmark_tabs: Escape sequences: `\{`, `\}`, `\:`, `\.`, `\,`, `\<space>`.
 
 All placeholder begin with a single opening curly brace `{` and end with a
 closing one `}`:
@@ -328,7 +328,7 @@ from the operating system or examples.
 
 ##### General syntax
 
-> Escape sequences: `\@`.
+> :bookmark_tabs: Escape sequences: `\@`.
 
 All directives begin with a single `@` character followed by a directive name:
 
