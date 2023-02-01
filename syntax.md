@@ -489,6 +489,18 @@ while providing sample values too.
 ## Best practices
 
 - Always add mnemonics when you know where to add them.
+- Always prefer "display" verb when dealing with singular object instead of
+  "print", "get", "show", etc. For instance write `- Display help:` instead of
+  `- Show help:`.
+- Always use "list" verb for multiple objects of the same kind. For instance prefer
+  `- List all files in a specific directory:` instead of `- Show all files in a specific directory:`.
+- Constantly explicitly mention that all available objects are handled like
+  `- List all files in a specific directory:` instead of `- List files in a specific directory:`
+  as in the second case it's not clear what files are listed.
+- When explaining command moving or copying some data from one place to another
+  always explicitly use "source" or "destination" nouns to specify what placeholder
+  should be interpreted as a data source and what as a target.
+- Always add dot before mentioned extensions in description.
 - Use repetition quantifiers where variable number of arguments expected.
   Tell users what command can accept and not it accepts in some example.
   For instance instead of `tar cf {/?file archive: target.tar} {/?file first input} {/?file second input}`
