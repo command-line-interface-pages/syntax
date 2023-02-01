@@ -142,6 +142,20 @@ At least one character should be present inside square brackets. `remainig-word-
 can be an empty string like `[help]` when option or subcommand name is equal to
 word inside square brackets.
 
+### I/O streams
+
+I/O streams are devices used to capture input or output from commands.
+
+#### General syntax
+
+All I/O streams are unquoted and written as:
+
+```md
+stdin
+stdout
+stderr
+```
+
 ### Placeholders
 
 Placeholders are contructs used to substitute some user entered data.
