@@ -499,7 +499,8 @@ while providing sample values too.
   as in the second case it's not clear what files are listed.
 - When explaining command moving or copying some data from one place to another
   always explicitly use "source" or "destination" nouns to specify what placeholder
-  should be interpreted as a data source and what as a target.
+  should be interpreted as a data source and what as a target. For example write:
+  `azcopy copy '{/?file local input}' 'https://{string remote storage account}.blob.core.windows.net/{string remote container}/{string blob}'` and not `azcopy copy '{/?file input}' 'https://{string storage account}.blob.core.windows.net/{string container}/{string blob}'`.
 - Always add dot before mentioned extensions in description.
 - Use repetition quantifiers where variable number of arguments expected.
   Tell users what command can accept and not it accepts in some example.
