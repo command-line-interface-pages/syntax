@@ -458,7 +458,7 @@ interpret it? Does `excluded` correspond to just file or to both terms? Such syn
 is unavailable in Better TlDr and maintainers must use one of the following equivalents:
 
 ```md
-{file+ excluded file|directory+ excluded directory}
+{path+ excluded}
 ```
 
 or:
@@ -469,8 +469,8 @@ or:
 
 ##### Not used generalized command syntax
 
-TlDr contributors sometimes prefer write concrete placeholders and not to use
-ellipsis construct available for such purposeses like:
+TlDr pages sometimes prefer concrete placeholders and not ellipsis construct available
+for such purposeses like:
 
 ```md
 tar cf {{target.tar}} {{file1}} {{file2}} {{file3}}
