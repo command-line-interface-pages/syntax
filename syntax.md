@@ -241,9 +241,19 @@ placeholder is. The following keywords are supported:
 - `/?file`: relative or absolute regular file path value (syntax sugar)
 - `/?directory`: relative or absolute directory path value (syntax sugar)
 - `/?path`: relative or absolute path value (syntax sugar)
+- `remote-file`: relative remote regular file path value
+- `remote-directory`: relative remote directory path value
+- `remote-path`: relative remote path value
+- `/remote-file`: absolute remote regular file path value
+- `/remote-directory`: absolute remote directory path value
+- `/remote-path`: absolute remote path value
+- `/?remote-file`: relative or absolute remote regular file path value (syntax sugar)
+- `/?remote-directory`: relative or absolute remote directory path value (syntax sugar)
+- `/?remote-path`: relative or absolute remote path value (syntax sugar)
 - `any`: anything
+- `remote-any`: remote arbitrary object
 
-`any` is used for placeholders those accept all types of arguments listed above
+`any` or `remote-any` are used for placeholders those accept all types of arguments listed above
 this keyword while `path` is a combinational meaning of `file` and `directory`
 keywords.
 
