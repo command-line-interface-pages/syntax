@@ -156,6 +156,10 @@ stdout
 stderr
 ```
 
+stdin must be mentioned just when it's a not default method to read source
+data from. stdout must be mentioned until it's default output stream for
+some command example. stderr should be always mentioned explicitly when used.
+
 ### Placeholders
 
 Placeholders are contructs used to substitute some user entered data.
