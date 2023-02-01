@@ -142,6 +142,28 @@ At least one character should be present inside square brackets. `remainig-word-
 can be an empty string like `[help]` when option or subcommand name is equal to
 word inside square brackets.
 
+### I/O streams
+
+I/O streams are devices used to capture input or output from commands.
+
+#### General syntax
+
+All I/O streams are unquoted and written as:
+
+```md
+stdin
+stdout
+stderr
+```
+
+stdin must be mentioned just when it's a not default method to read source
+data from. stdout must be mentioned until it's default output stream for
+some command example. stderr should be always mentioned explicitly when used.
+
+When no output happens mention this fact explicitly and assume that any command
+prints something by default. In this case "by default" is not used to mention default
+command syntax and behaviour, but the default assumption done for all commands.
+
 ### Placeholders
 
 Placeholders are contructs used to substitute some user entered data.
@@ -219,9 +241,19 @@ placeholder is. The following keywords are supported:
 - `/?file`: relative or absolute regular file path value (syntax sugar)
 - `/?directory`: relative or absolute directory path value (syntax sugar)
 - `/?path`: relative or absolute path value (syntax sugar)
+- `remote-file`: relative remote regular file path value
+- `remote-directory`: relative remote directory path value
+- `remote-path`: relative remote path value
+- `/remote-file`: absolute remote regular file path value
+- `/remote-directory`: absolute remote directory path value
+- `/remote-path`: absolute remote path value
+- `/?remote-file`: relative or absolute remote regular file path value (syntax sugar)
+- `/?remote-directory`: relative or absolute remote directory path value (syntax sugar)
+- `/?remote-path`: relative or absolute remote path value (syntax sugar)
 - `any`: anything
+- `remote-any`: remote arbitrary object
 
-`any` is used for placeholders those accept all types of arguments listed above
+`any` or `remote-any` are used for placeholders those accept all types of arguments listed above
 this keyword while `path` is a combinational meaning of `file` and `directory`
 keywords.
 
@@ -274,7 +306,17 @@ experience as it was before placeholder standardization:
 - `{/?file some text}` is rendered as `path/to/some_text_file`
 - `{/?directory some text}` is rendered as `path/to/some_text_directory`
 - `{/?path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory`
+- `{remote-file some text}` is rendered as `remote/path/to/some_text_file`
+- `{remote-directory some text}` is rendered as `remote/path/to/some_text_directory`
+- `{remote-path some text}` is rendered as `remote/path/to/some_text_file|remote/path/to/some_text_directory`
+- `{/remote-file some text}` is rendered as `/remote/path/to/some_text_file`
+- `{/remote-directory some text}` is rendered as `/remote/path/to/some_text_directory`
+- `{/remote-path some text}` is rendered as `/remote/path/to/some_text_file|/remote/path/to/some_text_directory`
+- `{/?remote-file some text}` is rendered as `remote/path/to/some_text_file`
+- `{/?remote-directory some text}` is rendered as `remote/path/to/some_text_directory`
+- `{/?remote-path some text}` is rendered as `remote/path/to/some_text_file|remote/path/to/some_text_directory`
 - `{any some text}` is rendered as `some_text`
+- `{remote-any some text}` is rendered as `remote some_text`
 
 Spaces can be left as they were, without replacing with underscores.
 
@@ -447,6 +489,19 @@ while providing sample values too.
 ## Best practices
 
 - Always add mnemonics when you know where to add them.
+- Always prefer "display" verb when dealing with singular object instead of
+  "print", "get", "show", etc. For instance write `- Display help:` instead of
+  `- Show help:`.
+- Always use "list" verb for multiple objects of the same kind. For instance prefer
+  `- List all files in a specific directory:` instead of `- Show all files in a specific directory:`.
+- Constantly explicitly mention that all available objects are handled like
+  `- List all files in a specific directory:` instead of `- List files in a specific directory:`
+  as in the second case it's not clear what files are listed.
+- When explaining command moving or copying some data from one place to another
+  always explicitly use "source" or "destination" nouns to specify what placeholder
+  should be interpreted as a data source and what as a target. For example write:
+  `azcopy copy '{/?file local input}' 'https://{string remote storage account}.blob.core.windows.net/{string remote container}/{string blob}'` and not `azcopy copy '{/?file input}' 'https://{string storage account}.blob.core.windows.net/{string container}/{string blob}'`.
+- Always add dot before mentioned extensions in description.
 - Use repetition quantifiers where variable number of arguments expected.
   Tell users what command can accept and not it accepts in some example.
   For instance instead of `tar cf {/?file archive: target.tar} {/?file first input} {/?file second input}`
@@ -505,23 +560,23 @@ while providing sample values too.
 > See also: awk, ed
 > More information: https://keith.github.io/xcode-man-pages/sed.1.html
 
-- Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in all input lines and print the result to `stdout`:
+- Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in all input lines:
 
 `{command input command} | sed 's/{string search string: apple}/{string replacement string: mango}/g'`
 
-- Execute a specific script [f]ile and print the result to `stdout`:
+- Execute a specific script [f]ile:
 
 `{command input command} | sed -f {/?path script: script.sed}`
 
-- Replace all `apple` (extended regex) occurrences with `APPLE` (extended regex) in all input lines and print the result to `stdout`:
+- Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
 
 `{command input command} | sed -E 's/{string search string: (apple)}/\U\1/g'`
 
-- Print just a first line to `stdout`:
+- Display just a first line:
 
 `{command input command} | sed -n '{int line count: 1}p'`
 
-- Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in a `file` and save a backup of the original to `file.bak`:
+- Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in a specific file and save a backup of the original file:
 
 `sed -i bak 's/{string search string: apple}/{string replacement string: mango}/g' {/?file input file}`
 ```
