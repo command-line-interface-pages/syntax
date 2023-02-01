@@ -151,7 +151,7 @@ I/O streams are devices used to capture input or output from commands.
 All I/O streams are unquoted and written as:
 
 ```md
-stdin
+@stdin
 stdout
 stderr
 ```
@@ -159,6 +159,10 @@ stderr
 stdin must be mentioned just when it's a not default method to read source
 data from. stdout must be mentioned until it's default output stream for
 some command example. stderr should be always mentioned explicitly when used.
+
+When no output happens mention this fact explicitly and assume that any command
+prints something by default. In this case "by default" is not used to mention default
+command syntax and behaviour, but the default assumption done for all commands.
 
 ### Placeholders
 
@@ -523,11 +527,11 @@ while providing sample values too.
 > See also: awk, ed
 > More information: https://keith.github.io/xcode-man-pages/sed.1.html
 
-- Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in all input lines and print the result to `stdout`:
+- Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in all input lines and display a result:
 
 `{command input command} | sed 's/{string search string: apple}/{string replacement string: mango}/g'`
 
-- Execute a specific script [f]ile and print the result to `stdout`:
+- Execute a specific script [f]ile:
 
 `{command input command} | sed -f {/?path script: script.sed}`
 
