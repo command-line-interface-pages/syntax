@@ -547,7 +547,7 @@ while providing sample values too.
 > See also: awk, ed
 > More information: https://keith.github.io/xcode-man-pages/sed.1.html
 
-- Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in all input lines and display a result:
+- Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in all input lines:
 
 `{command input command} | sed 's/{string search string: apple}/{string replacement string: mango}/g'`
 
@@ -555,15 +555,15 @@ while providing sample values too.
 
 `{command input command} | sed -f {/?path script: script.sed}`
 
-- Replace all `apple` (extended regex) occurrences with `APPLE` (extended regex) in all input lines and print the result to `stdout`:
+- Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
 
 `{command input command} | sed -E 's/{string search string: (apple)}/\U\1/g'`
 
-- Print just a first line to `stdout`:
+- Display just a first line:
 
 `{command input command} | sed -n '{int line count: 1}p'`
 
-- Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in a `file` and save a backup of the original to `file.bak`:
+- Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in a specific file and save a backup of the original file:
 
 `sed -i bak 's/{string search string: apple}/{string replacement string: mango}/g' {/?file input file}`
 ```
