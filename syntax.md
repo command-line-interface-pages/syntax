@@ -8,7 +8,7 @@ All unrecognized escape sequences are treated literally.
 
 ## Command summary
 
-> Compatibility note: trailing dot and angle brackets for url are not supported.
+> :bell: Compatibility note: trailing dot and angle brackets for url are not supported.
 
 Command summary is a combination of command description, documentation link and
 other information about command like:
@@ -51,7 +51,7 @@ The following singular value tags are supported:
 
 #### List like tags
 
-> Compatibility note: `or` is not supported for `See also`.
+> :bell: Compatibility note: `or` is not supported for `See also`.
 
 The following list like tags are supported:
 
@@ -170,7 +170,7 @@ Placeholders are contructs used to substitute some user entered data.
 
 #### General syntax
 
-> Compatibility note: double braces are not used.  
+> :bell: Compatibility note: double braces are not used.  
 > Escape sequences: `\{`, `\}`, `\:`, `\.`, `\,`, `\<space>`.
 
 All placeholder begin with a single opening curly brace `{` and end with a
@@ -285,7 +285,7 @@ make pages unreadable after rendering even knowing that fact that just the first
 
 #### Primitive placeholder rendering
 
-> Compatibility note: `path/to/file_or_directory` and `/path/to/file_or_directory`
+> :bell: Compatibility note: `path/to/file_or_directory` and `/path/to/file_or_directory`
 > are not used.
 
 All placeholders rendered a little bit differently to keep almost the same user
@@ -362,7 +362,7 @@ different coloring by default.
 
 #### Repeated primitive placeholders
 
-> Compatibility note: `...` is not used.
+> :bell: Compatibility note: `...` is not used.
 
 Primitive placeholders also can accept more than one argument. For this purpose
 repetition syntax was created. The following quantifiers are supported:
