@@ -151,7 +151,7 @@ I/O streams are devices used to capture input or output from commands.
 All I/O streams are unquoted and written as:
 
 ```md
-@stdin
+stdin
 stdout
 stderr
 ```
