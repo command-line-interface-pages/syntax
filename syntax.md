@@ -609,7 +609,7 @@ while providing sample values too.
 
 - Execute a specific script [f]ile:
 
-`{command input command} | sed {option specify script: --file, -f} {/?path script: script.sed}`
+`{command input command} | sed {option: --file, -f} {/?path script: script.sed}`
 
 - Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
 
