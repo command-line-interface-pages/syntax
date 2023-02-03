@@ -274,6 +274,8 @@ Placeholder nesting is not supported now.
 
 #### Primitive placeholders
 
+> :fountain_pen: Analogue: question mark syntax is originated from [nullable types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types).
+
 Placeholder explanation always begins with a keyword which determines what kind
 placeholder is. The following keywords are supported:
 
