@@ -635,35 +635,35 @@ while providing sample values too.
 
 - [c]reate an archive and write it to a [f]ile:
 
-`tar {option mode: --create, -c} {option archive: --file, -f} {/?file archive: target.tar} {/?path+ input}`
+`tar {option mode: --create, -c} {option: --file, -f} {/?file archive: target.tar} {/?path+ input}`
 
 - [c]reate a gzipped archive and write it to a [f]ile:
 
-`tar {option mode: --create, -c} --gzip {option archive: --file, -f} {/?file archive: target.tar.gz} {/?path+ input}`
+`tar {option mode: --create, -c} --gzip {option: --file, -f} {/?file archive: target.tar.gz} {/?path+ input}`
 
 - [c]reate a gzipped archive from a directory using relative paths:
 
-`tar {option mode: --create, -c} --gzip {option archive: --file, -f} {/?file archive: target.tar.gz} --directory={directory input} .`
+`tar {option mode: --create, -c} --gzip {option: --file, -f} {/?file archive: target.tar.gz} --directory={directory input} .`
 
 - E[x]tract a (compressed) archive [f]ile into the current directory [v]erbosely:
 
-`tar {option mode: --extract, -x} {option enable verbose mode: --verbose, -v} {option archive: --file, -f} {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz}`
+`tar {option mode: --extract, -x} {option enable verbose mode: --verbose, -v} {option: --file, -f} {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz}`
 
 - E[x]tract a (compressed) archive [f]ile into the target directory:
 
-`tar {option mode: --extract, -x} {option archive: --file, -f} {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz} --directory={directory target}`
+`tar {option mode: --extract, -x} {option: --file, -f} {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz} --directory={directory target}`
 
 - [c]reate a compressed archive and write it to a [f]ile, using [a]rchive suffix to determine the compression program:
 
-`tar {option mode: --create, -c} {option use archive suffix to determine compression program: --auto-compress, -a} {option archive: --file, -f} {/?file archive: target.tar.xz} {/?path+ input}`
+`tar {option mode: --create, -c} {option use archive suffix to determine compression program: --auto-compress, -a} {option: --file, -f} {/?file archive: target.tar.xz} {/?path+ input}`
 
 - Lis[t] the contents of a tar [f]ile [v]erbosely:
 
-`tar {option mode: --list, -t} {option enable verbose mode: --verbose, -v} {option archive: --file, -f} {/?file archive: source.tar}`
+`tar {option mode: --list, -t} {option enable verbose mode: --verbose, -v} {option: --file, -f} {/?file archive: source.tar}`
 
 - E[x]tract files matching a pattern from an archive [f]ile:
 
-`tar {option mode: --extract, -x} {option archive: --file, -f} {/?file archive: source.tar} --wildcards "{string glob: *.html}"`
+`tar {option mode: --extract, -x} {option: --file, -f} {/?file archive: source.tar} --wildcards "{string glob: *.html}"`
 ```
 
 Note several mistakes done in the original page:
