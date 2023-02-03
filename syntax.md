@@ -595,19 +595,19 @@ while providing sample values too.
 
 - Execute a specific script [f]ile:
 
-`{command input command} | sed -f {/?path script: script.sed}`
+`{command input command} | sed {option specify script: --file, -f} {/?path script: script.sed}`
 
 - Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
 
-`{command input command} | sed -E 's/{string search string: (apple)}/\U\1/g'`
+`{command input command} | sed {option enable extended regular expressions: --regexp-extended, -E} 's/{string search string: (apple)}/\U\1/g'`
 
 - Display just a first line:
 
-`{command input command} | sed -n '{int line count: 1}p'`
+`{command input command} | sed {option print nothing by default: --silent, -n} '{int line count: 1}p'`
 
 - Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in a specific file and save a backup of the original file:
 
-`sed -i bak 's/{string search string: apple}/{string replacement string: mango}/g' {/?file input file}`
+`sed {option: edit input files: --in-place, -i} bak 's/{string search string: apple}/{string replacement string: mango}/g' {/?file input file}`
 ```
 
 [`tar`](https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md) will be rewritten as:
