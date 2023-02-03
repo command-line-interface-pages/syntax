@@ -285,6 +285,7 @@ placeholder is. The following keywords are supported:
 - `char`: character value
 - `string`: string value
 - `command`: executable value
+- `option`: option value
 - `file`: relative regular file path value
 - `directory`: relative directory path value
 - `path`: relative path value
