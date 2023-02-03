@@ -26,7 +26,7 @@ are treated as a command explanation.
 
 ### Tags
 
-> :fountain_pen: Analogue: YAML keys.
+> :fountain_pen: Analogue: colon-based syntax is originated from [YAML keys](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started).
 
 Tags are contructs used to add some additional information about a command being
 explained.
