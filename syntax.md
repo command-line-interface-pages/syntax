@@ -312,7 +312,11 @@ this keyword while `path` is a combinational meaning of `file` and `directory`
 keywords.
 
 `option` accepts just two examples: long and short option in this order and must
-be used to show both flags.
+be used to show both flags. `option` placeholder doesn't mandate description
+opposed to other placeholders. When description is missing the next option description
+is used as the description for an option. It can be used for option with arguments
+like `{option: --file, -f} {/?file archive: target.tar}`. However, two consecutive
+placeholders without descriptions are invalid.
 
 Example:
 
