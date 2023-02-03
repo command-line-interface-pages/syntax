@@ -228,10 +228,10 @@ All placeholder begin with a single opening curly brace `{` and end with a
 closing one `}`:
 
 ```md
-{placeholder-content}
+{<placeholder-content>}
 ```
 
-where `placeholder-content` is some special treated text by TlDr parser and
+where `<placeholder-content>` is some special treated text by TlDr parser and
 render like:
 
 ```md
@@ -239,14 +239,14 @@ render like:
 ```
 
 Placeholders can provide both argument semantics and
-example values, so to be more concrete `placeholder-content` can be specified as:
+example values, so to be more concrete `<placeholder-content>` can be specified as:
 
 ```md
-{placeholder-explanation: example-values}
+{<placeholder-explanation>: <example-values>}
 ```
 
-where `placeholder-explanation` is a some text explaining what placeholder is
-used for and `example-values` are some comma-separated example values which
+where `<placeholder-explanation>` is a some text explaining what placeholder is
+used for and `<example-values>` are some comma-separated example values which
 can be substituted instead of this placeholder. Example:
 
 ```md
@@ -259,8 +259,8 @@ It's possible to omit `: example-values` and put just placeholder semantics like
 {file image to process}
 ```
 
-Spacing inside `placeholder-explanation` doesn't matter, all spaces are replaced
-by one underscore while rendering. Almost the same happens with `example-values`,
+Spacing inside `<placeholder-explanation>` doesn't matter, all spaces are replaced
+by one underscore while rendering. Almost the same happens with `<example-values>`,
 all unescaped spaces are replaced by one space while render. It means that
 `my  rose.jpg` in:
 
@@ -329,7 +329,7 @@ sleep {int seconds: 2}{char suffix: s, m, h, d}
 String, file, directory, path and any placeholders are always rendered inside double
 quotes.
 
-If there are two dots between two integers without spaces around it in `placeholder-explanation`
+If there are two dots between two integers without spaces around it in `<placeholder-explanation>`
 then such construct is expanded to all numbers in this range. For instance:
 
 ```md
@@ -403,7 +403,7 @@ repetition syntax was created. The following quantifiers are supported:
 
 - `*`: accept 0 or more arguments like `{file* image: rose.jpg}`
 - `+`: accept 1 or more arguments like `{file+ image: rose.jpg}`
-- `{from}..{to}`: accept `from` to `to` arguments like `{file 2..10 image: rose.jpg}`
+- `{<from>}..{<to>}`: accept `<from>` to `<to>` arguments like `{file 2..10 image: rose.jpg}`
   At least one space after a placeholder keyword is required. It's possible to
   omit any of included range borders but not both like `{file 2.. image: rose.jpg}`.
 
