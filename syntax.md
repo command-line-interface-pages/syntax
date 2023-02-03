@@ -1,5 +1,7 @@
 # Supported syntax
 
+![image](https://img.shields.io/badge/version-2-green)
+
 All syntax is formalized, and clearly defined how it must be interpreted denying
 changing it from case to case for some unclear reason. Disabling errors is not possible
 to keep everything standardized.
