@@ -552,6 +552,14 @@ while providing sample values too.
 - Don't use `name` suffix explicitly, assume that when it's omitted object name
   or it's identifier in other words should be used. Here name and identifier are
   synonyms. For instance instead of `{string package name}` write `{string package}`.
+  This rule doesn't apply when the object placeholder describes is itself a name
+  or an identifier like in this case:
+  
+  ```md
+  - Add a new package source:
+
+  `choco source add --name {string name} --source {string url}`
+  ```
 
 ## Page examples
 
