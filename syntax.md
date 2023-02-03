@@ -57,10 +57,10 @@ The following singular value tags are supported:
 - `Version: <version-flag>`: version flag for a generated code example **where** `<version-flag>` is
   usually one of `--version` and `-v` like `Version: --version`
 - `Internal: <boolean>`: indicator for not directly callable commands
-  **where** `<boolean>` is one of: `true` and `false` like `Internal: true`
+  **where** `<boolean>` is one of: `true` and `false` like `Internal: true`  
   A default message to be shown when value is `true` is: `This command should not be called directly`
 - `Deprecated: <boolean>`: indicator for deprecated commands **where** `<boolean>`
-  is one of: `true` and `false` like `Deprecated: true`
+  is one of: `true` and `false` like `Deprecated: true`  
   A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
 
 #### List like tags
