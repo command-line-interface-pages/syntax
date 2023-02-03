@@ -354,6 +354,8 @@ experience as it was before placeholder standardization:
 - `{char some text}` is rendered as `some_text`
 - `{string some text}` is rendered as `some_text`
 - `{command some text}` is rendered as `some_text`
+- `{option some text: --long, -s}` is rendered as `--long` or `-s` depending on
+  what option's style user prefers
 - `{file some text}` is rendered as `path/to/some_text_file`
 - `{directory some text}` is rendered as `path/to/some_text_directory`
 - `{path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory`
