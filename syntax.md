@@ -26,6 +26,8 @@ are treated as a command explanation.
 
 ### Tags
 
+> :fountain_pen: Analogue: YAML keys.
+
 Tags are contructs used to add some additional information about a command being
 explained.
 
