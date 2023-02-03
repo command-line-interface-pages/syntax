@@ -549,6 +549,9 @@ while providing sample values too.
   with the same semantics. Write
   `tar {option mode: --create, -c} {option archive: --file, -f} {/?file archive: target.tar} {/?path+ input}`
   instead of `tar cf {/?file archive: target.tar} {/?path+ input}`.
+- Don't use `name` suffix explicitly, assume that when it's omitted object name
+  or it's identifier in other words should be used. Here name and identifier are
+  synonyms. For instance instead of `{string package name}` write `{string package}`.
 
 ## Page examples
 
