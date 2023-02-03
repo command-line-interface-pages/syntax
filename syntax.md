@@ -655,7 +655,7 @@ while providing sample values too.
 
 - Lis[t] the contents of a tar [f]ile [v]erbosely:
 
-`tar  {option mode: --list, -t} {option enable verbose mode: --verbose, -v} {option archive: --file, -f} {/?file archive: source.tar}`
+`tar {option mode: --list, -t} {option enable verbose mode: --verbose, -v} {option archive: --file, -f} {/?file archive: source.tar}`
 
 - E[x]tract files matching a pattern from an archive [f]ile:
 
