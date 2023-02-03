@@ -311,6 +311,9 @@ placeholder is. The following keywords are supported:
 this keyword while `path` is a combinational meaning of `file` and `directory`
 keywords.
 
+`option` accepts just two examples: long and short option in this order and must
+be used to show both flags.
+
 Example:
 
 ```md
