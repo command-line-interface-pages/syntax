@@ -56,8 +56,8 @@ The following singular value tags are supported:
   usually one of `--help` and `-h` like `Help: --help`
 - `Version: <version-flag>`: version flag for a generated code example **where** `<version-flag>` is
   usually one of `--version` and `-v` like `Version: --version`
-- `Not directly callable: <boolean>`: indicator for not directly callable commands
-  **where** `<boolean>` is one of: `true` and `false` like `Not directly callable: true`
+- `Internal: <boolean>`: indicator for not directly callable commands
+  **where** `<boolean>` is one of: `true` and `false` like `Internal: true`
   A default message to be shown when value is `true` is: `This command should not be called directly`
 - `Deprecated: <boolean>`: indicator for deprecated commands **where** `<boolean>`
   is one of: `true` and `false` like `Deprecated: true`
@@ -130,6 +130,23 @@ and control their order to make pages consistent instead of using the power of r
 
 ```md
 > Version: --version
+```
+
+##### No unified way to tell that command is deprecated or should not be directly used
+
+The same issue happens when it comes to mentioning the fact that some command is
+internal and must not be used directly by user or when something is deprecated
+and replaced by a newer alternative. It's not automated in TlDr and leads to [these](https://github.com/tldr-pages/tldr/blob/main/pages/common/auditd.md) descriptions:
+
+```md
+> This responds to requests from the audit utility and notifications from the kernel.
+> It should not be invoked manually.
+```
+
+instead of letting render to decide how to notify users about this:
+
+```md
+Internal: true
 ```
 
 ## Code examples
