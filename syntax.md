@@ -540,6 +540,10 @@ while providing sample values too.
   Tell users what command can accept and not it accepts in some example.
   For instance instead of `tar cf {/?file archive: target.tar} {/?file first input} {/?file second input}`
   use `tar cf {/?file archive: target.tar} {/?path+ input}`.
+- Permanently prefer GNU-style (`--help`) or Unix-style (`-h`) options over subcommands
+  with the same semantics. Write
+  `tar {option mode: --create, -c} {option archive: --file, -f} {/?file archive: target.tar} {/?path+ input}`
+  instead of `tar cf {/?file archive: target.tar} {/?path+ input}`.
 
 ## Page examples
 
