@@ -661,3 +661,10 @@ Note several mistakes done in the original page:
 - incorrect multiple extension syntax used: one extension expected instead of `[.gz|.bz2|.xz]`  
   reason: such syntax is undefined by style guide and will not be recognized correctly
   by a script which relies on style guide
+
+## Why not Better TlDr?
+
+Even syntax is highly standardized it may be complicated for newcomers and it may
+be simpler to contribute to TlDr project instead of this one. But it appears that
+in the long run it easier to support and unify Better TlDr pages instead of TlDr
+ones as more things are automated and moved to render.
