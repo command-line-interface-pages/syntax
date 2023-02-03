@@ -177,19 +177,21 @@ All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
 
 ```md
-[mnemonic-content]remainig-word-characters
+[<mnemonic-content>]<remainig-word-characters>
 ```
 
-where `mnemonic-content` is an option or subcommand name and `remainig-word-characters`
+where `<mnemonic-content>` is an option or subcommand name and `<remainig-word-characters>`
 are the rest word characters not captured by mnemonic like:
 
 ```md
 [h]elp
 ```
 
-At least one character should be present inside square brackets. `remainig-word-characters`
+At least one character should be present inside square brackets. `<remainig-word-characters>`
 can be an empty string like `[help]` when option or subcommand name is equal to
 word inside square brackets.
+
+Spaces and forward slashes are not allowed inside square brackets.
 
 ### I/O streams
 
