@@ -33,13 +33,14 @@ explained.
 
 > :bookmark_tabs: Escape sequences: unavailable.
 
-All tags begin with a tag name, followed by a colon with a tag value:
+All tags begin with a tag name, followed by a colon with a at least one space (one by default)
+with a tag value:
 
 ```md
-tag-name:tag-value
+<tag-name>: <tag-value>
 ```
 
-where `tag-name` is a tag name and `tag-value` is a tag value.
+where `<tag-name>` is a tag name and `<tag-value>` is a tag value.
 
 Tags are case-sensitive.
 
@@ -47,9 +48,18 @@ Tags are case-sensitive.
 
 The following singular value tags are supported:
 
-- `More information: link`: link to a documentation where `link` is a link
-  like `More information: https://manned.org/mate-calc`  
-  Link always should be enclosed in angle brackets.
+- `More information: <link>`: link to a documentation **where** `<link>` is a link
+  like `More information: https://manned.org/mate-calc`
+- `Help: <help-flag>`: help flag for a generated code example **where** `<help-flag>` is
+  usually one of `--help` and `-h` like `Help: --help`
+- `Version: <version-flag>`: version flag for a generated code example **where** `<version-flag>` is
+  usually one of `--version` and `-v` like `Version: --version`
+- `Not directly callable: <boolean>`: indicator for not directly callable commands
+  **where** `<boolean>` is one of: `true` and `false` like `Not directly callable: true`
+  A default message to be shown when value is `true` is: `This command should not be called directly`
+- `Deprecated: <boolean>`: indicator for deprecated commands **where** `<boolean>`
+  is one of: `true` and `false` like `Deprecated: true`
+  A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
 
 #### List like tags
 
@@ -57,10 +67,10 @@ The following singular value tags are supported:
 
 The following list like tags are supported:
 
-- `See also: command1, command2, ...`: comma-separated similar command list
-  where `command1`, `command2` and `...` are commands like `See also: awk, ed.`
-- `Aliases: command1, command2, ...`: comma-separated alias list where
-  `command1`, `command2` and `...` are commands like `Aliases: egrep, fgrep.`
+- `See also: <command1, command2, ...>`: comma-separated similar command list
+  **where** `<command1, command2, ...>` are commands like `See also: awk, ed`
+- `Aliases: <command1, command2, ...>`: comma-separated alias list **where**
+  `<command1, command2, ...>` are commands like `Aliases: egrep, fgrep`
 
 #### Why not TlDr?
 
