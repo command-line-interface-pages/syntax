@@ -540,6 +540,9 @@ while providing sample values too.
 ## Best practices
 
 - Always add mnemonics when you know where to add them.
+- Constantly separate alternatives in descriptions with forward slash
+  like `- Test if a specific variable is equal/not equal to a string:` instead of
+  `- Test if a specific variable is equal or not equal to a string:`.
 - Always prefer "display" verb when dealing with singular object instead of
   "print", "get", "show", etc. For instance write `- Display help:` instead of
   `- Show help:`.
