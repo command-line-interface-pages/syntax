@@ -114,6 +114,24 @@ in TlDr the only one correct way to do the same thing is:
 > More information: <https://www.gnu.org/software/coreutils/sleep>.
 ```
 
+##### Missing standardized syntax for version and help examples
+
+As for now TlDr doesn't have any syntax to automatically generate such examples
+not to waste space for a such common thing. So every person should write them manually
+like this:
+
+```md
+- Display version:
+
+`sed --version
+```
+
+and control their order to make pages consistent instead of using the power of render:
+
+```md
+> Version: --version
+```
+
 ## Code examples
 
 Code examples are combinations of code descriptions and actual commands like:
