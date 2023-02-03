@@ -371,35 +371,6 @@ experience as it was before placeholder standardization:
 
 Spaces can be left as they were, without replacing with underscores.
 
-#### Primitive placeholder directives
-
-Directives are contructs used to modify written examples while page rendering.
-They are used to make pages more dymanic and provide current available data
-from the operating system or examples.
-
-##### General syntax
-
-> :bookmark_tabs: Escape sequences: `\@`.
-
-All directives begin with a single `@` character followed by a directive name:
-
-```md
-@directive example
-```
-
-where `directive` is a directive name and `example` is an example for a placeholder.
-
-##### Directives
-
-The following directives are supported:
-
-- `@shuffle`: shuffle example characters like `@shuffle abc`
-- `@random-bool`: get random bool
-- `@random-int`: get random int
-- `@random-float`: get random float
-- `@random-char`: get random char
-- `@random-string`: get random string
-
 #### Optional primitive placeholders
 
 Placeholders can be optional meaning that the corresponding argument may or may
