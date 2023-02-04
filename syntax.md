@@ -1,10 +1,14 @@
 # Supported syntax
 
+![image](https://img.shields.io/badge/version-2-green)
+
 All syntax is formalized, and clearly defined how it must be interpreted denying
 changing it from case to case for some unclear reason. Disabling errors is not possible
 to keep everything standardized.
 
 All unrecognized escape sequences are treated literally.
+
+All Command Line Interface Pages pages must have `.clip` extension.
 
 ## Command summary
 
@@ -24,6 +28,8 @@ are treated as a command explanation.
 
 ### Tags
 
+> :fountain_pen: Analogue: colon-based syntax is originated from [YAML keys](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started).
+
 Tags are contructs used to add some additional information about a command being
 explained.
 
@@ -31,13 +37,14 @@ explained.
 
 > :bookmark_tabs: Escape sequences: unavailable.
 
-All tags begin with a tag name, followed by a colon with a tag value:
+All tags begin with a tag name, followed by a colon with a at least one space (one by default)
+with a tag value:
 
 ```md
-tag-name:tag-value
+<tag-name>: <tag-value>
 ```
 
-where `tag-name` is a tag name and `tag-value` is a tag value.
+where `<tag-name>` is a tag name and `<tag-value>` is a tag value.
 
 Tags are case-sensitive.
 
@@ -45,9 +52,18 @@ Tags are case-sensitive.
 
 The following singular value tags are supported:
 
-- `More information: link`: link to a documentation where `link` is a link
-  like `More information: https://manned.org/mate-calc`  
-  Link always should be enclosed in angle brackets.
+- `More information: <link>`: link to a documentation **where** `<link>` is a link
+  like `More information: https://manned.org/mate-calc`
+- `Help: <help-flag>`: help flag for a generated code example **where** `<help-flag>` is
+  usually one of `--help` and `-h` like `Help: --help`
+- `Version: <version-flag>`: version flag for a generated code example **where** `<version-flag>` is
+  usually one of `--version` and `-v` like `Version: --version`
+- `Internal: <boolean>`: indicator for not directly callable commands
+  **where** `<boolean>` is one of: `true` and `false` like `Internal: true`  
+  A default message to be shown when value is `true` is: `This command should not be called directly`
+- `Deprecated: <boolean>`: indicator for deprecated commands **where** `<boolean>`
+  is one of: `true` and `false` like `Deprecated: true`  
+  A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
 
 #### List like tags
 
@@ -55,10 +71,10 @@ The following singular value tags are supported:
 
 The following list like tags are supported:
 
-- `See also: command1, command2, ...`: comma-separated similar command list
-  where `command1`, `command2` and `...` are commands like `See also: awk, ed.`
-- `Aliases: command1, command2, ...`: comma-separated alias list where
-  `command1`, `command2` and `...` are commands like `Aliases: egrep, fgrep.`
+- `See also: <command1, command2, ...>`: comma-separated similar command list
+  **where** `<command1, command2, ...>` are commands like `See also: awk, ed`
+- `Aliases: <command1, command2, ...>`: comma-separated alias list **where**
+  `<command1, command2, ...>` are commands like `Aliases: egrep, fgrep`
 
 #### Why not TlDr?
 
@@ -68,7 +84,7 @@ To use validated and simplified summary syntax.
 
 Due to missing smart TlDr clients TlDr pages themselved should be written in a way
 they should be rendered. It means than contributors have to write more than they could.
-To compare in Better TlDr it's possible to list similar commands just via comma
+To compare in Command Line Interface Pages it's possible to list similar commands just via comma
 and let render decide how to display such list:
 
 ```md
@@ -88,7 +104,7 @@ before the last term they should remove it in all pages. It contradicts DRY prin
 
 Almost the same applies to `More information` tag. TlDr contributors want to use
 standard Markdown syntax while adding some extenions (like placehodlers) and restrictions
-to it. It results in more keystrokes. While in Better TlDr you just write:
+to it. It results in more keystrokes. While in Command Line Interface Pages you just write:
 
 ```md
 > More information: https://www.gnu.org/software/coreutils/sleep
@@ -98,6 +114,41 @@ in TlDr the only one correct way to do the same thing is:
 
 ```md
 > More information: <https://www.gnu.org/software/coreutils/sleep>.
+```
+
+##### Missing standardized syntax for version and help examples
+
+As for now TlDr doesn't have any syntax to automatically generate such examples
+not to waste space for a such common thing. So every person should write them manually
+like this:
+
+```md
+- Display version:
+
+`sed --version
+```
+
+and control their order to make pages consistent instead of using the power of render:
+
+```md
+> Version: --version
+```
+
+##### No unified way to tell that command is deprecated or should not be directly used
+
+The same issue happens when it comes to mentioning the fact that some command is
+internal and must not be used directly by user or when something is deprecated
+and replaced by a newer alternative. It's not automated in TlDr and leads to [these](https://github.com/tldr-pages/tldr/blob/main/pages/common/auditd.md) descriptions:
+
+```md
+> This responds to requests from the audit utility and notifications from the kernel.
+> It should not be invoked manually.
+```
+
+instead of letting render to decide how to notify users about this:
+
+```md
+Internal: true
 ```
 
 ## Code examples
@@ -128,19 +179,21 @@ All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
 
 ```md
-[mnemonic-content]remainig-word-characters
+[<mnemonic-content>]<remainig-word-characters>
 ```
 
-where `mnemonic-content` is an option or subcommand name and `remainig-word-characters`
+where `<mnemonic-content>` is an option or subcommand name and `<remainig-word-characters>`
 are the rest word characters not captured by mnemonic like:
 
 ```md
 [h]elp
 ```
 
-At least one character should be present inside square brackets. `remainig-word-characters`
+At least one character should be present inside square brackets. `<remainig-word-characters>`
 can be an empty string like `[help]` when option or subcommand name is equal to
 word inside square brackets.
+
+Spaces and forward slashes are not allowed inside square brackets.
 
 ### I/O streams
 
@@ -177,10 +230,10 @@ All placeholder begin with a single opening curly brace `{` and end with a
 closing one `}`:
 
 ```md
-{placeholder-content}
+{<placeholder-content>}
 ```
 
-where `placeholder-content` is some special treated text by TlDr parser and
+where `<placeholder-content>` is some special treated text by TlDr parser and
 render like:
 
 ```md
@@ -188,14 +241,14 @@ render like:
 ```
 
 Placeholders can provide both argument semantics and
-example values, so to be more concrete `placeholder-content` can be specified as:
+example values, so to be more concrete `<placeholder-content>` can be specified as:
 
 ```md
-{placeholder-explanation: example-values}
+{<placeholder-explanation>: <example-values>}
 ```
 
-where `placeholder-explanation` is a some text explaining what placeholder is
-used for and `example-values` are some comma-separated example values which
+where `<placeholder-explanation>` is a some text explaining what placeholder is
+used for and `<example-values>` are some comma-separated example values which
 can be substituted instead of this placeholder. Example:
 
 ```md
@@ -208,8 +261,8 @@ It's possible to omit `: example-values` and put just placeholder semantics like
 {file image to process}
 ```
 
-Spacing inside `placeholder-explanation` doesn't matter, all spaces are replaced
-by one underscore while rendering. Almost the same happens with `example-values`,
+Spacing inside `<placeholder-explanation>` doesn't matter, all spaces are replaced
+by one underscore while rendering. Almost the same happens with `<example-values>`,
 all unescaped spaces are replaced by one space while render. It means that
 `my  rose.jpg` in:
 
@@ -223,6 +276,8 @@ Placeholder nesting is not supported now.
 
 #### Primitive placeholders
 
+> :fountain_pen: Analogue: question mark syntax is originated from [nullable types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types).
+
 Placeholder explanation always begins with a keyword which determines what kind
 placeholder is. The following keywords are supported:
 
@@ -232,6 +287,7 @@ placeholder is. The following keywords are supported:
 - `char`: character value
 - `string`: string value
 - `command`: executable value
+- `option`: option value
 - `file`: relative regular file path value
 - `directory`: relative directory path value
 - `path`: relative path value
@@ -257,6 +313,13 @@ placeholder is. The following keywords are supported:
 this keyword while `path` is a combinational meaning of `file` and `directory`
 keywords.
 
+`option` accepts just two examples: long and short option in this order and must
+be used to show both flags. `option` placeholder doesn't mandate description
+opposed to other placeholders. When description is missing the next option description
+is used as the description for an option. It can be used for option with arguments
+like `{option: --file, -f} {/?file archive: target.tar}`. However, two consecutive
+placeholders without descriptions are invalid.
+
 Example:
 
 ```md
@@ -266,7 +329,7 @@ sleep {int seconds: 2}{char suffix: s, m, h, d}
 String, file, directory, path and any placeholders are always rendered inside double
 quotes.
 
-If there are two dots between two integers without spaces around it in `placeholder-explanation`
+If there are two dots between two integers without spaces around it in `<placeholder-explanation>`
 then such construct is expanded to all numbers in this range. For instance:
 
 ```md
@@ -297,6 +360,8 @@ experience as it was before placeholder standardization:
 - `{char some text}` is rendered as `some_text`
 - `{string some text}` is rendered as `some_text`
 - `{command some text}` is rendered as `some_text`
+- `{option some text: --long, -s}` is rendered as `--long` or `-s` depending on
+  what option's style user prefers
 - `{file some text}` is rendered as `path/to/some_text_file`
 - `{directory some text}` is rendered as `path/to/some_text_directory`
 - `{path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory`
@@ -318,36 +383,8 @@ experience as it was before placeholder standardization:
 - `{any some text}` is rendered as `some_text`
 - `{remote-any some text}` is rendered as `remote some_text`
 
-Spaces can be left as they were, without replacing with underscores.
-
-#### Primitive placeholder directives
-
-Directives are contructs used to modify written examples while page rendering.
-They are used to make pages more dymanic and provide current available data
-from the operating system or examples.
-
-##### General syntax
-
-> :bookmark_tabs: Escape sequences: `\@`.
-
-All directives begin with a single `@` character followed by a directive name:
-
-```md
-@directive example
-```
-
-where `directive` is a directive name and `example` is an example for a placeholder.
-
-##### Directives
-
-The following directives are supported:
-
-- `@shuffle`: shuffle example characters like `@shuffle abc`
-- `@random-bool`: get random bool
-- `@random-int`: get random int
-- `@random-float`: get random float
-- `@random-char`: get random char
-- `@random-string`: get random string
+Spaces can be left as they were, without replacing with underscores. Forward path
+slashes will be rendered as backward ones in Windows environment.
 
 #### Optional primitive placeholders
 
@@ -369,7 +406,7 @@ repetition syntax was created. The following quantifiers are supported:
 
 - `*`: accept 0 or more arguments like `{file* image: rose.jpg}`
 - `+`: accept 1 or more arguments like `{file+ image: rose.jpg}`
-- `{from}..{to}`: accept `from` to `to` arguments like `{file 2..10 image: rose.jpg}`
+- `{<from>}..{<to>}`: accept `<from>` to `<to>` arguments like `{file 2..10 image: rose.jpg}`
   At least one space after a placeholder keyword is required. It's possible to
   omit any of included range borders but not both like `{file 2.. image: rose.jpg}`.
 
@@ -410,7 +447,7 @@ tell user that file is an image and not anything else. On the other hand with in
 placeholders it's not the case `{{4}}`. What is 4? Such placeholders make code examples
 not self-contained, user have to read description to understand placeholder semantic.
 
-Better TlDr solves this issue by requiring semantic to be always present, while
+Command Line Interface Pages solves this issue by requiring semantic to be always present, while
 sample values are optional:
 
 ```md
@@ -455,7 +492,7 @@ permit both absolute and relative paths.
 TlDr pages sometimes violate their own style guide. For instance they can provide
 `{{path/to/excluded_file_or_directory}}` placeholders in code examples. But how to
 interpret it? Does `excluded` correspond to just file or to both terms? Such syntax
-is unavailable in Better TlDr and maintainers must use one of the following equivalents:
+is unavailable in Command Line Interface Pages and maintainers must use one of the following equivalents:
 
 ```md
 {path+ excluded}
@@ -477,7 +514,7 @@ tar cf {{target.tar}} {{file1}} {{file2}} {{file3}}
 ```
 
 The problem it's not possible to tell how much file broken (invalid syntax is used,
-it should begin with `path/to/`) arguments are expected: 1, 2, 3 or more? Better TlDr
+it should begin with `path/to/`) arguments are expected: 1, 2, 3 or more? Command Line Interface Pages
 solves this problem by mandating describing general command syntax:
 
 ```md
@@ -488,7 +525,11 @@ while providing sample values too.
 
 ## Best practices
 
-- Always add mnemonics when you know where to add them.
+- Always add mnemonics when you know where to add them. When both long and short
+  options or commands are presented add mnemonic just for a short option.
+- Constantly separate alternatives in descriptions with forward slash
+  like `- Test if a specific variable is equal/not equal to a string:` instead of
+  `- Test if a specific variable is equal or not equal to a string:`.
 - Always prefer "display" verb when dealing with singular object instead of
   "print", "get", "show", etc. For instance write `- Display help:` instead of
   `- Show help:`.
@@ -506,6 +547,21 @@ while providing sample values too.
   Tell users what command can accept and not it accepts in some example.
   For instance instead of `tar cf {/?file archive: target.tar} {/?file first input} {/?file second input}`
   use `tar cf {/?file archive: target.tar} {/?path+ input}`.
+- Permanently prefer GNU-style (`--help`) or Unix-style (`-h`) options over subcommands
+  with the same semantics. Write
+  `tar {option mode: --create, -c} {option archive: --file, -f} {/?file archive: target.tar} {/?path+ input}`
+  instead of `tar cf {/?file archive: target.tar} {/?path+ input}`.
+- Don't use `name` suffix explicitly, assume that when it's omitted object name
+  or it's identifier in other words should be used. Here name and identifier are
+  synonyms. For instance instead of `{string package name}` write `{string package}`.
+  This rule doesn't apply when the object placeholder describes is itself a name
+  or an identifier like in this case:
+  
+  ```md
+  - Add a new package source:
+
+  `choco source add --name {string name} --source {string url}`
+  ```
 
 ## Page examples
 
@@ -566,19 +622,19 @@ while providing sample values too.
 
 - Execute a specific script [f]ile:
 
-`{command input command} | sed -f {/?path script: script.sed}`
+`{command input command} | sed {option: --file, -f} {/?path script: script.sed}`
 
 - Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
 
-`{command input command} | sed -E 's/{string search string: (apple)}/\U\1/g'`
+`{command input command} | sed {option enable extended regular expressions: --regexp-extended, -E} 's/{string search string: (apple)}/\U\1/g'`
 
 - Display just a first line:
 
-`{command input command} | sed -n '{int line count: 1}p'`
+`{command input command} | sed {option print nothing by default: --silent, -n} '{int line count: 1}p'`
 
 - Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in a specific file and save a backup of the original file:
 
-`sed -i bak 's/{string search string: apple}/{string replacement string: mango}/g' {/?file input file}`
+`sed {option: edit input files: --in-place, -i} bak 's/{string search string: apple}/{string replacement string: mango}/g' {/?file input file}`
 ```
 
 [`tar`](https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md) will be rewritten as:
@@ -592,35 +648,35 @@ while providing sample values too.
 
 - [c]reate an archive and write it to a [f]ile:
 
-`tar cf {/?file archive: target.tar} {/?path+ input}`
+`tar {option mode: --create, -c} {option: --file, -f} {/?file archive: target.tar} {/?path+ input}`
 
-- [c]reate a g[z]ipped archive and write it to a [f]ile:
+- [c]reate a gzipped archive and write it to a [f]ile:
 
-`tar czf {/?file archive: target.tar.gz} {/?path+ input}`
+`tar {option mode: --create, -c} --gzip {option: --file, -f} {/?file archive: target.tar.gz} {/?path+ input}`
 
-- [c]reate a g[z]ipped archive from a directory using relative paths:
+- [c]reate a gzipped archive from a directory using relative paths:
 
-`tar czf {/?file archive: target.tar.gz} --directory={directory input} .`
+`tar {option mode: --create, -c} --gzip {option: --file, -f} {/?file archive: target.tar.gz} --directory={directory input} .`
 
 - E[x]tract a (compressed) archive [f]ile into the current directory [v]erbosely:
 
-`tar xvf {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz}`
+`tar {option mode: --extract, -x} {option enable verbose mode: --verbose, -v} {option: --file, -f} {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz}`
 
 - E[x]tract a (compressed) archive [f]ile into the target directory:
 
-`tar xf {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz} --directory={directory target}`
+`tar {option mode: --extract, -x} {option: --file, -f} {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz} --directory={directory target}`
 
 - [c]reate a compressed archive and write it to a [f]ile, using [a]rchive suffix to determine the compression program:
 
-`tar caf {/?file archive: target.tar.xz} {/?path+ input}`
+`tar {option mode: --create, -c} {option use archive suffix to determine compression program: --auto-compress, -a} {option: --file, -f} {/?file archive: target.tar.xz} {/?path+ input}`
 
 - Lis[t] the contents of a tar [f]ile [v]erbosely:
 
-`tar tvf {/?file archive: source.tar}`
+`tar {option mode: --list, -t} {option enable verbose mode: --verbose, -v} {option: --file, -f} {/?file archive: source.tar}`
 
 - E[x]tract files matching a pattern from an archive [f]ile:
 
-`tar xf {/?file archive: source.tar} --wildcards "{string glob: *.html}"`
+`tar {option mode: --extract, -x} {option: --file, -f} {/?file archive: source.tar} --wildcards "{string glob: *.html}"`
 ```
 
 Note several mistakes done in the original page:
@@ -633,3 +689,10 @@ Note several mistakes done in the original page:
 - incorrect multiple extension syntax used: one extension expected instead of `[.gz|.bz2|.xz]`  
   reason: such syntax is undefined by style guide and will not be recognized correctly
   by a script which relies on style guide
+
+## Why not Command Line Interface Pages?
+
+Even syntax is highly standardized it may be complicated for newcomers and it may
+be simpler to contribute to TlDr project instead of this one. But it appears that
+in the long run it easier to support and unify Command Line Interface Pages pages instead of TlDr
+ones as more things are automated and moved to render.
