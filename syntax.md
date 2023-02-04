@@ -8,7 +8,7 @@ to keep everything standardized.
 
 All unrecognized escape sequences are treated literally.
 
-All Better TlDr pages must have `.clip` extension.
+All Command Line Interface Pages pages must have `.clip` extension.
 
 ## Command summary
 
@@ -84,7 +84,7 @@ To use validated and simplified summary syntax.
 
 Due to missing smart TlDr clients TlDr pages themselved should be written in a way
 they should be rendered. It means than contributors have to write more than they could.
-To compare in Better TlDr it's possible to list similar commands just via comma
+To compare in Command Line Interface Pages it's possible to list similar commands just via comma
 and let render decide how to display such list:
 
 ```md
@@ -104,7 +104,7 @@ before the last term they should remove it in all pages. It contradicts DRY prin
 
 Almost the same applies to `More information` tag. TlDr contributors want to use
 standard Markdown syntax while adding some extenions (like placehodlers) and restrictions
-to it. It results in more keystrokes. While in Better TlDr you just write:
+to it. It results in more keystrokes. While in Command Line Interface Pages you just write:
 
 ```md
 > More information: https://www.gnu.org/software/coreutils/sleep
@@ -447,7 +447,7 @@ tell user that file is an image and not anything else. On the other hand with in
 placeholders it's not the case `{{4}}`. What is 4? Such placeholders make code examples
 not self-contained, user have to read description to understand placeholder semantic.
 
-Better TlDr solves this issue by requiring semantic to be always present, while
+Command Line Interface Pages solves this issue by requiring semantic to be always present, while
 sample values are optional:
 
 ```md
@@ -492,7 +492,7 @@ permit both absolute and relative paths.
 TlDr pages sometimes violate their own style guide. For instance they can provide
 `{{path/to/excluded_file_or_directory}}` placeholders in code examples. But how to
 interpret it? Does `excluded` correspond to just file or to both terms? Such syntax
-is unavailable in Better TlDr and maintainers must use one of the following equivalents:
+is unavailable in Command Line Interface Pages and maintainers must use one of the following equivalents:
 
 ```md
 {path+ excluded}
@@ -514,7 +514,7 @@ tar cf {{target.tar}} {{file1}} {{file2}} {{file3}}
 ```
 
 The problem it's not possible to tell how much file broken (invalid syntax is used,
-it should begin with `path/to/`) arguments are expected: 1, 2, 3 or more? Better TlDr
+it should begin with `path/to/`) arguments are expected: 1, 2, 3 or more? Command Line Interface Pages
 solves this problem by mandating describing general command syntax:
 
 ```md
@@ -690,9 +690,9 @@ Note several mistakes done in the original page:
   reason: such syntax is undefined by style guide and will not be recognized correctly
   by a script which relies on style guide
 
-## Why not Better TlDr?
+## Why not Command Line Interface Pages?
 
 Even syntax is highly standardized it may be complicated for newcomers and it may
 be simpler to contribute to TlDr project instead of this one. But it appears that
-in the long run it easier to support and unify Better TlDr pages instead of TlDr
+in the long run it easier to support and unify Command Line Interface Pages pages instead of TlDr
 ones as more things are automated and moved to render.
