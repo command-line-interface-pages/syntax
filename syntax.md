@@ -8,6 +8,8 @@ to keep everything standardized.
 
 All unrecognized escape sequences are treated literally.
 
+All Better TlDr pages must have `.clip` extension.
+
 ## Command summary
 
 > :bell: Compatibility note: trailing dot and angle brackets for url are not supported.
