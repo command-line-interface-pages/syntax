@@ -224,7 +224,7 @@ Placeholders are contructs used to substitute some user entered data.
 #### General syntax
 
 > :bell: Compatibility note: double braces are not used.  
-> :bookmark_tabs: Escape sequences: `\{`, `\}`, `\:`, `\.`, `\,`, `\<space>`.
+> :bookmark_tabs: Escape sequences: `\{`, `\}`, `\:`, `\.`, `\,`, `\<space>`, `\|`.
 
 All placeholder begin with a single opening curly brace `{` and end with a
 closing one `}`:
