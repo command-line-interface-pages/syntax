@@ -125,7 +125,7 @@ like this:
 ```md
 - Display version:
 
-`sed --version
+`sed --version`
 ```
 
 and control their order to make pages consistent instead of using the power of render:
@@ -233,7 +233,7 @@ closing one `}`:
 {<placeholder-content>}
 ```
 
-where `<placeholder-content>` is some special treated text by TlDr parser and
+where `<placeholder-content>` is some special treated text by Command Line Interface Pages parser and
 render like:
 
 ```md
@@ -282,8 +282,8 @@ Placeholder explanation always begins with a keyword which determines what kind
 placeholder is. The following keywords are supported:
 
 - `bool`: boolean value
-- `int`: integer value, value range is defined by an explaned tool
-- `float`: float value, value range is defined by an explaned tool
+- `int`: integer value
+- `float`: float value
 - `char`: character value
 - `string`: string value
 - `command`: executable value
@@ -294,8 +294,8 @@ placeholder is. The following keywords are supported:
 - `/file`: absolute regular file path value
 - `/directory`: absolute directory path value
 - `/path`: absolute path value
-- `/?file`: relative or absolute regular file path value (syntax sugar)
-- `/?directory`: relative or absolute directory path value (syntax sugar)
+- `/?file`: relative or absolute regular file path value
+- `/?directory`: relative or absolute directory path value
 - `/?path`: relative or absolute path value (syntax sugar)
 - `remote-file`: relative remote regular file path value
 - `remote-directory`: relative remote directory path value
@@ -303,9 +303,9 @@ placeholder is. The following keywords are supported:
 - `/remote-file`: absolute remote regular file path value
 - `/remote-directory`: absolute remote directory path value
 - `/remote-path`: absolute remote path value
-- `/?remote-file`: relative or absolute remote regular file path value (syntax sugar)
-- `/?remote-directory`: relative or absolute remote directory path value (syntax sugar)
-- `/?remote-path`: relative or absolute remote path value (syntax sugar)
+- `/?remote-file`: relative or absolute remote regular file path value
+- `/?remote-directory`: relative or absolute remote directory path value
+- `/?remote-path`: relative or absolute remote path value
 - `any`: anything
 - `remote-any`: remote arbitrary object
 
