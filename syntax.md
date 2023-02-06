@@ -43,9 +43,11 @@ closing one `]`:
 
 where:
 
-- `<mnemonic-content>` is an command name
-- `<leading-word-characters>` are term characters before a mnemonic
-- `<trailing-word-characters>` are term characters after a mnemonic
+- `<mnemonic-content>` is an command name, must contain at least one character
+- `<leading-word-characters>` are term characters before a mnemonic, may be
+  empty string
+- `<trailing-word-characters>` are term characters after a mnemonic, may be
+  empty string
 
 like:
 
@@ -53,10 +55,7 @@ like:
 GNU [b]ourne-[a]gain [sh]ell
 ```
 
-At least one character should be present inside square brackets. 
-Both `<leading-word-characters>` and `<trailing-word-characters>`
-can be an empty string like `[elvish]` when command name is equal to
-word inside square brackets.
+When mnemonic is equal to the whole word it looks like this: `[elvish]`.
 
 Spaces and forward slashes are not allowed inside square brackets.
 
@@ -247,19 +246,24 @@ All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
 
 ```md
-[<mnemonic-content>]<remainig-word-characters>
+<leading-word-characters>[<mnemonic-content>]<trailing-word-characters>
 ```
 
-where `<mnemonic-content>` is an option or subcommand name and `<remainig-word-characters>`
-are the rest word characters not captured by mnemonic like:
+where:
+
+- `<mnemonic-content>` is an command name, must contain at least one character
+- `<leading-word-characters>` are term characters before a mnemonic, may be
+  empty string
+- `<trailing-word-characters>` are term characters after a mnemonic, may be
+  empty string
+
+like:
 
 ```md
 [h]elp
 ```
 
-At least one character should be present inside square brackets. `<remainig-word-characters>`
-can be an empty string like `[help]` when option or subcommand name is equal to
-word inside square brackets.
+When mnemonic is equal to the whole option or subcommand it looks like this:  `[help]`.
 
 Spaces and forward slashes are not allowed inside square brackets.
 
