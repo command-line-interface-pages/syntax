@@ -71,6 +71,8 @@ The following list like tags are supported:
   **where** `<command1, command2, ...>` are commands like `See also: awk, ed`
 - `Aliases: <command1, command2, ...>`: comma-separated alias list **where**
   `<command1, command2, ...>` are commands like `Aliases: egrep, fgrep`
+- `Syntax compatible: <command1, command2, ...>`: comma-separated version command list
+  **where** `<command1, command2, ...>` are commands like `Syntax compatible: sh`
 - `Help: <flag1, flag2, ...>`: comma-separated help flag list
   for a generated code example **where** `<flag1, flag2, ...>` are flags
   like `--help` and `-h` like `Help: --help, -h`
