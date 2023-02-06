@@ -1,6 +1,6 @@
 # Supported syntax
 
-![image](https://img.shields.io/badge/version-2.1.0-green)
+![image](https://img.shields.io/badge/version-2.1.3-green)
 
 All syntax is formalized, and clearly defined how it must be interpreted denying
 changing it from case to case for some unclear reason. Disabling errors is not possible
