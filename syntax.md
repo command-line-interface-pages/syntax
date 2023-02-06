@@ -26,6 +26,34 @@ Leading angle bracket is a required syntax and always should be put
 at the beginning of the line. The first one or two lines where no colons exist
 are treated as a command explanation.
 
+### Mnemonics
+
+Mnemonics are constructs used to refer to characters used in contracted command names.
+
+#### General syntax
+
+> :bookmark_tabs: Escape sequences: `\[`, `\]`.
+
+All mnemonics begin with a single opening square brace `[` and end with a
+closing one `]`:
+
+```md
+[<mnemonic-content>]<remainig-word-characters>
+```
+
+where `<mnemonic-content>` is an option or subcommand name and `<remainig-word-characters>`
+are the rest word characters not captured by mnemonic like:
+
+```md
+GNU [b]ourne-[a]gain [sh]ell
+```
+
+At least one character should be present inside square brackets. `<remainig-word-characters>`
+can be an empty string like `[elvish]` when command name is equal to
+word inside square brackets.
+
+Spaces and forward slashes are not allowed inside square brackets.
+
 ### Tags
 
 > :fountain_pen: Analogue: colon-based syntax is originated from [YAML keys](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started).
