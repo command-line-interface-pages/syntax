@@ -666,7 +666,8 @@ while providing sample values too.
   `choco source add --name {string name} --source {string url}`
   ```
 
-- Always use double quotes.
+- Always use double quotes in code examples unless they make code examples longer
+  than with single quotes.
 
 ## Page examples
 
