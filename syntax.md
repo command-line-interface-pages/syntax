@@ -333,6 +333,9 @@ It's possible to omit `: example-values` and put just placeholder semantics like
 {file image to process}
 ```
 
+Placeholder examples are just samples of possible values and not all possible
+values which can be substitited.
+
 Spacing inside `<placeholder-explanation>` doesn't matter, all spaces are replaced
 by one underscore while rendering. Almost the same happens with `<example-values>`,
 all unescaped spaces are replaced by one space while render. It means that
