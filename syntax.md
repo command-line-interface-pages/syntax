@@ -54,10 +54,6 @@ The following singular value tags are supported:
 
 - `More information: <link>`: link to a documentation **where** `<link>` is a link
   like `More information: https://manned.org/mate-calc`
-- `Help: <help-flag>`: help flag for a generated code example **where** `<help-flag>` is
-  usually one of `--help` and `-h` like `Help: --help`
-- `Version: <version-flag>`: version flag for a generated code example **where** `<version-flag>` is
-  usually one of `--version` and `-v` like `Version: --version`
 - `Internal: <boolean>`: indicator for not directly callable commands
   **where** `<boolean>` is one of: `true` and `false` like `Internal: true`  
   A default message to be shown when value is `true` is: `This command should not be called directly`
@@ -75,6 +71,12 @@ The following list like tags are supported:
   **where** `<command1, command2, ...>` are commands like `See also: awk, ed`
 - `Aliases: <command1, command2, ...>`: comma-separated alias list **where**
   `<command1, command2, ...>` are commands like `Aliases: egrep, fgrep`
+- `Help: <flag1, flag2, ...>`: comma-separated help flag list
+  for a generated code example **where** `<flag1, flag2, ...>` are flags
+  like `--help` and `-h` like `Help: --help, -h`
+- `Version: <flag1, flag2, ...>`: comma-separated version flag list
+  for a generated code example **where** `<flag1, flag2, ...>` are flags
+  like `--version` and `-v` like `Version: --version, -v`
 
 #### Why not TlDr?
 
