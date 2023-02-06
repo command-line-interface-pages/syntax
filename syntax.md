@@ -232,7 +232,8 @@ description like:
 where `equal` matches `==` and `not equal` `!=` respectively. Alternative count
 in code description must match alternative count inside a complex placeholder with
 alternatives. No more than one description alternative and complex placeholder is
-allowed to make render interpret it properly.
+allowed to make render interpret it properly. Also note that complex placeholder
+in such situation must contain one value example.
 
 ### Mnemonics
 
