@@ -392,6 +392,33 @@ is used as the description for an option. It can be used for option with argumen
 like `{option: --file, -f} {/?file archive: target.tar}`. However, two consecutive
 placeholders without descriptions are invalid.
 
+When user wants to switch between code description alternatives and make code examples
+change placeholders with multiple alternatives are rendered as their first example
+value like a regular code, not like a placeholder. For instance the following
+code:
+
+```md
+- Test if a specific variable is (equal/not equal) to a string:
+
+`[ "${string variable: foo}" {string operator: ==|string operator: !=} "{string string: Hello world!}" ]`
+```
+
+will can be rendered like this code:
+
+```md
+- Test if a specific variable is equal to a string:
+
+`[ "${string variable: foo}" == "{string string: Hello world!}" ]`
+```
+
+or that one:
+
+```md
+- Test if a specific variable is not equal to a string:
+
+`[ "${string variable: foo}" != "{string string: Hello world!}" ]`
+```
+
 Example:
 
 ```md
