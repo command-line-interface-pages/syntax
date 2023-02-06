@@ -666,6 +666,8 @@ while providing sample values too.
   `choco source add --name {string name} --source {string url}`
   ```
 
+- Always use double quotes.
+
 ## Page examples
 
 [`sleep`](https://github.com/tldr-pages/tldr/blob/main/pages/common/sleep.md) will be rewritten as:
