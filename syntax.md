@@ -38,17 +38,23 @@ All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
 
 ```md
-[<mnemonic-content>]<remainig-word-characters>
+<leading-word-characters>[<mnemonic-content>]<trailing-word-characters>
 ```
 
-where `<mnemonic-content>` is an option or subcommand name and `<remainig-word-characters>`
-are the rest word characters not captured by mnemonic like:
+where:
+
+- `<mnemonic-content>` is an command name
+- `<leading-word-characters>` are term characters before a mnemonic
+- `<trailing-word-characters>` are term characters after a mnemonic
+
+like:
 
 ```md
 GNU [b]ourne-[a]gain [sh]ell
 ```
 
-At least one character should be present inside square brackets. `<remainig-word-characters>`
+At least one character should be present inside square brackets. 
+Both `<leading-word-characters>` and `<trailing-word-characters>`
 can be an empty string like `[elvish]` when command name is equal to
 word inside square brackets.
 
