@@ -199,6 +199,36 @@ at the beginning and at the end of the line respectively.
 Code description always should have a trailing colon and be a one line. Almost the
 same applies to a code example, it also should be one line.
 
+### Alternatives
+
+Alternatives are constructs used to describe options or subcommands where more 2
+or more choices available.
+
+#### General syntax
+
+> :bookmark_tabs: Escape sequences: `\(`, `\)`.
+
+All alternatives begin with a single opening parenthesis `(` and end with a
+closing one `)`:
+
+```md
+(<alternative-content1>/<alternative-content2>/...)
+```
+
+where `<alternative-contentX>` (where `X` is some number) is an option or subcommand
+description like:
+
+```md
+- Test if a specific variable is (equal/not equal) to a string:
+
+`[ "${string variable: foo}" {string operator: ==|string operator: !=} "{string string: Hello world!}" ]`
+```
+
+where `equal` matches `==` and `not equal` `!=` respectively. Alternative count
+in code description must match alternative count inside a complex placeholder with
+alternatives. No more than one description alternative and complex placeholder is
+allowed to make render interpret it properly.
+
 ### Mnemonics
 
 Mnemonics are constructs used to refer to options or subcommands.
