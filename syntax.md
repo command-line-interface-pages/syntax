@@ -57,7 +57,7 @@ GNU [b]ourne-[a]gain [sh]ell
 
 When mnemonic is equal to the whole word it looks like this: `[elvish]`.
 
-Spaces and forward slashes are not allowed inside square brackets.
+Spaces and pipe characters are not allowed inside square brackets.
 
 ### Tags
 
@@ -217,14 +217,14 @@ All alternatives begin with a single opening parenthesis `(` and end with a
 closing one `)`:
 
 ```md
-(<alternative-content1>/<alternative-content2>/...)
+(<alternative-content1>|<alternative-content2>|...)
 ```
 
 where `<alternative-contentX>` (where `X` is some number) is an option or subcommand
 description like:
 
 ```md
-- Test if a specific variable is (equal/not equal) to a string:
+- Test if a specific variable is (equal|not equal) to a string:
 
 `[ "${string variable: foo}" {string operator: ==|string operator: !=} "{string string: Hello world!}" ]`
 ```
@@ -266,7 +266,7 @@ like:
 
 When mnemonic is equal to the whole option or subcommand it looks like this:  `[help]`.
 
-Spaces and forward slashes are not allowed inside square brackets.
+Spaces and pipe characters are not allowed inside square brackets.
 
 ### I/O streams
 
@@ -402,7 +402,7 @@ value like a regular code, not like a placeholder. For instance the following
 code:
 
 ```md
-- Test if a specific variable is (equal/not equal) to a string:
+- Test if a specific variable is (equal|not equal) to a string:
 
 `[ "${string variable: foo}" {string operator: ==|string operator: !=} "{string string: Hello world!}" ]`
 ```
@@ -630,8 +630,8 @@ while providing sample values too.
 
 - Always add mnemonics when you know where to add them. When both long and short
   options or commands are presented add mnemonic just for a short option.
-- Constantly separate alternatives in descriptions with forward slash
-  like `- Test if a specific variable is equal/not equal to a string:` instead of
+- Constantly separate alternatives in descriptions with a pipe character
+  like `- Test if a specific variable is equal|not equal to a string:` instead of
   `- Test if a specific variable is equal or not equal to a string:`.
 - Always prefer "display" verb when dealing with singular object instead of
   "print", "get", "show", etc. For instance write `- Display help:` instead of
