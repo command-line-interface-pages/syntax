@@ -1,6 +1,6 @@
 # Supported syntax
 
-![image](https://img.shields.io/badge/version-2-green)
+![image](https://img.shields.io/badge/version-2.6.0-green)
 
 All syntax is formalized, and clearly defined how it must be interpreted denying
 changing it from case to case for some unclear reason. Disabling errors is not possible
@@ -25,6 +25,39 @@ other information about command like:
 Leading angle bracket is a required syntax and always should be put
 at the beginning of the line. The first one or two lines where no colons exist
 are treated as a command explanation.
+
+### Mnemonics
+
+Mnemonics are constructs used to refer to characters used in contracted command names.
+
+#### General syntax
+
+> :bookmark_tabs: Escape sequences: `\[`, `\]`.
+
+All mnemonics begin with a single opening square brace `[` and end with a
+closing one `]`:
+
+```md
+<leading-word-characters>[<mnemonic-content>]<trailing-word-characters>
+```
+
+where:
+
+- `<mnemonic-content>` is an command name, must contain at least one character
+- `<leading-word-characters>` are term characters before a mnemonic, may be
+  empty string
+- `<trailing-word-characters>` are term characters after a mnemonic, may be
+  empty string
+
+like:
+
+```md
+GNU [b]ourne-[a]gain [sh]ell
+```
+
+When mnemonic is equal to the whole word it looks like this: `[elvish]`.
+
+Spaces and pipe characters are not allowed inside square brackets.
 
 ### Tags
 
@@ -54,10 +87,6 @@ The following singular value tags are supported:
 
 - `More information: <link>`: link to a documentation **where** `<link>` is a link
   like `More information: https://manned.org/mate-calc`
-- `Help: <help-flag>`: help flag for a generated code example **where** `<help-flag>` is
-  usually one of `--help` and `-h` like `Help: --help`
-- `Version: <version-flag>`: version flag for a generated code example **where** `<version-flag>` is
-  usually one of `--version` and `-v` like `Version: --version`
 - `Internal: <boolean>`: indicator for not directly callable commands
   **where** `<boolean>` is one of: `true` and `false` like `Internal: true`  
   A default message to be shown when value is `true` is: `This command should not be called directly`
@@ -75,6 +104,14 @@ The following list like tags are supported:
   **where** `<command1, command2, ...>` are commands like `See also: awk, ed`
 - `Aliases: <command1, command2, ...>`: comma-separated alias list **where**
   `<command1, command2, ...>` are commands like `Aliases: egrep, fgrep`
+- `Syntax compatible: <command1, command2, ...>`: comma-separated version command list
+  **where** `<command1, command2, ...>` are commands like `Syntax compatible: sh`
+- `Help: <flag1, flag2, ...>`: comma-separated help flag list
+  for a generated code example **where** `<flag1, flag2, ...>` are flags
+  like `--help` and `-h` like `Help: --help, -h`
+- `Version: <flag1, flag2, ...>`: comma-separated version flag list
+  for a generated code example **where** `<flag1, flag2, ...>` are flags
+  like `--version` and `-v` like `Version: --version, -v`
 
 #### Why not TlDr?
 
@@ -167,6 +204,37 @@ at the beginning and at the end of the line respectively.
 Code description always should have a trailing colon and be a one line. Almost the
 same applies to a code example, it also should be one line.
 
+### Alternatives
+
+Alternatives are constructs used to describe options or subcommands where more 2
+or more choices available.
+
+#### General syntax
+
+> :bookmark_tabs: Escape sequences: `\(`, `\)`.
+
+All alternatives begin with a single opening parenthesis `(` and end with a
+closing one `)`:
+
+```md
+(<alternative-content1>|<alternative-content2>|...)
+```
+
+where `<alternative-contentX>` (where `X` is some number) is an option or subcommand
+description like:
+
+```md
+- Test if a specific variable is (equal|not equal) to a string:
+
+`[ "${string variable: foo}" {string operator: ==|string operator: !=} "{string string: Hello world!}" ]`
+```
+
+where `equal` matches `==` and `not equal` `!=` respectively. Alternative count
+in code description must match alternative count inside a complex placeholder with
+alternatives. No more than one description alternative and complex placeholder is
+allowed to make render interpret it properly. Also note that complex placeholder
+in such situation must contain one value example.
+
 ### Mnemonics
 
 Mnemonics are constructs used to refer to options or subcommands.
@@ -179,21 +247,26 @@ All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
 
 ```md
-[<mnemonic-content>]<remainig-word-characters>
+<leading-word-characters>[<mnemonic-content>]<trailing-word-characters>
 ```
 
-where `<mnemonic-content>` is an option or subcommand name and `<remainig-word-characters>`
-are the rest word characters not captured by mnemonic like:
+where:
+
+- `<mnemonic-content>` is an command name, must contain at least one character
+- `<leading-word-characters>` are term characters before a mnemonic, may be
+  empty string
+- `<trailing-word-characters>` are term characters after a mnemonic, may be
+  empty string
+
+like:
 
 ```md
 [h]elp
 ```
 
-At least one character should be present inside square brackets. `<remainig-word-characters>`
-can be an empty string like `[help]` when option or subcommand name is equal to
-word inside square brackets.
+When mnemonic is equal to the whole option or subcommand it looks like this:  `[help]`.
 
-Spaces and forward slashes are not allowed inside square brackets.
+Spaces and pipe characters are not allowed inside square brackets.
 
 ### I/O streams
 
@@ -261,6 +334,9 @@ It's possible to omit `: example-values` and put just placeholder semantics like
 {file image to process}
 ```
 
+Placeholder examples are just samples of possible values and not all possible
+values which can be substitited.
+
 Spacing inside `<placeholder-explanation>` doesn't matter, all spaces are replaced
 by one underscore while rendering. Almost the same happens with `<example-values>`,
 all unescaped spaces are replaced by one space while render. It means that
@@ -320,6 +396,33 @@ is used as the description for an option. It can be used for option with argumen
 like `{option: --file, -f} {/?file archive: target.tar}`. However, two consecutive
 placeholders without descriptions are invalid.
 
+When user wants to switch between code description alternatives and make code examples
+change placeholders with multiple alternatives are rendered as their first example
+value like a regular code, not like a placeholder. For instance the following
+code:
+
+```md
+- Test if a specific variable is (equal|not equal) to a string:
+
+`[ "${string variable: foo}" {string operator: ==|string operator: !=} "{string string: Hello world!}" ]`
+```
+
+will can be rendered like this code:
+
+```md
+- Test if a specific variable is equal to a string:
+
+`[ "${string variable: foo}" == "{string string: Hello world!}" ]`
+```
+
+or that one:
+
+```md
+- Test if a specific variable is not equal to a string:
+
+`[ "${string variable: foo}" != "{string string: Hello world!}" ]`
+```
+
 Example:
 
 ```md
@@ -358,30 +461,30 @@ experience as it was before placeholder standardization:
 - `{int some text}` is rendered as `some_text`
 - `{float some text}` is rendered as `some_text`
 - `{char some text}` is rendered as `some_text`
-- `{string some text}` is rendered as `some_text`
+- `{string some text}` is rendered as `"some_text"`
 - `{command some text}` is rendered as `some_text`
 - `{option some text: --long, -s}` is rendered as `--long` or `-s` depending on
   what option's style user prefers
-- `{file some text}` is rendered as `path/to/some_text_file`
-- `{directory some text}` is rendered as `path/to/some_text_directory`
-- `{path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory`
-- `{/file some text}` is rendered as `/path/to/some_text_file`
-- `{/directory some text}` is rendered as `/path/to/some_text_directory`
-- `{/path some text}` is rendered as `/path/to/some_text_file|/path/to/some_text_directory`
-- `{/?file some text}` is rendered as `path/to/some_text_file`
-- `{/?directory some text}` is rendered as `path/to/some_text_directory`
-- `{/?path some text}` is rendered as `path/to/some_text_file|path/to/some_text_directory`
-- `{remote-file some text}` is rendered as `remote/path/to/some_text_file`
-- `{remote-directory some text}` is rendered as `remote/path/to/some_text_directory`
-- `{remote-path some text}` is rendered as `remote/path/to/some_text_file|remote/path/to/some_text_directory`
-- `{/remote-file some text}` is rendered as `/remote/path/to/some_text_file`
-- `{/remote-directory some text}` is rendered as `/remote/path/to/some_text_directory`
-- `{/remote-path some text}` is rendered as `/remote/path/to/some_text_file|/remote/path/to/some_text_directory`
-- `{/?remote-file some text}` is rendered as `remote/path/to/some_text_file`
-- `{/?remote-directory some text}` is rendered as `remote/path/to/some_text_directory`
-- `{/?remote-path some text}` is rendered as `remote/path/to/some_text_file|remote/path/to/some_text_directory`
-- `{any some text}` is rendered as `some_text`
-- `{remote-any some text}` is rendered as `remote some_text`
+- `{file some text}` is rendered as `"path/to/some_text_file"`
+- `{directory some text}` is rendered as `"path/to/some_text_directory"`
+- `{path some text}` is rendered as `"path/to/some_text_file"|"path/to/some_text_directory"`
+- `{/file some text}` is rendered as `"/path/to/some_text_file"`
+- `{/directory some text}` is rendered as `"/path/to/some_text_directory"`
+- `{/path some text}` is rendered as `"/path/to/some_text_file"|"/path/to/some_text_directory"`
+- `{/?file some text}` is rendered as `"path/to/some_text_file"`
+- `{/?directory some text}` is rendered as `"path/to/some_text_directory"`
+- `{/?path some text}` is rendered as `"path/to/some_text_file"|"path/to/some_text_directory"`
+- `{remote-file some text}` is rendered as `"remote/path/to/some_text_file"`
+- `{remote-directory some text}` is rendered as `"remote/path/to/some_text_directory"`
+- `{remote-path some text}` is rendered as `"remote/path/to/some_text_file"|"remote/path/to/some_text_directory"`
+- `{/remote-file some text}` is rendered as `"/remote/path/to/some_text_file"`
+- `{/remote-directory some text}` is rendered as `"/remote/path/to/some_text_directory"`
+- `{/remote-path some text}` is rendered as `"/remote/path/to/some_text_file"|"/remote/path/to/some_text_directory"`
+- `{/?remote-file some text}` is rendered as `"remote/path/to/some_text_file"`
+- `{/?remote-directory some text}` is rendered as `"remote/path/to/some_text_directory"`
+- `{/?remote-path some text}` is rendered as `"remote/path/to/some_text_file"|"remote/path/to/some_text_directory"`
+- `{any some text}` is rendered as `"some_text"`
+- `{remote-any some text}` is rendered as `"remote some_text"`
 
 Spaces can be left as they were, without replacing with underscores. Forward path
 slashes will be rendered as backward ones in Windows environment.
@@ -527,8 +630,8 @@ while providing sample values too.
 
 - Always add mnemonics when you know where to add them. When both long and short
   options or commands are presented add mnemonic just for a short option.
-- Constantly separate alternatives in descriptions with forward slash
-  like `- Test if a specific variable is equal/not equal to a string:` instead of
+- Constantly separate alternatives in descriptions with a pipe character
+  like `- Test if a specific variable is equal|not equal to a string:` instead of
   `- Test if a specific variable is equal or not equal to a string:`.
 - Always prefer "display" verb when dealing with singular object instead of
   "print", "get", "show", etc. For instance write `- Display help:` instead of
@@ -562,6 +665,9 @@ while providing sample values too.
 
   `choco source add --name {string name} --source {string url}`
   ```
+
+- Always use double quotes in code examples unless they make code examples longer
+  than with single quotes.
 
 ## Page examples
 
