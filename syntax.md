@@ -385,6 +385,22 @@ placeholder is. The following keywords are supported:
 - `any`: anything
 - `remote-any`: remote arbitrary object
 
+`bool` accepts any booleans, like `true`, `false`, `on`, `off`, etc. The main point here
+is to represent type with two values with enabled/disabled semantics.
+
+`command` placeholder can be used to represent just a singular command or subcommand.
+It means that it's invalid to use it in the following case:
+
+```md
+- Execute specific [c]ommands:
+
+`bash -c {string commands: "echo 'Hello world!'"}`
+```
+
+as `-c` accepts any Bash code, not just command or subcommand that's why `string`
+placeholder is used. Note that it means that quantifiers for such placeholder are
+useless.
+
 `any` or `remote-any` are used for placeholders those accept all types of arguments listed above
 this keyword while `path` is a combinational meaning of `file` and `directory`
 keywords.
@@ -628,6 +644,8 @@ while providing sample values too.
 
 ## Best practices
 
+### Summary and code descriptions
+
 - Always add mnemonics when you know where to add them. When both long and short
   options or commands are presented add mnemonic just for a short option.
 - Constantly separate alternatives in descriptions with a pipe character
@@ -646,6 +664,9 @@ while providing sample values too.
   should be interpreted as a data source and what as a target. For example write:
   `azcopy copy '{/?file local input}' 'https://{string remote storage account}.blob.core.windows.net/{string remote container}/{string blob}'` and not `azcopy copy '{/?file input}' 'https://{string storage account}.blob.core.windows.net/{string container}/{string blob}'`.
 - Always add dot before mentioned extensions in description.
+
+### Code examples
+
 - Use repetition quantifiers where variable number of arguments expected.
   Tell users what command can accept and not it accepts in some example.
   For instance instead of `tar cf {/?file archive: target.tar} {/?file first input} {/?file second input}`
