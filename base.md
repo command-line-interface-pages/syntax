@@ -215,6 +215,10 @@ instead of letting render to decide how to notify users about this:
 Internal: true
 ```
 
+##### No official support for pages explaining directories
+
+TlDr doesn't officially provide such pages, contradictionary to this project.
+
 ## Code examples
 
 Code examples are combinations of code descriptions and actual commands like:
