@@ -1,3 +1,3 @@
 # Syntax
 
-Syntax [definition](./syntax.md) and highlighting for different editors.
+Syntax [definition](./base.md) and highlighting for different editors.
