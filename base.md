@@ -124,20 +124,21 @@ The following command/directory singular value tags are supported:
 
 > :bell: Compatibility note: `or` is not supported for `See also`.
 
-The following list like tags are supported:
+The following command/directory list like tags are supported:
 
-- `See also: <command1, command2, ...>`: comma-separated similar command list
-  **where** `<command1, command2, ...>` are commands like `See also: awk, ed`
-- `Aliases: <command1, command2, ...>`: comma-separated alias list **where**
-  `<command1, command2, ...>` are commands like `Aliases: egrep, fgrep`
-- `Syntax compatible: <command1, command2, ...>`: comma-separated version command list
-  **where** `<command1, command2, ...>` are commands like `Syntax compatible: sh`
-- `Help: <flag1, flag2, ...>`: comma-separated help flag list
-  for a generated code example **where** `<flag1, flag2, ...>` are flags
-  like `--help` and `-h` like `Help: --help, -h`
-- `Version: <flag1, flag2, ...>`: comma-separated version flag list
-  for a generated code example **where** `<flag1, flag2, ...>` are flags
-  like `--version` and `-v` like `Version: --version, -v`
+- `See also: <<command|symlink>1, <command|symlink>2, ...>`: comma-separated
+  similar command/directory list
+  :blue_book: **where**:
+  - `<<command|symlink>1, <command|symlink>2, ...>` are commands or directory symlinks
+  
+  :duck: **examples** `See also: awk, ed`
+- `Aliases: <<command|symlink>1, <command|symlink>2, ...>`: comma-separated
+  alias/symlink list
+  :blue_book: **where**:
+  - `<<command|symlink>1, <command|symlink>2, ...>` are commands or directory symlinks
+  
+  :duck: **examples** `Aliases: egrep, fgrep`
+- [CLI tags](./type-specific/cli.md)/[directory tags](./type-specific/directory.md)
 
 #### Why not TlDr?
 
