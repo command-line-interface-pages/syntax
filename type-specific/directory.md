@@ -6,7 +6,7 @@
 
 #### List like tags
 
-> :bell: Compatibility note: `or` is not supported for `See also`.
+> :bell: Compatibility note: `or` is not supported for list like tags.
 
 The following list like tags are supported:
 

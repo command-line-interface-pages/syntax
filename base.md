@@ -122,7 +122,7 @@ The following command/directory singular value tags are supported:
 
 #### List like tags
 
-> :bell: Compatibility note: `or` is not supported for `See also`.
+> :bell: Compatibility note: `or` is not supported for list like tags.
 
 The following command/directory list like tags are supported:
 
