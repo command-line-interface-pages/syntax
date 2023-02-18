@@ -77,8 +77,8 @@ Spaces and pipe characters are not allowed inside square brackets.
 
 > :fountain_pen: Analogue: colon-based syntax is originated from [YAML keys](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started).
 
-Tags are contructs used to add some additional information about a command being
-explained.
+Tags are contructs used to add some additional information about a command/directory
+being explained.
 
 #### General syntax
 
@@ -97,16 +97,24 @@ Tags are case-sensitive.
 
 #### Singular value tags
 
-The following singular value tags are supported:
+The following command/directory singular value tags are supported:
 
-- `More information: <link>`: link to a documentation **where** `<link>` is a link
-  like `More information: https://manned.org/mate-calc`
-- `Internal: <boolean>`: indicator for not directly callable commands
-  **where** `<boolean>` is one of: `true` and `false` like `Internal: true`  
-  A default message to be shown when value is `true` is: `This command should not be called directly`
-- `Deprecated: <boolean>`: indicator for deprecated commands **where** `<boolean>`
-  is one of: `true` and `false` like `Deprecated: true`  
-  A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
+- `More information: <link>`: link to a documentation
+  :blue_book: **where**:
+  - `<link>` is a link
+  **like** `More information: https://manned.org/mate-calc`
+- `Internal: <boolean>`: indicator for:
+  - not directly callable commands
+  - not directly used directories
+  :blue_book: **where**:
+  - `<boolean>` is one of: `true` and `false`  
+  **like** `Internal: true`  
+  **note** A default message to be shown when value is `true` is: `This command should not be called directly`
+- `Deprecated: <boolean>`: indicator for deprecated commands/directories
+  :blue_book: **where**:
+  - `<boolean>` is one of: `true` and `false`
+  **like** `Deprecated: true`  
+  **note** A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
 
 #### List like tags
 
