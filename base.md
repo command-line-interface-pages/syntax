@@ -221,7 +221,7 @@ TlDr doesn't officially provide such pages, contradictionary to this project.
 
 ## Examples
 
-- [CLI tags](./type-specific/cli#code-examples.md)/[directory tags](./type-specific/directory#file-examples.md)
+- [CLI code examples](./type-specific/cli#code-examples.md)/[directory file examples](./type-specific/directory#file-examples.md)
 
 ## Best practices
 
