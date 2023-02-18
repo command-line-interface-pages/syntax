@@ -131,13 +131,13 @@ The following command/directory list like tags are supported:
   :blue_book: **where**:
   - `<<command|symlink>1, <command|symlink>2, ...>` are commands or directory symlinks
   
-  :duck: **examples** `See also: awk, ed`
+  :duck: **examples**: `See also: awk, ed`
 - `Aliases: <<command|symlink>1, <command|symlink>2, ...>`: comma-separated
   alias/symlink list  
   :blue_book: **where**:
   - `<<command|symlink>1, <command|symlink>2, ...>` are commands or directory symlinks
   
-  :duck: **examples** `Aliases: egrep, fgrep`
+  :duck: **examples**: `Aliases: egrep, fgrep`
 - [CLI tags](./type-specific/cli.md)/[directory tags](./type-specific/directory.md)
 
 #### Why not TlDr?
