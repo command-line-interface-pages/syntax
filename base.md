@@ -35,7 +35,8 @@ are treated as a command/diretory explanation.
 
 ### Mnemonics
 
-Mnemonics are constructs used to refer to characters used in contracted command names.
+Mnemonics are constructs used to refer to characters used in contracted command/directory
+names.
 
 #### General syntax
 
@@ -45,14 +46,14 @@ All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
 
 ```md
-<leading-word-characters>[<mnemonic-content>]<trailing-word-characters>
+[<leading-word-characters>]<mnemonic-content>[<trailing-word-characters>]
 ```
 
 where:
 
-- `<mnemonic-content>` is an command name, must contain at least one character
 - `<leading-word-characters>` are term characters before a mnemonic, may be
   empty string
+- `<mnemonic-content>` is an command/directory name, must contain at least one character
 - `<trailing-word-characters>` are term characters after a mnemonic, may be
   empty string
 
@@ -60,6 +61,12 @@ like:
 
 ```md
 GNU [b]ourne-[a]gain [sh]ell
+```
+
+or
+
+```md
+/[bin]aries
 ```
 
 When mnemonic is equal to the whole word it looks like this: `[elvish]`.
