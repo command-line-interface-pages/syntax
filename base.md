@@ -14,17 +14,24 @@ All Command Line Interface Pages pages must have `.clip` extension.
 
 > :bell: Compatibility note: trailing dot and angle brackets for url are not supported.
 
-Page summary is a combination of command/directory/config description,
-documentation link and other information about command/directory/config like:
+Page summary is a combination of command/directory description,
+documentation link and other information about command/directory like:
 
 ```md
 > Calculate specific mathematic expressions in MATE desktop environment
 > More information: https://manned.org/mate-calc
 ```
 
+or
+
+```md
+> Essential user command binaries (for use by all users)
+> More information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
+```
+
 Leading angle bracket is a required syntax and always should be put
 at the beginning of the line. The first one or two lines where no colons exist
-are treated as a command explanation.
+are treated as a command/diretory explanation.
 
 ### Mnemonics
 
