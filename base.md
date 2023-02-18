@@ -112,13 +112,13 @@ The following command/directory singular value tags are supported:
   - `<boolean>` is one of: `true` and `false`  
   
   :duck: **example** `Internal: true`  
-  **note** A default message to be shown when value is `true` is: `This command should not be called directly`
+  :bulb: **note** A default message to be shown when value is `true` is: `This command should not be called directly`
 - `Deprecated: <boolean>`: indicator for deprecated commands/directories  
   :blue_book: **where**:
   - `<boolean>` is one of: `true` and `false`
   
   :duck: **example** `Deprecated: true`  
-  **note** A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
+  :bulb: **note** A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
 
 #### List like tags
 
