@@ -17,7 +17,7 @@ The following list like tags are supported:
   
   :bulb: **examples**: `Syntax compatible: sh`  
   :pencil: **note** Command `<first>` considered syntax compatible with command
-  `<second>` when `<first>` support all syntax that `<second>` does or vice versa.
+  `<second>` when `<first>` support all syntax that `<second>` does.
   It doesn't matter whether this happens by default or by enabling some emulation
   mode like in `Zsh`. Deprecated syntax construct doesn't count while comparing
   syntax compatibility.
