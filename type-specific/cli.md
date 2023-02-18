@@ -10,7 +10,8 @@
 
 The following list like tags are supported:
 
-- `Syntax compatible: <command1, command2, ...>`: comma-separated command list  
+- `Syntax compatible: <command1, command2, ...>`: comma-separated command list
+  containing syntax compatible commands  
   :blue_book: **where**:
   - `<command1, command2, ...>` are commands
   
