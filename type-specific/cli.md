@@ -534,3 +534,130 @@ while providing sample values too.
 
 - Always use double quotes in code examples unless they make code examples longer
   than with single quotes.
+
+## Page examples
+
+[`sleep`](https://github.com/tldr-pages/tldr/blob/main/pages/common/sleep.md) will be rewritten as:
+
+```md
+# sleep
+
+> Delay for a specific amount of time
+> More information: https://www.gnu.org/software/coreutils/sleep
+
+- Delay in [s]econds:
+
+`sleep {int seconds: 2}s`
+
+- Delay in [m]inutes:
+
+`sleep {int minutes: 2}m`
+
+- Delay in [h]ours:
+
+`sleep {int hours: 2}h`
+
+- Delay in [d]ays:
+
+`sleep {int days: 2}d`
+```
+
+[`mate-calc`](https://github.com/tldr-pages/tldr/blob/main/pages/linux/mate-calc.md) will be rewritten as:
+
+```md
+# mate-calc
+
+> Calculate specific mathematic expressions in MATE desktop environment
+> More information: https://manned.org/mate-calc
+
+- Start the calculator:
+
+`mate-calc`
+
+- Calculate a specific mathematic expression:
+
+`mate-calc --solve {string expression: 2 + 5}`
+```
+
+[`sed`](https://github.com/tldr-pages/tldr/blob/main/pages/osx/sed.md) will be rewritten as:
+
+```md
+# sed
+
+> Edit specific text in a scriptable manner
+> See also: awk, ed
+> More information: https://keith.github.io/xcode-man-pages/sed.1.html
+
+- Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in all input lines:
+
+`{command input command} | sed 's/{string search string: apple}/{string replacement string: mango}/g'`
+
+- Execute a specific script [f]ile:
+
+`{command input command} | sed {option: --file, -f} {/?path script: script.sed}`
+
+- Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
+
+`{command input command} | sed {option enable extended regular expressions: --regexp-extended, -E} 's/{string search string: (apple)}/\U\1/g'`
+
+- Display just a first line:
+
+`{command input command} | sed {option print nothing by default: --silent, -n} '{int line count: 1}p'`
+
+- Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in a specific file and save a backup of the original file:
+
+`sed {option: edit input files: --in-place, -i} bak 's/{string search string: apple}/{string replacement string: mango}/g' {/?file input file}`
+```
+
+[`tar`](https://github.com/tldr-pages/tldr/blob/main/pages/common/tar.md) will be rewritten as:
+
+```md
+# tar
+
+> Archiving utility
+> Often combined with a compression method, such as gzip or bzip2
+> More information: https://www.gnu.org/software/tar
+
+- [c]reate an archive and write it to a [f]ile:
+
+`tar {option mode: --create, -c} {option: --file, -f} {/?file archive: target.tar} {/?path+ input}`
+
+- [c]reate a gzipped archive and write it to a [f]ile:
+
+`tar {option mode: --create, -c} --gzip {option: --file, -f} {/?file archive: target.tar.gz} {/?path+ input}`
+
+- [c]reate a gzipped archive from a directory using relative paths:
+
+`tar {option mode: --create, -c} --gzip {option: --file, -f} {/?file archive: target.tar.gz} --directory={directory input} .`
+
+- E[x]tract a (compressed) archive [f]ile into the current directory [v]erbosely:
+
+`tar {option mode: --extract, -x} {option enable verbose mode: --verbose, -v} {option: --file, -f} {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz}`
+
+- E[x]tract a (compressed) archive [f]ile into the target directory:
+
+`tar {option mode: --extract, -x} {option: --file, -f} {/?file archive: source.tar.gz, source.tar.bz2, source.tar.xz} --directory={directory target}`
+
+- [c]reate a compressed archive and write it to a [f]ile, using [a]rchive suffix to determine the compression program:
+
+`tar {option mode: --create, -c} {option use archive suffix to determine compression program: --auto-compress, -a} {option: --file, -f} {/?file archive: target.tar.xz} {/?path+ input}`
+
+- Lis[t] the contents of a tar [f]ile [v]erbosely:
+
+`tar {option mode: --list, -t} {option enable verbose mode: --verbose, -v} {option: --file, -f} {/?file archive: source.tar}`
+
+- E[x]tract files matching a pattern from an archive [f]ile:
+
+`tar {option mode: --extract, -x} {option: --file, -f} {/?file archive: source.tar} --wildcards "{string glob: *.html}"`
+```
+
+Note several mistakes done in the original page:
+
+- incorrect placeholder for paths used: `path/to/*` expected intead of `{{target.tar}}`  
+  reason: such incorrect placeholders will not be recognized correctly by a script
+  which relies on style guide
+- incorrect variadic argument representation used: `...` expected instead of `{{file1}} {{file2}} {{file3}}`  
+  reason: tar accepts not just 3 arguments even if in example just 3 are passed
+- incorrect multiple extension syntax used: one extension expected instead of `[.gz|.bz2|.xz]`  
+  reason: such syntax is undefined by style guide and will not be recognized correctly
+  by a script which relies on style guide
