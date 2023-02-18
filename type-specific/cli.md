@@ -16,6 +16,10 @@ The following list like tags are supported:
   - `<command1, command2, ...>` are commands
   
   :bulb: **examples**: `Syntax compatible: sh`
+  :pencil: **note** Command `<first>` considered syntax compatible with command
+  `<second>` when `<first>` support all syntax that `<second>` does or vice versa.
+  It doesn't matter whether this happens by default or by enabling some emulation
+  mode like in `Zsh`.
 - `Help: <flag1, flag2, ...>`: comma-separated help flag list
   for a generated code example  
   :blue_book: **where**:
