@@ -102,20 +102,22 @@ The following command/directory singular value tags are supported:
 - `More information: <link>`: link to a documentation  
   :blue_book: **where**:
   - `<link>` is a link
-  **like** `More information: https://manned.org/mate-calc`
+  
+  :duck: **example** `More information: https://manned.org/mate-calc`
 - `Internal: <boolean>`: indicator for:
   - not directly callable commands
   - not directly used directories
   
   :blue_book: **where**:
   - `<boolean>` is one of: `true` and `false`  
-  **like** `Internal: true`  
+  
+  :duck: **example** `Internal: true`  
   **note** A default message to be shown when value is `true` is: `This command should not be called directly`
 - `Deprecated: <boolean>`: indicator for deprecated commands/directories  
   :blue_book: **where**:
   - `<boolean>` is one of: `true` and `false`
   
-  **like** `Deprecated: true`  
+  :duck: **example** `Deprecated: true`  
   **note** A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
 
 #### List like tags
