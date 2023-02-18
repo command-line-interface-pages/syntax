@@ -13,7 +13,7 @@ The following list like tags are supported:
 - `Structure compatible: <directory1, directory2, ...>`: comma-separated directory
   containing structure compatible commands  
   :blue_book: **where**:
-  - `<directory1, directory2, ...>` are commands
+  - `<directory1, directory2, ...>` are directories
   
   :bulb: `Structure compatible: $HOME/bin`  
   :pencil: **note** Directory `<first>` considered structure compatible with
