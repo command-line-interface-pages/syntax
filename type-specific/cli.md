@@ -487,3 +487,50 @@ solves this problem by mandating describing general command syntax:
 ```
 
 while providing sample values too.
+
+## Best practices
+
+### Summary and code descriptions
+
+- Always add mnemonics when you know where to add them. When both long and short
+  options or commands are presented add mnemonic just for a short option.
+- Constantly separate alternatives in descriptions with a pipe character
+  like `- Test if a specific variable is equal|not equal to a string:` instead of
+  `- Test if a specific variable is equal or not equal to a string:`.
+- Always prefer "display" verb when dealing with singular object instead of
+  "print", "get", "show", etc. For instance write `- Display 10 numbers:` instead of
+  `- Show 10 numbers:`.
+- Always use "list" verb for multiple objects of the same kind. For instance prefer
+  `- List all files in a specific directory:` instead of `- Show all files in a specific directory:`.
+- Constantly explicitly mention that all available objects are handled like
+  `- List all files in a specific directory:` instead of `- List files in a specific directory:`
+  as in the second case it's not clear what files are listed.
+- When explaining command moving or copying some data from one place to another
+  always explicitly use "source" or "destination" nouns to specify what placeholder
+  should be interpreted as a data source and what as a target. For example write:
+  `azcopy copy '{/?file local input}' 'https://{string remote storage account}.blob.core.windows.net/{string remote container}/{string blob}'` and not `azcopy copy '{/?file input}' 'https://{string storage account}.blob.core.windows.net/{string container}/{string blob}'`.
+
+### Code examples
+
+- Use repetition quantifiers where variable number of arguments expected.
+  Tell users what command can accept and not it accepts in some example.
+  For instance instead of `tar cf {/?file archive: target.tar} {/?file first input} {/?file second input}`
+  use `tar cf {/?file archive: target.tar} {/?path+ input}`.
+- Permanently prefer GNU-style (`--help`) or Unix-style (`-h`) options over subcommands
+  with the same semantics. Write
+  `tar {option mode: --create, -c} {option archive: --file, -f} {/?file archive: target.tar} {/?path+ input}`
+  instead of `tar cf {/?file archive: target.tar} {/?path+ input}`.
+- Don't use `name` suffix explicitly, assume that when it's omitted object name
+  or it's identifier in other words should be used. Here name and identifier are
+  synonyms. For instance instead of `{string package name}` write `{string package}`.
+  This rule doesn't apply when the object placeholder describes is itself a name
+  or an identifier like in this case:
+  
+  ```md
+  - Add a new package source:
+
+  `choco source add --name {string name} --source {string url}`
+  ```
+
+- Always use double quotes in code examples unless they make code examples longer
+  than with single quotes.
