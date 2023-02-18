@@ -69,3 +69,17 @@ like:
 When mnemonic is equal to the whole file it looks like this:  `[home]`.
 
 Spaces and pipe characters are not allowed inside square brackets.
+
+## Page examples
+
+```md
+# /bin
+
+> Essential user command binaries (for use by all users)
+> Must not contain subdirectories
+> More information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
+
+- Utility to concatenate files:
+
+`cat`
+```
