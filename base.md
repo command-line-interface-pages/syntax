@@ -254,7 +254,7 @@ command syntax and behaviour, but the default assumption done for all commands.
 - Always add dot before mentioned extensions in description.
 - [CLI page best practices](./type-specific/cli.md)
 
-## Page examples
+### Page examples
 
 - [CLI page examples](./type-specific/cli.md)
 
