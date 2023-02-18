@@ -138,7 +138,7 @@ The following command/directory list like tags are supported:
   - `<<command|symlink>1, <command|symlink>2, ...>` are commands or directory symlinks
   
   :duck: **examples**: `Aliases: egrep, fgrep`
-- [CLI tags](./type-specific/cli.md)/[directory tags](./type-specific/directory.md)
+- [CLI tags](./type-specific/cli.md#list-like-tags)/[directory tags](./type-specific/directory.md#list-like-tags)
 
 #### Why not TlDr?
 
@@ -245,18 +245,18 @@ command syntax and behaviour, but the default assumption done for all commands.
 
 ## Examples
 
-- [CLI code examples](./type-specific/cli.md)/[directory file examples](./type-specific/directory.md)
+- [CLI code examples](./type-specific/cli.md#code-examples)/[directory file examples](./type-specific/directory.md#file-examples)
 
 ## Best practices
 
 ### Summary and example descriptions
 
 - Always add dot before mentioned extensions in description.
-- [CLI page best practices](./type-specific/cli.md)
+- [CLI page best practices](./type-specific/cli.md#best-practices)
 
 ### Page examples
 
-- [CLI page examples](./type-specific/cli.md)
+- [CLI page examples](./type-specific/cli.md#page-examples)
 
 ## Why not Command Line Interface Pages?
 
