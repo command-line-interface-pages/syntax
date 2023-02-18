@@ -10,12 +10,12 @@ All unrecognized escape sequences are treated literally.
 
 All Command Line Interface Pages pages must have `.clip` extension.
 
-## Command summary
+## Page summary
 
 > :bell: Compatibility note: trailing dot and angle brackets for url are not supported.
 
-Command summary is a combination of command description, documentation link and
-other information about command like:
+Page summary is a combination of command/directory/config description,
+documentation link and other information about command/directory/config like:
 
 ```md
 > Calculate specific mathematic expressions in MATE desktop environment
