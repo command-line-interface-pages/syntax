@@ -127,13 +127,13 @@ The following command/directory singular value tags are supported:
 The following command/directory list like tags are supported:
 
 - `See also: <<command|symlink>1, <command|symlink>2, ...>`: comma-separated
-  similar command/directory list
+  similar command/directory list  
   :blue_book: **where**:
   - `<<command|symlink>1, <command|symlink>2, ...>` are commands or directory symlinks
   
   :duck: **examples** `See also: awk, ed`
 - `Aliases: <<command|symlink>1, <command|symlink>2, ...>`: comma-separated
-  alias/symlink list
+  alias/symlink list  
   :blue_book: **where**:
   - `<<command|symlink>1, <command|symlink>2, ...>` are commands or directory symlinks
   
