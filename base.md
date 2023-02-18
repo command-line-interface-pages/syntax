@@ -105,7 +105,8 @@ The following command/directory singular value tags are supported:
   **like** `More information: https://manned.org/mate-calc`
 - `Internal: <boolean>`: indicator for:
   - not directly callable commands
-  - not directly used directories  
+  - not directly used directories
+  
   :blue_book: **where**:
   - `<boolean>` is one of: `true` and `false`  
   **like** `Internal: true`  
@@ -113,6 +114,7 @@ The following command/directory singular value tags are supported:
 - `Deprecated: <boolean>`: indicator for deprecated commands/directories  
   :blue_book: **where**:
   - `<boolean>` is one of: `true` and `false`
+  
   **like** `Deprecated: true`  
   **note** A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
 
