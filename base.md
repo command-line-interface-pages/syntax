@@ -219,6 +219,30 @@ Internal: true
 
 TlDr doesn't officially provide such pages, contradictionary to this project.
 
+## Page examples
+
+### I/O streams
+
+I/O streams are devices used to capture input or output from commands.
+
+#### General syntax
+
+All I/O streams are unquoted and written as:
+
+```md
+stdin
+stdout
+stderr
+```
+
+stdin must be mentioned just when it's a not default method to read source
+data from. stdout must be mentioned until it's default output stream for
+some command example. stderr should be always mentioned explicitly when used.
+
+When no output happens mention this fact explicitly and assume that any command
+prints something by default. In this case "by default" is not used to mention default
+command syntax and behaviour, but the default assumption done for all commands.
+
 ## Examples
 
 - [CLI code examples](./type-specific/cli.md)/[directory file examples](./type-specific/directory.md)
