@@ -1,192 +1,38 @@
 # Supported syntax
 
-![image](https://img.shields.io/badge/version-2.6.0-green)
-
-All syntax is formalized, and clearly defined how it must be interpreted denying
-changing it from case to case for some unclear reason. Disabling errors is not possible
-to keep everything standardized.
-
-All unrecognized escape sequences are treated literally.
-
-All Command Line Interface Pages pages must have `.clip` extension.
-
-## Command summary
-
-> :bell: Compatibility note: trailing dot and angle brackets for url are not supported.
-
-Command summary is a combination of command description, documentation link and
-other information about command like:
-
-```md
-> Calculate specific mathematic expressions in MATE desktop environment
-> More information: https://manned.org/mate-calc
-```
-
-Leading angle bracket is a required syntax and always should be put
-at the beginning of the line. The first one or two lines where no colons exist
-are treated as a command explanation.
-
-### Mnemonics
-
-Mnemonics are constructs used to refer to characters used in contracted command names.
-
-#### General syntax
-
-> :bookmark_tabs: Escape sequences: `\[`, `\]`.
-
-All mnemonics begin with a single opening square brace `[` and end with a
-closing one `]`:
-
-```md
-<leading-word-characters>[<mnemonic-content>]<trailing-word-characters>
-```
-
-where:
-
-- `<mnemonic-content>` is an command name, must contain at least one character
-- `<leading-word-characters>` are term characters before a mnemonic, may be
-  empty string
-- `<trailing-word-characters>` are term characters after a mnemonic, may be
-  empty string
-
-like:
-
-```md
-GNU [b]ourne-[a]gain [sh]ell
-```
-
-When mnemonic is equal to the whole word it looks like this: `[elvish]`.
-
-Spaces and pipe characters are not allowed inside square brackets.
+## Page summary
 
 ### Tags
 
-> :fountain_pen: Analogue: colon-based syntax is originated from [YAML keys](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started).
-
-Tags are contructs used to add some additional information about a command being
-explained.
-
-#### General syntax
-
-> :bookmark_tabs: Escape sequences: unavailable.
-
-All tags begin with a tag name, followed by a colon with a at least one space (one by default)
-with a tag value:
-
-```md
-<tag-name>: <tag-value>
-```
-
-where `<tag-name>` is a tag name and `<tag-value>` is a tag value.
-
-Tags are case-sensitive.
-
-#### Singular value tags
-
-The following singular value tags are supported:
-
-- `More information: <link>`: link to a documentation **where** `<link>` is a link
-  like `More information: https://manned.org/mate-calc`
-- `Internal: <boolean>`: indicator for not directly callable commands
-  **where** `<boolean>` is one of: `true` and `false` like `Internal: true`  
-  A default message to be shown when value is `true` is: `This command should not be called directly`
-- `Deprecated: <boolean>`: indicator for deprecated commands **where** `<boolean>`
-  is one of: `true` and `false` like `Deprecated: true`  
-  A default message to be shown when value is `true` is: `This command is deprecated and should not be used`
-
 #### List like tags
 
-> :bell: Compatibility note: `or` is not supported for `See also`.
+> :bell: Compatibility note: `or` is not supported for list like tags.
 
 The following list like tags are supported:
 
-- `See also: <command1, command2, ...>`: comma-separated similar command list
-  **where** `<command1, command2, ...>` are commands like `See also: awk, ed`
-- `Aliases: <command1, command2, ...>`: comma-separated alias list **where**
-  `<command1, command2, ...>` are commands like `Aliases: egrep, fgrep`
-- `Syntax compatible: <command1, command2, ...>`: comma-separated version command list
-  **where** `<command1, command2, ...>` are commands like `Syntax compatible: sh`
+- `Syntax compatible: <command1, command2, ...>`: comma-separated command list
+  containing syntax compatible commands  
+  :blue_book: **where**:
+  - `<command1, command2, ...>` are commands
+  
+  :bulb: **examples**: `Syntax compatible: sh`  
+  :pencil: **note** Command `<first>` considered syntax compatible with command
+  `<second>` when `<first>` support all syntax that `<second>` does.
+  It doesn't matter whether this happens by default or by enabling some emulation
+  mode like in `Zsh`. Deprecated syntax construct doesn't count while comparing
+  syntax compatibility.
 - `Help: <flag1, flag2, ...>`: comma-separated help flag list
-  for a generated code example **where** `<flag1, flag2, ...>` are flags
-  like `--help` and `-h` like `Help: --help, -h`
+  for a generated code example  
+  :blue_book: **where**:
+  - `<flag1, flag2, ...>` are flags
+  
+  :bulb: **examples**: `Help: --help, -h`
 - `Version: <flag1, flag2, ...>`: comma-separated version flag list
-  for a generated code example **where** `<flag1, flag2, ...>` are flags
-  like `--version` and `-v` like `Version: --version, -v`
-
-#### Why not TlDr?
-
-To use validated and simplified summary syntax.
-
-##### Redundant backticks and `or`
-
-Due to missing smart TlDr clients TlDr pages themselved should be written in a way
-they should be rendered. It means than contributors have to write more than they could.
-To compare in Command Line Interface Pages it's possible to list similar commands just via comma
-and let render decide how to display such list:
-
-```md
-> See also: grep, awk, sed
-```
-
-But in TlDr it's not possible and you encouraged to write this:
-
-```md
-> See also: `grep`, `awk`, or `sed`.
-```
-
-And if maintainers decide to change syntax of `See also`, let's say not to use `or`
-before the last term they should remove it in all pages. It contradicts DRY principle.
-
-##### Redundant angle brackets
-
-Almost the same applies to `More information` tag. TlDr contributors want to use
-standard Markdown syntax while adding some extenions (like placehodlers) and restrictions
-to it. It results in more keystrokes. While in Command Line Interface Pages you just write:
-
-```md
-> More information: https://www.gnu.org/software/coreutils/sleep
-```
-
-in TlDr the only one correct way to do the same thing is:
-
-```md
-> More information: <https://www.gnu.org/software/coreutils/sleep>.
-```
-
-##### Missing standardized syntax for version and help examples
-
-As for now TlDr doesn't have any syntax to automatically generate such examples
-not to waste space for a such common thing. So every person should write them manually
-like this:
-
-```md
-- Display version:
-
-`sed --version`
-```
-
-and control their order to make pages consistent instead of using the power of render:
-
-```md
-> Version: --version
-```
-
-##### No unified way to tell that command is deprecated or should not be directly used
-
-The same issue happens when it comes to mentioning the fact that some command is
-internal and must not be used directly by user or when something is deprecated
-and replaced by a newer alternative. It's not automated in TlDr and leads to [these](https://github.com/tldr-pages/tldr/blob/main/pages/common/auditd.md) descriptions:
-
-```md
-> This responds to requests from the audit utility and notifications from the kernel.
-> It should not be invoked manually.
-```
-
-instead of letting render to decide how to notify users about this:
-
-```md
-Internal: true
-```
+  for a generated code example  
+  :blue_book: **where**:
+  - `<flag1, flag2, ...>` are flags
+  
+  :bulb: **examples**: `Version: --version, -v`
 
 ## Code examples
 
@@ -267,28 +113,6 @@ like:
 When mnemonic is equal to the whole option or subcommand it looks like this:  `[help]`.
 
 Spaces and pipe characters are not allowed inside square brackets.
-
-### I/O streams
-
-I/O streams are devices used to capture input or output from commands.
-
-#### General syntax
-
-All I/O streams are unquoted and written as:
-
-```md
-stdin
-stdout
-stderr
-```
-
-stdin must be mentioned just when it's a not default method to read source
-data from. stdout must be mentioned until it's default output stream for
-some command example. stderr should be always mentioned explicitly when used.
-
-When no output happens mention this fact explicitly and assume that any command
-prints something by default. In this case "by default" is not used to mention default
-command syntax and behaviour, but the default assumption done for all commands.
 
 ### Placeholders
 
@@ -652,8 +476,8 @@ while providing sample values too.
   like `- Test if a specific variable is equal|not equal to a string:` instead of
   `- Test if a specific variable is equal or not equal to a string:`.
 - Always prefer "display" verb when dealing with singular object instead of
-  "print", "get", "show", etc. For instance write `- Display help:` instead of
-  `- Show help:`.
+  "print", "get", "show", etc. For instance write `- Display 10 numbers:` instead of
+  `- Show 10 numbers:`.
 - Always use "list" verb for multiple objects of the same kind. For instance prefer
   `- List all files in a specific directory:` instead of `- Show all files in a specific directory:`.
 - Constantly explicitly mention that all available objects are handled like
@@ -663,7 +487,6 @@ while providing sample values too.
   always explicitly use "source" or "destination" nouns to specify what placeholder
   should be interpreted as a data source and what as a target. For example write:
   `azcopy copy '{/?file local input}' 'https://{string remote storage account}.blob.core.windows.net/{string remote container}/{string blob}'` and not `azcopy copy '{/?file input}' 'https://{string storage account}.blob.core.windows.net/{string container}/{string blob}'`.
-- Always add dot before mentioned extensions in description.
 
 ### Code examples
 
@@ -816,10 +639,3 @@ Note several mistakes done in the original page:
 - incorrect multiple extension syntax used: one extension expected instead of `[.gz|.bz2|.xz]`  
   reason: such syntax is undefined by style guide and will not be recognized correctly
   by a script which relies on style guide
-
-## Why not Command Line Interface Pages?
-
-Even syntax is highly standardized it may be complicated for newcomers and it may
-be simpler to contribute to TlDr project instead of this one. But it appears that
-in the long run it easier to support and unify Command Line Interface Pages pages instead of TlDr
-ones as more things are automated and moved to render.
