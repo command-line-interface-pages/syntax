@@ -199,13 +199,16 @@ The following command/directory list like tags are supported:
   
 - [CLI tags](./type-specific/cli.md#list-like-tags)/[directory tags](./type-specific/directory.md#list-like-tags)
 
-## Page examples
+## Page examples (`examples`)
 
-### I/O streams
+### I/O streams (`examples.<example>.<stream>`)
 
-I/O streams are devices used to capture input or output from commands.
+I/O streams are devices used to capture input or output from commands like:
 
-#### General syntax
+```yaml
+examples:
+    description: Print file contents or error to stderr if it doesn't exist
+```
 
 All I/O streams are unquoted and written as:
 
