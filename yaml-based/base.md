@@ -189,6 +189,7 @@ The following command/directory list like tags are supported:
   **required**: false  
   **default**: []  
   **unique items**: true  
+  **note** Just shell aliases are considered as aliases, command wrappers are not  
   **example**:
 
   ```yaml
