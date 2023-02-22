@@ -44,12 +44,20 @@ summary:
 
 ### Mnemonics
 
-Mnemonics are constructs used to refer to characters used in contracted command/directory
-names.
-
-#### General syntax
-
 > :bookmark_tabs: Escape sequences: `\[`, `\]`.
+
+Mnemonics are constructs used to refer to characters used in contracted command/directory
+names like:
+
+```md
+GNU [b]ourne-[a]gain [sh]ell
+```
+
+or:
+
+```md
+/[bin]aries
+```
 
 All mnemonics begin with a single opening square brace `[` and end with a
 closing one `]`:
@@ -80,7 +88,7 @@ or
 
 When mnemonic is equal to the whole word it looks like this: `[elvish]`.
 
-Spaces and pipe characters are not allowed inside square brackets.
+Spaces are not allowed inside square brackets.
 
 ### Tags
 
