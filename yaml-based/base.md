@@ -36,7 +36,7 @@ A page title is equal to the file name when not specified.
 Page summary is a combination of command/directory description,
 documentation link and other information about command/directory.
 
-## Summary description (`summary.description`)
+### Summary description (`summary.description`)
 
 > :bell: Compatibility note: trailing dot is not supported.  
 > :information_source: Required: true.
