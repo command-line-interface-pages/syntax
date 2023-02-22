@@ -25,14 +25,14 @@ Summary description is a command/directory description like:
 
 ```yaml
 summary:
-description: Calculate specific mathematic expressions in MATE desktop environment
+    description: Calculate specific mathematic expressions in MATE desktop environment
 ```
 
 or:
 
 ```yaml
 summary:
-description: Essential user command binaries (for use by all users)
+    description: Essential user command binaries (for use by all users)
 ```
 
 ## :gear: Page summary: render notes
