@@ -6,7 +6,7 @@ All syntax is formalized, and clearly defined how it must be interpreted denying
 changing it from case to case for some unclear reason. Disabling errors is not possible
 to keep everything standardized.
 
-All unrecognized escape sequences are treated literally.
+All unrecognized escape sequences are treated as errors.
 
 All Command Line Interface Pages pages written in YAML must have `.yaml` extension.
 
