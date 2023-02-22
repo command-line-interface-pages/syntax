@@ -26,7 +26,6 @@ Summary description is a command/directory description like:
 ```yaml
 summary:
 description: Calculate specific mathematic expressions in MATE desktop environment
-more-information: https://manned.org/mate-calc
 ```
 
 or:
@@ -34,7 +33,6 @@ or:
 ```yaml
 summary:
 description: Essential user command binaries (for use by all users)
-more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
 ```
 
 ## :gear: Page summary: render notes
