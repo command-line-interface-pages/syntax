@@ -42,14 +42,16 @@ summary:
 Mnemonics are constructs used to refer to characters used in contracted command/directory
 names like:
 
-```md
-GNU [b]ourne-[a]gain [sh]ell
+```yaml
+summary:
+    description: GNU [b]ourne-[a]gain [sh]ell
 ```
 
 or:
 
-```md
-/[bin]aries
+```yaml
+summary:
+    description: /[bin]aries
 ```
 
 All mnemonics begin with a single opening square brace `[` and end with a
