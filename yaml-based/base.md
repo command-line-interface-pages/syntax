@@ -13,6 +13,7 @@ All Command Line Interface Pages pages written in YAML must have `.yaml` extensi
 ## Page summary (`summary`)
 
 > :bell: Compatibility note: trailing dot is not supported.
+> :information_source: Required: true.
 
 Page summary is a combination of command/directory description,
 documentation link and other information about command/directory.
@@ -20,6 +21,7 @@ documentation link and other information about command/directory.
 ## Summary description (`summary.description`)
 
 > :bell: Compatibility note: trailing dot is not supported.
+> :information_source: Required: true.
 
 Summary description is a command/directory description like:
 
@@ -38,6 +40,7 @@ summary:
 ### Mnemonics (`summary.description.<mnemonic>`)
 
 > :bookmark_tabs: Escape sequences: `\[`, `\]`.
+> :information_source: Required: false, but recommended when possible.
 
 Mnemonics are constructs used to refer to characters used in contracted command/directory
 names like:
@@ -76,6 +79,7 @@ Spaces are not allowed inside square brackets.
 ### Tags (`summary.<tag>`)
 
 > :bookmark_tabs: Escape sequences: unavailable.
+> :information_source: Required: false, but recommended when possible.
 
 Tags are contructs used to add some additional information about a command/directory
 being explained like:
@@ -103,10 +107,13 @@ where `<tag-name>` is a tag name and `<tag-value>` is a tag value.
 
 #### Singular value tags (`summary.<singular-tag>`)
 
+> :information_source: Required: true, but not for all.
+
 The following command/directory singular value tags are supported:
 
 - `more-information: <link>`: link to a documentation  
   **type**: string  
+  **required**: true  
   **example**:
 
   ```yaml
@@ -119,6 +126,8 @@ The following command/directory singular value tags are supported:
   - not directly used directories
   
   **type**: boolean  
+  **required**: false  
+  **default**: false  
   **note** A default message to be shown when value is `true` is: `This command/directory should not be called/used directly`  
   **example**:
 
@@ -128,6 +137,9 @@ The following command/directory singular value tags are supported:
   ```
 
 - `deprecated: <boolean>`: indicator for deprecated commands/directories  
+  **type**: boolean  
+  **required**: false  
+  **default**: false  
   **note** A default message to be shown when value is `true` is: `This command is deprecated and should not be used`  
   **example**:
 
