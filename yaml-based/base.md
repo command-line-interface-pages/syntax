@@ -166,24 +166,36 @@ The following command/directory singular value tags are supported:
       deprecated: true
   ```
 
-#### List like tags
+#### List like tags (`summary.<array-tag>`)
 
-> :bell: Compatibility note: `or` is not supported for list like tags.
+> :information_source: Required: false.
 
 The following command/directory list like tags are supported:
 
-- `See also: <<command|directory>1, <command|directory>2, ...>`: comma-separated
-  similar command/directory list  
-  :blue_book: **where**:
-  - `<<command|directory>1, <command|directory>2, ...>` are commands or directories
+- `see-also: [<command1|directory1>, <command2|directory2>, ...]`: similar command/directory
+  array
+  **required**: false  
+  **default**: []  
+  **unique items**: true
+  **example**:
+
+  ```yaml
+  summary:
+      see-also: [awk, sed]
+  ```
+
+- `aliases: [<command1|symlink1>, <command2|symlink2>, ...]`: command alias/symlink
+  array  
+  **required**: false  
+  **default**: []  
+  **unique items**: true
+  **example**:
+
+  ```yaml
+  summary:
+      aliases: [egrep, fgrep]
+  ```
   
-  :duck: **examples**: `See also: awk, ed`
-- `Aliases: <<command|symlink>1, <command|symlink>2, ...>`: comma-separated
-  alias/symlink list  
-  :blue_book: **where**:
-  - `<<command|symlink>1, <command|symlink>2, ...>` are commands or directory symlinks
-  
-  :duck: **examples**: `Aliases: egrep, fgrep`
 - [CLI tags](./type-specific/cli.md#list-like-tags)/[directory tags](./type-specific/directory.md#list-like-tags)
 
 #### Why not TlDr?
