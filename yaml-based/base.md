@@ -10,21 +10,29 @@ All unrecognized escape sequences are treated as errors.
 
 All Command Line Interface Pages pages written in YAML must have `.yaml` extension.
 
-## :notebook: Page summary
+## Page summary (summary)
 
-> :bell: Compatibility note: trailing dot and angle brackets for url are not supported.
+> :bell: Compatibility note: trailing dot is not supported.
 
 Page summary is a combination of command/directory description,
-documentation link and other information about command/directory like:
+documentation link and other information about command/directory.
+
+## Summary description (summary.description)
+
+> :bell: Compatibility note: trailing dot is not supported.
+
+Summary description is a command/directory description like:
 
 ```yaml
+summary:
 description: Calculate specific mathematic expressions in MATE desktop environment
 more-information: https://manned.org/mate-calc
 ```
 
-or
+or:
 
 ```yaml
+summary:
 description: Essential user command binaries (for use by all users)
 more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
 ```
