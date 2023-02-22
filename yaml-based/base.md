@@ -35,13 +35,6 @@ summary:
     description: Essential user command binaries (for use by all users)
 ```
 
-## :gear: Page summary: render notes
-
-- How much first lines of command summary are rendered by default is controlled by render.
-  **Default value**: 2.
-- What is written after description when just part of it is shown is also chosen by render.
-  **Default value**: `...`.
-
 ### Mnemonics
 
 > :bookmark_tabs: Escape sequences: `\[`, `\]`.
