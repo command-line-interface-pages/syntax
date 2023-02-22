@@ -67,18 +67,6 @@ where:
 - `<trailing-word-characters>` are term characters after a mnemonic, may be
   empty string
 
-like:
-
-```md
-GNU [b]ourne-[a]gain [sh]ell
-```
-
-or
-
-```md
-/[bin]aries
-```
-
 When mnemonic is equal to the whole word it looks like this: `[elvish]`.
 
 Spaces are not allowed inside square brackets.
