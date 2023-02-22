@@ -10,6 +10,24 @@ All unrecognized escape sequences are treated as errors.
 
 All Command Line Interface Pages pages written in YAML must have `.yaml` extension.
 
+## Page title (`title`)
+
+> :information_source: Required: false.
+
+Page title is a command/directory name like:
+
+```yaml
+title: git init
+```
+
+or:
+
+```yaml
+title: /bin
+```
+
+A page title is equal to the file name when not specified.
+
 ## Page summary (`summary`)
 
 > :bell: Compatibility note: trailing dot is not supported.  
