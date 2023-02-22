@@ -173,10 +173,10 @@ The following command/directory singular value tags are supported:
 The following command/directory list like tags are supported:
 
 - `see-also: [<command1|directory1>, <command2|directory2>, ...]`: similar command/directory
-  array
+  array  
   **required**: false  
   **default**: []  
-  **unique items**: true
+  **unique items**: true  
   **example**:
 
   ```yaml
@@ -188,7 +188,7 @@ The following command/directory list like tags are supported:
   array  
   **required**: false  
   **default**: []  
-  **unique items**: true
+  **unique items**: true  
   **example**:
 
   ```yaml
