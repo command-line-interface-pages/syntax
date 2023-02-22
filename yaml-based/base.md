@@ -12,7 +12,7 @@ All Command Line Interface Pages pages written in YAML must have `.yaml` extensi
 
 ## Page summary (`summary`)
 
-> :bell: Compatibility note: trailing dot is not supported.
+> :bell: Compatibility note: trailing dot is not supported.  
 > :information_source: Required: true.
 
 Page summary is a combination of command/directory description,
@@ -20,7 +20,7 @@ documentation link and other information about command/directory.
 
 ## Summary description (`summary.description`)
 
-> :bell: Compatibility note: trailing dot is not supported.
+> :bell: Compatibility note: trailing dot is not supported.  
 > :information_source: Required: true.
 
 Summary description is a command/directory description like:
@@ -39,7 +39,7 @@ summary:
 
 ### Mnemonics (`summary.description.<mnemonic>`)
 
-> :bookmark_tabs: Escape sequences: `\[`, `\]`.
+> :bookmark_tabs: Escape sequences: `\[`, `\]`.  
 > :information_source: Required: false, but recommended when possible.
 
 Mnemonics are constructs used to refer to characters used in contracted command/directory
@@ -78,7 +78,7 @@ Spaces are not allowed inside square brackets.
 
 ### Tags (`summary.<tag>`)
 
-> :bookmark_tabs: Escape sequences: unavailable.
+> :bookmark_tabs: Escape sequences: unavailable.  
 > :information_source: Required: false, but recommended when possible.
 
 Tags are contructs used to add some additional information about a command/directory
