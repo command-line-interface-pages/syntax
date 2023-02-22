@@ -10,14 +10,14 @@ All unrecognized escape sequences are treated as errors.
 
 All Command Line Interface Pages pages written in YAML must have `.yaml` extension.
 
-## Page summary (summary)
+## Page summary (`summary`)
 
 > :bell: Compatibility note: trailing dot is not supported.
 
 Page summary is a combination of command/directory description,
 documentation link and other information about command/directory.
 
-## Summary description (summary.description)
+## Summary description (`summary.description`)
 
 > :bell: Compatibility note: trailing dot is not supported.
 
@@ -35,7 +35,7 @@ summary:
     description: Essential user command binaries (for use by all users)
 ```
 
-### Mnemonics
+### Mnemonics (`summary.description.<mnemonic>`)
 
 > :bookmark_tabs: Escape sequences: `\[`, `\]`.
 
@@ -71,7 +71,7 @@ When mnemonic is equal to the whole word it looks like this: `[elvish]`.
 
 Spaces are not allowed inside square brackets.
 
-### Tags (summary.<tag-name>)
+### Tags (`summary.<tag>`)
 
 > :bookmark_tabs: Escape sequences: unavailable.
 
