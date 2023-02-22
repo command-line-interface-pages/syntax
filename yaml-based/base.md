@@ -146,7 +146,7 @@ The following command/directory singular value tags are supported:
   **type**: boolean  
   **required**: false  
   **default**: false  
-  **note** A default message to be shown when value is `true` is: `This command/directory should not be called/used directly`  
+  **note**: A default message to be shown when value is `true` is: `This command/directory should not be called/used directly`  
   **example**:
 
   ```yaml
@@ -158,7 +158,7 @@ The following command/directory singular value tags are supported:
   **type**: boolean  
   **required**: false  
   **default**: false  
-  **note** A default message to be shown when value is `true` is: `This command is deprecated and should not be used`  
+  **note**: A default message to be shown when value is `true` is: `This command is deprecated and should not be used`  
   **example**:
 
   ```yaml
