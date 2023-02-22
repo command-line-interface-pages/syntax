@@ -32,9 +32,9 @@ more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
 ## :gear: Page summary: render notes
 
 - How much first lines of command summary are rendered by default is controlled by render.
-  Default value: 2.
+  **Default value**: 2.
 - What is written after description when just part of it is shown is also chosen by render.
-  Default value: `...`.
+  **Default value**: `...`.
 
 ### Mnemonics
 
