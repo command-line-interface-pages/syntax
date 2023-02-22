@@ -240,10 +240,3 @@ command syntax and behaviour, but the default assumption done for all commands.
 ### Page examples
 
 - [CLI page examples](./type-specific/cli.md#page-examples)
-
-## Why not Command Line Interface Pages?
-
-Even syntax is highly standardized it may be complicated for newcomers and it may
-be simpler to contribute to TlDr project instead of this one. But it appears that
-in the long run it easier to support and unify Command Line Interface Pages pages instead of TlDr
-ones as more things are automated and moved to render.
