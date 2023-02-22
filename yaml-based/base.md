@@ -71,19 +71,27 @@ When mnemonic is equal to the whole word it looks like this: `[elvish]`.
 
 Spaces are not allowed inside square brackets.
 
-### Tags
-
-> :fountain_pen: Analogue: colon-based syntax is originated from [YAML keys](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started).
-
-Tags are contructs used to add some additional information about a command/directory
-being explained.
-
-#### General syntax
+### Tags (summary.<tag-name>)
 
 > :bookmark_tabs: Escape sequences: unavailable.
 
-All tags begin with a tag name, followed by a colon with a at least one space (one by default)
-with a tag value:
+Tags are contructs used to add some additional information about a command/directory
+being explained like:
+
+```yaml
+summary:
+    more-information: https://manned.org/mate-calc
+```
+
+or:
+
+```yaml
+summary:
+    more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
+```
+
+All tags begin with a tag name, followed by a colon with a at least one space with
+a tag value:
 
 ```md
 <tag-name>: <tag-value>
