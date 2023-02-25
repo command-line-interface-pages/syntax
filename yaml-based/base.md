@@ -129,6 +129,32 @@ where `<tag-name>` is a tag name and `<tag-value>` is a tag value.
 
 The following command/directory singular value tags are supported:
 
+- `parent-page: <page>`: parent page path in the same repository  
+  **type**: string  
+  **required**: false  
+  **default**: `""`  
+  **example**:
+
+  ```yaml
+  summary:
+      parent-page: coreutils
+  ```
+
+  **note**: All not explicitly set tags are inherited from the parent page. Circular
+  references are not allowed.
+
+- `fake-page: <boolean>`: indicator for a page should not be rendered but used as
+  a store of tags  
+  **type**: boolean  
+  **required**: false  
+  **default**: false  
+  **example**:
+
+  ```yaml
+  summary:
+      fake-page: true
+  ```
+
 - `more-information: <link>`: link to a documentation  
   **type**: string  
   **required**: true  
