@@ -174,6 +174,7 @@ The following command/directory list like tags are supported:
 
 - `see-also: [<command1|directory1>, <command2|directory2>, ...]`: similar command/directory
   array  
+  **type**: array of string  
   **required**: false  
   **default**: []  
   **unique items**: true  
@@ -186,6 +187,7 @@ The following command/directory list like tags are supported:
 
 - `aliases: [<command1|symlink1>, <command2|symlink2>, ...]`: command alias/symlink
   array  
+  **type**: array of string  
   **required**: false  
   **default**: []  
   **unique items**: true  
