@@ -50,5 +50,5 @@ The following list like tags are supported:
 
   ```yaml
   summary:
-      help: [--help, -h]
+      version: [--version, -v]
   ```
