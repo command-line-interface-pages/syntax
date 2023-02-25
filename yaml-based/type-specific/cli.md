@@ -1,10 +1,10 @@
 # Supported syntax
 
-## Page summary
+## Page summary (`summary`)
 
-### Tags
+### Tags (`summary.<tag>`)
 
-#### List like tags
+#### List like tags (`summary.<array-tag>`)
 
 > :bell: Compatibility note: `or` is not supported for list like tags.
 
