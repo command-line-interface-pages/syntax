@@ -2,6 +2,9 @@
 
 ![image](https://img.shields.io/badge/version-2.7.0-green)
 
+> :warning: Support note: Markdown-based syntax will be supported, but new features will not be proposed here.
+> It will be remained for some sort of compatibility with TlDr. Use YAML-based syntax instead by default.
+
 All syntax is formalized, and clearly defined how it must be interpreted denying
 changing it from case to case for some unclear reason. Disabling errors is not possible
 to keep everything standardized.
