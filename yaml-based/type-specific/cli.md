@@ -390,7 +390,7 @@ summary:
   more-information: https://keith.github.io/xcode-man-pages/sed.1.html
 
 examples:
-  Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in all input lines:
+  Replace all "${search}" (basic regex) occurrences with "${replacement}" (basic regex) in all input lines:
     code: "sed 's/${search}/${replacement}/g'"
     annotations:
       search:
@@ -410,15 +410,15 @@ examples:
         type: file
         examples: ["script.sed"]
   
-  Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
-    code: "sed ${option} 's/${search}/\\U\\1/g'"
+  Transform all "${search}" (extended regex) occurrences to upper case in all input lines:
+    code: "sed ${option} 's/(${search})/\\U\\1/g'"
     annotations:
       option:
         type: option
         values: [--regexp-extended, -E]
       search:
         type: string
-        examples: ["(apple)"]
+        examples: ["apple"]
 
   Display just a first line:
     code: "sed ${option} '${line}p'"
@@ -431,7 +431,7 @@ examples:
         minimum: 1
         examples: [1]
 
-  Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in a specific file and save a backup of the original file:
+  Replace all "${search}" (basic regex) occurrences with "${replacement}" (basic regex) in a specific file and save a backup of the original file:
     code: "sed ${option} bak 's/${search}/${replacement}/g' ${file}"
     annotations:
       option:
