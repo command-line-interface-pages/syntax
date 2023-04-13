@@ -116,18 +116,9 @@ summary:
     more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
 ```
 
-All tags begin with a tag name, followed by a colon with an at least one space with
-a tag value:
-
-```md
-<tag-name>: <tag-value>
-```
-
-where `<tag-name>` is a tag name and `<tag-value>` is a tag value.
-
 #### Singular value tags (`summary.<singular-tag>`)
 
-> :information_source: Required: true, but not for all.
+> :information_source: Required: dependent.
 
 The following command/directory singular value tags are supported:
 
