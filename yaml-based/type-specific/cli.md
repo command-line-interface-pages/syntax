@@ -141,10 +141,11 @@ examples:
 The following singular value annotations are supported:
 
 - `type`: placeholder value type  
-  **type**: string  
-  **required**: false  
-  **default**: string  
-  **values**: bool, int, float, char, string, command, subcommand, option, file, directory, path, any
+  **type**: *string*  
+  **required**: *false*  
+  **default**: *string*  
+  **values**: *bool*, *int*, *float*, *char*, *string*, *command*, *subcommand*,
+  *option*, *file*, *directory*, *path*, *any*
   **example**:
 
   ```yaml
@@ -158,8 +159,8 @@ The following singular value annotations are supported:
   ```
 
 - `minimum`: minimum placeholder value  
-  **type**: integer, number, string  
-  **required**: false  
+  **type**: *integer*, *number*, *string*  
+  **required**: *false*  
   **example**:
 
   ```yaml
@@ -173,23 +174,23 @@ The following singular value annotations are supported:
   ```
 
 - `maximum`: maximum placeholder value  
-  **type**: integer, number, string  
-  **required**: false  
+  **type**: *integer*, *number*, *string*  
+  **required**: *false*  
 
 - `repeat-minimum`: minimum amount of placeholder repetitions  
-  **type**: integer  
-  **required**: false  
-  **default**: 0
+  **type**: *integer*  
+  **required**: *false*  
+  **default**: *0*
 
 - `repeat-maximum: <value>`: maximum amount of placeholder repetitions  
-  **type**: integer  
-  **required**: false  
-  **default**: <infinity>
+  **type**: *integer*  
+  **required**: *false*  
+  **default**: *infinity*
 
 - `repeat-separator: <value>`: separator between placeholder repetitions  
-  **type**: string  
-  **required**: false  
-  **default**: <space>
+  **type**: *string*  
+  **required**: *false*  
+  **default**: *space*
 
   ```yaml
   examples:
