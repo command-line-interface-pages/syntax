@@ -250,6 +250,27 @@ The following singular value annotations are supported:
           alternative: true
   ```
 
+- `input`: whether to show placeholder content as an original data  
+  **type**: *boolean*  
+  **required**: *false*  
+  **default**: *false*
+
+  ```yaml
+  examples:
+    Display content of specific files with line [n]umbers:
+      code: "cat ${option} ${file}"
+      annotations:
+        option:
+          type: option
+          values: ["--number", "-n"]
+        file:
+          type: file
+          input: true
+  ```
+
+  **note**: This is useful to demonstrate how command affects some input data
+  and visually compare the original input and command output.
+
 ##### List like annotations (`examples.<code-example>.code.<annotation>.<list-annotation>`)
 
 The following list like annotations are supported:
