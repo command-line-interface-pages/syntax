@@ -259,6 +259,7 @@ The following list like annotations are supported:
   **type**: *array of integer*, *array of number*, *array of string*  
   **required**: *false*  
   **default**: *[]*  
+  **unique items**: *true*  
   **example**:
 
   ```yaml
@@ -276,6 +277,7 @@ The following list like annotations are supported:
   **type**: *array of integer*, *array of number*, *array of string*  
   **required**: *false*  
   **default**: *[]*  
+  **unique items**: *true*  
   **example**:
 
   ```yaml
@@ -289,10 +291,19 @@ The following list like annotations are supported:
           examples: [1]
   ```
 
+- `path-type`: a placeholder file/directory/path type  
+  **type**: *array of string*  
+  **required**: *false*  
+  **default**: *[relative, absolute]*  
+  **unique items**: *true*  
+  **values**: *relative*, *absolute*
+  **requires**: `type` to be one of *file*, *directory*, *path*  
+
 - `extension-required: <boolean>`: whether a file/path extension is required  
   **type**: *boolean*  
   **required**: *false*  
   **default**: *false*  
+  **unique items**: *true*  
   **requires**: `type` to be one of *file*, *directory*, *path*  
 
 ## Page examples
