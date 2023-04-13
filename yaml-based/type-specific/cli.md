@@ -306,6 +306,28 @@ The following list like annotations are supported:
   **unique items**: *true*  
   **requires**: `type` to be one of *file*, *directory*, *path*  
 
+### Description placeholders (`examples.<code-example>.<placeholder>`)
+
+> :bell: Compatibility note: double braces are not used.  
+> :bookmark_tabs: Escape sequences: `\$`.
+
+Description placeholders are constructs used to substitute first example values
+from code placeholders. Their syntax is the same as for code placeholder, just
+semantic is slightly different:
+
+```yaml
+examples:
+  Transform all "${search}" (extended regex) occurrences to upper case in all input lines:
+    code: "sed ${option} 's/${search}/\\U\\1/g'"
+    annotations:
+      option:
+        type: option
+        values: [--regexp-extended, -E]
+      search:
+        type: string
+        examples: ["(apple)"]
+```
+
 ## Page examples
 
 [`sleep`](https://github.com/tldr-pages/tldr/blob/main/pages/common/sleep.md) will be rewritten as:
