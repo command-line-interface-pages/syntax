@@ -100,6 +100,40 @@ When mnemonic is equal to the whole option or subcommand it looks like this:
 
 Spaces and pipe characters are not allowed inside square brackets.
 
+### Alternatives (`examples.<code-example>.<alternative>`)
+
+Alternatives are constructs used to describe options or subcommands where more 2
+or more choices available.
+
+> :bookmark_tabs: Escape sequences: `\(`, `\)`.
+
+All alternatives begin with a single opening parenthesis `(` and end with a
+closing one `)`:
+
+```md
+(<alternative-content1>|<alternative-content2>|...)
+```
+
+where `<alternative-contentX>` (where `X` is some number) is an option or
+subcommand description like:
+
+```yaml
+examples:
+  Test if a specific variable is (equal|not equal) to a string:
+    code: '[ "$${first-variable}" ${operator} "${value}" ]'
+    annotations:
+      operator:
+        type: string
+        values: ["==", "!="]
+        alternative: true
+```
+
+where `equal` matches `==` and `not equal` `!=` respectively. Alternative
+choices in code description must match value count inside a placeholder `values` and
+`alternative` should be set to true. Several placeholders can't satisfy
+described conditions at once. No more than one alternative can be defined per
+code example.
+
 ### Placeholders (`examples.<code-example>[.code].<placeholder>`)
 
 > :bell: Compatibility note: double braces are not used.  
@@ -198,6 +232,22 @@ The following singular value annotations are supported:
         classes:
           repeat-minimum: 1
           repeat-separator: ":"
+  ```
+
+- `alternative`: whether to correlate placeholder values with alternative  
+  **type**: *boolean*  
+  **required**: *false*  
+  **default**: *false*
+
+  ```yaml
+  examples:
+    Test if a specific variable is (equal|not equal) to a string:
+      code: '[ "$${first-variable}" ${operator} "${value}" ]'
+      annotations:
+        operator:
+          type: string
+          values: ["==", "!="]
+          alternative: true
   ```
 
 ##### List like annotations (`examples.<code-example>.code.<annotation>.<list-annotation>`)
