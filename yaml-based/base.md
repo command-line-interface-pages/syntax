@@ -8,7 +8,7 @@ to keep everything standardized.
 
 All unrecognized escape sequences are treated as errors.
 
-All Command Line Interface Pages pages written in YAML must have `.yaml` extension.
+All Command Line Interface Pages written in YAML must have `.yaml` extension.
 
 ## Page title (`title`)
 
@@ -86,7 +86,7 @@ where:
 
 - `<leading-word-characters>` are term characters before a mnemonic, may be
   empty string
-- `<mnemonic-content>` is an command/directory name, must contain at least one character
+- `<mnemonic-content>` is a command/directory name, must contain at least one character
 - `<trailing-word-characters>` are term characters after a mnemonic, may be
   empty string
 
@@ -99,7 +99,7 @@ Spaces are not allowed inside square brackets.
 > :bookmark_tabs: Escape sequences: unavailable.  
 > :information_source: Required: false, but recommended when possible.
 
-Tags are contructs used to add some additional information about a command/directory
+Tags are constructs used to add some additional information about a command/directory
 being explained like:
 
 ```yaml
@@ -114,7 +114,7 @@ summary:
     more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
 ```
 
-All tags begin with a tag name, followed by a colon with a at least one space with
+All tags begin with a tag name, followed by a colon with an at least one space with
 a tag value:
 
 ```md
@@ -252,7 +252,7 @@ some command example. stderr should be always mentioned explicitly when used.
 
 When no output happens mention this fact explicitly and assume that any command
 prints something by default. In this case "by default" is not used to mention default
-command syntax and behaviour, but the default assumption done for all commands.
+command syntax and behavior, but the default assumption done for all commands.
 
 ## Examples
 

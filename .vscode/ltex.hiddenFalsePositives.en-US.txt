@@ -1,0 +1,14 @@
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q:information_source: Required: false.\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q:information_source: Required: true.\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q:bookmark_tabs: Escape sequences: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q:information_source: Required: false, but recommended when possible.\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q:bookmark_tabs: Escape sequences: unavailable.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwhere \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a tag name and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a tag value.\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q:information_source: Required: true, but not for all.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qnote: All not explicitly set tags are inherited from the parent page.\\E$"}
+{"rule":"EN_A_VS_AN","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q are term characters before a mnemonic, may be empty string\n\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is an command/directory name, must contain at least one character\n\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q are term characters after a mnemonic, may be empty string\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q: similar command/directory array type: array of string required: false default:  unique items: true example:\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q: command alias/symlink array type: array of string required: false default:  unique items: true note Just shell aliases are considered as aliases, command wrappers are not example:\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qstdin must be mentioned just when it's a not default method to read source data from.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qstdout must be mentioned until it's default output stream for some command example.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qstderr should be always mentioned explicitly when used.\\E$"}
