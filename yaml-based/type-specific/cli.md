@@ -389,7 +389,7 @@ examples:
         examples: ["script.sed"]
   
   Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
-    code: "sed ${option} 's/${search}/\U\1/g'"
+    code: "sed ${option} 's/${search}/\\U\\1/g'"
     annotations:
       option:
         type: option
