@@ -318,14 +318,14 @@ semantic is slightly different:
 ```yaml
 examples:
   Transform all "${search}" (extended regex) occurrences to upper case in all input lines:
-    code: "sed ${option} 's/${search}/\\U\\1/g'"
+    code: "sed ${option} 's/(${search})/\\U\\1/g'"
     annotations:
       option:
         type: option
         values: [--regexp-extended, -E]
       search:
         type: string
-        examples: ["(apple)"]
+        examples: ["apple"]
 ```
 
 ## Page examples
