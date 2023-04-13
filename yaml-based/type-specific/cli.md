@@ -207,6 +207,11 @@ The following singular value annotations are supported:
           repeat-separator: ":"
   ```
 
+- `comprehensive: <boolean>`: whether just example values are valid  
+  **type**: boolean  
+  **required**: false
+  **default**: false
+
 ##### List like annotations (`examples.<code-example>.code.<annotation>.<list-annotation>`)
 
 The following list like annotations are supported:
