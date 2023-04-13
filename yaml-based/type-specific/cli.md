@@ -207,9 +207,9 @@ The following list like annotations are supported:
 
 - `values`: all placeholder values
   array  
-  **type**: array of integer, array of number, array of string  
-  **required**: false  
-  **default**: []  
+  **type**: *array of integer*, *array of number*, *array of string*  
+  **required**: *false*  
+  **default**: *[]*  
   **example**:
 
   ```yaml
@@ -224,9 +224,9 @@ The following list like annotations are supported:
 
 - `examples`: placeholder example values
   array  
-  **type**: array of integer, array of number, array of string
-  **required**: false  
-  **default**: []  
+  **type**: *array of integer*, *array of number*, *array of string*  
+  **required**: *false*  
+  **default**: *[]*  
   **example**:
 
   ```yaml
@@ -241,6 +241,7 @@ The following list like annotations are supported:
   ```
 
 - `extension-required: <boolean>`: whether a file/path extension is required  
-  **type**: bool  
-  **required**: false  
-  **default**: false  
+  **type**: *boolean*  
+  **required**: *false*  
+  **default**: *false*  
+  **requires**: `type` to be one of *file*, *directory*, *path*  
