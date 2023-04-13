@@ -6,16 +6,14 @@
 
 #### List like tags (`summary.<array-tag>`)
 
-> :bell: Compatibility note: `or` is not supported for list like tags.
-
 The following list like tags are supported:
 
-- `syntax-compatible: [<command1>, <command2>, ...]`: syntax compatible command
+- `syntax-compatible`: syntax compatible commands
   array  
-  **type**: array of string  
-  **required**: false  
-  **default**: []  
-  **unique items**: true  
+  **type**: *array of string*  
+  **required**: *false*  
+  **default**: *[]*  
+  **unique items**: *true*  
   **example**:
 
   ```yaml
@@ -29,11 +27,11 @@ The following list like tags are supported:
   mode like in `Zsh`. Deprecated syntax construct doesn't count while comparing
   syntax compatibility.
 
-- `help: [<flag1>, <flag2>, ...]`: help flag command array  
-  **type**: array of string  
-  **required**: false  
-  **default**: []  
-  **unique items**: true  
+- `help`: help flags  
+  **type**: *array of string*  
+  **required**: *false*  
+  **default**: *[]*  
+  **unique items**: *true*  
   **example**:
 
   ```yaml
@@ -41,11 +39,11 @@ The following list like tags are supported:
       help: [--help, -h]
   ```
 
-- `version: [<flag1>, <flag2>, ...]`: version flag command array  
-  **type**: array of string  
-  **required**: false  
-  **default**: []  
-  **unique items**: true  
+- `version`: version flags  
+  **type**: *array of string*  
+  **required**: *false*  
+  **default**: *[]*  
+  **unique items**: *true*  
   **example**:
 
   ```yaml
