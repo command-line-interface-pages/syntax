@@ -122,10 +122,10 @@ summary:
 
 The following command/directory singular value tags are supported:
 
-- `parent-page: <page>`: parent page path in the same repository  
-  **type**: string  
-  **required**: false  
-  **default**: `""`  
+- `parent-page`: parent page path in the same repository  
+  **type**: *string*  
+  **required**: *false*  
+  **default**: *""*  
   **example**:
 
   ```yaml
@@ -136,11 +136,10 @@ The following command/directory singular value tags are supported:
   **note**: All not explicitly set tags are inherited from the parent page. Circular
   references are not allowed.
 
-- `fake-page: <boolean>`: indicator for a page should not be rendered but used as
-  a store of tags  
-  **type**: boolean  
-  **required**: false  
-  **default**: false  
+- `fake-page`: whether not to render page and use as a tag store  
+  **type**: *boolean*  
+  **required**: *false*  
+  **default**: *false*  
   **example**:
 
   ```yaml
@@ -149,8 +148,8 @@ The following command/directory singular value tags are supported:
   ```
 
 - `more-information: <link>`: link to a documentation  
-  **type**: string  
-  **required**: true  
+  **type**: *string*  
+  **required**: *true*  
   **example**:
 
   ```yaml
@@ -158,13 +157,10 @@ The following command/directory singular value tags are supported:
       more-information: https://manned.org/mate-calc
   ```
 
-- `internal: <boolean>`: indicator for:
-  - not directly callable commands
-  - not directly used directories
-  
-  **type**: boolean  
-  **required**: false  
-  **default**: false  
+- `internal`: whether treat command/directory as not directly callable/used  
+  **type**: *boolean*  
+  **required**: *false*  
+  **default**: *false*  
   **note**: A default message to be shown when value is `true` is: `This command/directory should not be called/used directly`  
   **example**:
 
@@ -173,10 +169,10 @@ The following command/directory singular value tags are supported:
       internal: true
   ```
 
-- `deprecated: <boolean>`: indicator for deprecated commands/directories  
-  **type**: boolean  
-  **required**: false  
-  **default**: false  
+- `deprecated`: whether treat commands/directories as deprecated  
+  **type**: *boolean*  
+  **required**: *false*  
+  **default**: *false*  
   **note**: A default message to be shown when value is `true` is: `This command is deprecated and should not be used`  
   **example**:
 
@@ -191,12 +187,11 @@ The following command/directory singular value tags are supported:
 
 The following command/directory list like tags are supported:
 
-- `see-also: [<command1|directory1>, <command2|directory2>, ...]`: similar command/directory
-  array  
-  **type**: array of string  
-  **required**: false  
-  **default**: []  
-  **unique items**: true  
+- `see-also`: similar commands/directories  
+  **type**: *array of string*  
+  **required**: *false*  
+  **default**: *[]*  
+  **unique items**: *true*  
   **example**:
 
   ```yaml
@@ -204,12 +199,11 @@ The following command/directory list like tags are supported:
       see-also: [awk, sed]
   ```
 
-- `aliases: [<command1|symlink1>, <command2|symlink2>, ...]`: command alias/symlink
-  array  
-  **type**: array of string  
-  **required**: false  
-  **default**: []  
-  **unique items**: true  
+- `aliases`: command aliases/symlinks  
+  **type**: *array of string*  
+  **required**: *false*  
+  **default**: *[]*  
+  **unique items**: *true*  
   **note** Just shell aliases are considered as aliases, command wrappers are not  
   **example**:
 
