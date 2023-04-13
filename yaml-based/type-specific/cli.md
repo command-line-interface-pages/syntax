@@ -294,3 +294,123 @@ The following list like annotations are supported:
   **required**: *false*  
   **default**: *false*  
   **requires**: `type` to be one of *file*, *directory*, *path*  
+
+## Page examples
+
+[`sleep`](https://github.com/tldr-pages/tldr/blob/main/pages/common/sleep.md) will be rewritten as:
+
+```yaml
+title: sleep
+summary:
+  description: Delay for a specific amount of time
+  aliases: [gsleep]
+  version: [--version, -v]
+  help: [--help, -h]
+  more-information: https://www.gnu.org/software/coreutils/sleep
+
+examples:
+  Delay for specific amount of ([s]econds|[m]inutes|[h]ours|[d]ays):
+    code: "sleep ${seconds}${suffix}"
+    annotations:
+      seconds:
+        type: int
+        minimum: 0
+        examples: [2]
+      suffix:
+        values: [s, m, h, d]
+        alternative: true
+```
+
+[`mate-calc`](https://github.com/tldr-pages/tldr/blob/main/pages/linux/mate-calc.md) will be rewritten as:
+
+```yaml
+title: mate-calc
+summary:
+  description: Calculate specific mathematic expressions in MATE desktop environment
+  aliases: [mate-calculator]
+  version: [--version, -v]
+  help: [--help, -h]
+  more-information: https://manned.org/mate-calc
+
+examples:
+  Start the calculator: mate-calc
+  Calculate a specific mathematic expression:
+    code: "mate-calc ${solve} ${expression}"
+    annotations:
+      solve:
+        type: option
+        values: [--solve, -s]
+      expression:
+        type: string
+        examples: ["2 + 5"]
+```
+
+[`sed`](https://github.com/tldr-pages/tldr/blob/main/pages/osx/sed.md) will be rewritten as:
+
+```yaml
+title: sed
+summary:
+  description: Edit specific text in a scriptable manner
+  see-also: [awk, ed]
+  version: [--version, -v]
+  help: [--help, -h]
+  more-information: https://keith.github.io/xcode-man-pages/sed.1.html
+
+examples:
+  Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in all input lines:
+    code: "sed 's/${search}/${replacement}/g'"
+    annotations:
+      search:
+        type: string
+        examples: ["apple"]
+      replacement:
+        type: string
+        examples: ["mango"]
+  
+  Execute a specific script [f]ile:
+    code: "sed ${option} ${script}"
+    annotations:
+      option:
+        type: option
+        values: [--file, -f]
+      script:
+        type: file
+        examples: ["script.sed"]
+  
+  Replace all "apple" (extended regex) occurrences with "APPLE" (extended regex) in all input lines:
+    code: "sed ${option} 's/${search}/\U\1/g'"
+    annotations:
+      option:
+        type: option
+        values: [--regexp-extended, -E]
+      search:
+        type: string
+        examples: ["(apple)"]
+
+  Display just a first line:
+    code: "sed ${option} '${line}p'"
+    annotations:
+      option:
+        type: option
+        values: [--silent, -n]
+      line:
+        type: int
+        minimum: 1
+        examples: [1]
+
+  Replace all "apple" (basic regex) occurrences with "mango" (basic regex) in a specific file and save a backup of the original file:
+    code: "sed ${option} bak 's/${search}/${replacement}/g' ${file}"
+    annotations:
+      option:
+        type: option
+        values: [--in-place, -i]
+      search:
+        type: string
+        examples: ["apple"]
+      replacement:
+        type: string
+        examples: ["mango"]
+      file:
+        type: file
+        examples: ["~/.bashrc"]
+```
