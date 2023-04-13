@@ -30,7 +30,8 @@ A page title is equal to the file name when not specified.
 
 ## Page summary (`summary`)
 
-> :bell: Compatibility note: trailing dot is not supported.  
+> :bell: Compatibility note: trailing dot isn't treated specially what means
+> it's not removed when put at the end and interpreted as a summary part.  
 > :information_source: Required: true.
 
 Page summary is a combination of command/directory description,
@@ -38,7 +39,8 @@ documentation link and other information about command/directory.
 
 ### Summary description (`summary.description`)
 
-> :bell: Compatibility note: trailing dot is not supported.  
+> :bell: Compatibility note: trailing dot isn't treated specially what means
+> it's not removed when put at the end and interpreted as a summary part.  
 > :information_source: Required: true.
 
 Summary description is a command/directory description like:
