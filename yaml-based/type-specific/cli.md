@@ -140,7 +140,7 @@ examples:
 
 The following singular value annotations are supported:
 
-- `type: <type>`: value type  
+- `type`: placeholder value type  
   **type**: string  
   **required**: false  
   **default**: string  
@@ -155,13 +155,10 @@ The following singular value annotations are supported:
         option:
           type: option
           values: [--silent, -n]
-        line:
-          type: int
-          minimum: 1
   ```
 
-- `minimum: <value>`: minimum value  
-  **type**: int, float, char  
+- `minimum`: minimum placeholder value  
+  **type**: integer, number, string  
   **required**: false  
   **example**:
 
@@ -170,31 +167,28 @@ The following singular value annotations are supported:
     Display just a specific line:
       code: "sed ${option} '${line}p'"
       annotations:
-        option:
-          type: option
-          values: [--silent, -n]
         line:
           type: int
           minimum: 1
   ```
 
-- `maximum: <value>`: maximum value  
-  **type**: int, float, char  
+- `maximum`: maximum placeholder value  
+  **type**: integer, number, string  
   **required**: false  
 
-- `repeat-minimum: <value>`: minimum amount of repetitions  
-  **type**: int  
-  **required**: false
+- `repeat-minimum`: minimum amount of placeholder repetitions  
+  **type**: integer  
+  **required**: false  
   **default**: 0
 
-- `repeat-maximum: <value>`: maximum amount of repetitions  
-  **type**: int  
-  **required**: false
+- `repeat-maximum: <value>`: maximum amount of placeholder repetitions  
+  **type**: integer  
+  **required**: false  
   **default**: <infinity>
 
-- `repeat-separator: <value>`: separator between repetitions  
+- `repeat-separator: <value>`: separator between placeholder repetitions  
   **type**: string  
-  **required**: false
+  **required**: false  
   **default**: <space>
 
   ```yaml
@@ -207,18 +201,13 @@ The following singular value annotations are supported:
           repeat-separator: ":"
   ```
 
-- `comprehensive: <boolean>`: whether just example values are valid  
-  **type**: boolean  
-  **required**: false
-  **default**: false
-
 ##### List like annotations (`examples.<code-example>.code.<annotation>.<list-annotation>`)
 
 The following list like annotations are supported:
 
-- `examples: <type>`: value type
+- `values`: all placeholder values
   array  
-  **type**: array of <anything-except-array>  
+  **type**: array of integer, array of number, array of string  
   **required**: false  
   **default**: []  
   **example**:
@@ -231,6 +220,20 @@ The following list like annotations are supported:
         option:
           type: option
           values: [--silent, -n]
+  ```
+
+- `examples`: placeholder example values
+  array  
+  **type**: array of integer, array of number, array of string
+  **required**: false  
+  **default**: []  
+  **example**:
+
+  ```yaml
+  examples:
+    Display just a specific line:
+      code: "sed ${option} '${line}p'"
+      annotations:
         line:
           type: int
           minimum: 1
