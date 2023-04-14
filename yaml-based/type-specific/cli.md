@@ -324,7 +324,7 @@ The following list like annotations are supported:
   **required**: *false*  
   **default**: *false*  
   **unique items**: *true*  
-  **requires**: `type` to be one of *file*, *directory*, *path*  
+  **requires**: `type` to be one of *file*, *path*  
 
 ### Description placeholders (`examples.<code-example>.<placeholder>`)
 
