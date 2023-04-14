@@ -101,3 +101,14 @@ When mnemonic is equal to the whole option or subcommand it looks like this:
 `[sync]`.
 
 Spaces and pipe characters are not allowed inside square brackets.
+
+## Page organization
+
+All directory pages should be put in one of the following locations:
+
+- `<os>/<path>/files.yaml`
+
+By default, `<os>` is **common** (applies for all supported operating systems).
+`<path>` always equal to described directory. For instance for `/usr/bin/`
+page should be put in `linux/usr/bin/files.yaml` while for `/` in
+`linux/files.yaml`
