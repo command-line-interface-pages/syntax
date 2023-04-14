@@ -403,6 +403,15 @@ to write pages on your own):
 - Always use double quotes in code examples unless they make code examples
   longer than with single quotes.
 
+## Page organization
+
+All CLI pages should be put in one of the following locations:
+
+- `<os>/<page>.yaml`
+- `<os>/<shell>/<page>.yaml`
+
+By default, `<os>` is **common** and shell is **bash**.
+
 ## Page examples
 
 [`sleep`](https://github.com/tldr-pages/tldr/blob/main/pages/common/sleep.md) will be rewritten as:
