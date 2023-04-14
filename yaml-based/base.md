@@ -296,12 +296,14 @@ command syntax and behavior, but the default assumption done for all commands.
 
 ## Best practices
 
-### Summary and example descriptions
-
 We encourage everyone committing to our official repositories to follow best
 practices listed below (while for your own repositories you free to decide how
 to write pages on your own):
 
+- Put `title` in the first line.
+- Add one empty line after `summary` before code/file examples.
+- Delimit all examples by exactly one empty line.
+- In other cases don't add extra empty lines.
 - Don't use properties just to explicitly state their defaults assuming that
   they can be changed. For instance never describe minimum and/or maximum
   repetition count unless placeholder accepts more than one value.
