@@ -282,10 +282,6 @@ When no output happens mention this fact explicitly and assume that any command
 prints something by default. In this case "by default" is not used to mention default
 command syntax and behavior, but the default assumption done for all commands.
 
-## Examples
-
-- [CLI code examples](./type-specific/cli.md#code-examples)/[directory file examples](./type-specific/directory.md#file-examples)
-
 ## Best practices
 
 ### Summary and example descriptions
