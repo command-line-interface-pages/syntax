@@ -1,0 +1,161 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "title-property": {
+            "title": "title",
+            "description": "A title of the current page",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "sleep",
+                "Essential user command binaries"
+            ]
+        },
+        "description-property": {
+            "title": "description",
+            "description": "A description of the current page",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "Delay for a specific amount of time",
+                "Commands that may be used by both the system administrator and by users, but which are required when no other filesystems are mounted"
+            ]
+        },
+        "type-property": {
+            "title": "type",
+            "description": "A type of the current page",
+            "type": "string",
+            "default": "cli",
+            "enum": [
+                "cli",
+                "directory"
+            ]
+        },
+        "parent-property": {
+            "title": "parent",
+            "description": "A parent of the current page",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "common/coreutils.yaml"
+            ]
+        },
+        "fake-property": {
+            "title": "fake",
+            "description": "Whether the current page is fake",
+            "type": "boolean",
+            "default": false
+        },
+        "more-information-property": {
+            "title": "more information",
+            "description": "Links of the current page",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                        "https://www.gnu.org/software/coreutils/sleep"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "official": {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "https://www.gnu.org/software/coreutils/sleep"
+                            ]
+                        },
+                        "manned": {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "sleep"
+                            ]
+                        },
+                        "manrepository": {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "sleep"
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "internal-property": {
+            "title": "internal",
+            "description": "Whether the current page is internal",
+            "type": "boolean",
+            "default": false
+        },
+        "deprecated-property": {
+            "title": "deprecated",
+            "description": "Whether the current page is deprecated",
+            "type": "boolean",
+            "default": false
+        },
+        "section-property": {
+            "title": "section",
+            "description": "A man page section of the current page",
+            "type": "string",
+            "default": "regular-executable",
+            "enum": [
+                "system-executable",
+                "game-executable",
+                "regular-executable",
+                "system-call",
+                "regular-call",
+                "special-file",
+                "file-format",
+                "else"
+            ]
+        }
+    },
+    "title": "page",
+    "description": "A page",
+    "type": "object",
+    "required": [
+        "title",
+        "summary"
+    ],
+    "properties": {
+        "title": {
+            "$ref": "#/definitions/title-property"
+        },
+        "summary": {
+            "title": "summary",
+            "description": "A summary for the current page",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "$ref": "#/definitions/description-property"
+                },
+                "type": {
+                    "$ref": "#/definitions/type-property"
+                },
+                "page": {
+                    "$ref": "#/definitions/parent-property"
+                },
+                "fake": {
+                    "$ref": "#/definitions/fake-property"
+                },
+                "more-information": {
+                    "$ref": "#/definitions/more-information-property"
+                },
+                "internal": {
+                    "$ref": "#/definitions/internal-property"
+                },
+                "deprecated": {
+                    "$ref": "#/definitions/deprecated-property"
+                },
+                "section": {
+                    "$ref": "#/definitions/section-property"
+                }
+            }
+        }
+    }
+}
