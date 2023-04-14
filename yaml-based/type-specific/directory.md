@@ -112,3 +112,14 @@ By default, `<os>` is **common** (applies for all supported operating systems).
 `<path>` always equal to described directory. For instance for `/usr/bin/`
 page should be put in `linux/usr/bin/files.yaml` while for `/` in
 `linux/files.yaml`
+
+## Best practices
+
+We encourage everyone committing to our official repositories to follow best
+practices listed below (while for your own repositories you free to decide how
+to write pages on your own):
+
+- Always add mnemonics when you know where to add them. When both long and short
+  options or commands are presented add mnemonic just for a short option.
+- Constantly refer to existing CLI and other kinds of pages via `is` to provide
+  file details.
