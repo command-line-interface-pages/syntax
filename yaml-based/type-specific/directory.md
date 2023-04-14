@@ -132,6 +132,7 @@ written as:
 ```yaml
 title: Essential user command binaries
 summary:
+  type: directory
   description: Commands that may be used by both the system administrator and by users, but which are required when no other filesystems are mounted
   more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
 
