@@ -286,7 +286,6 @@ command syntax and behavior, but the default assumption done for all commands.
 
 ### Summary and example descriptions
 
-- Always add dot before mentioned extensions in description.
 - [CLI page best practices](./type-specific/cli.md#best-practices)
 
 ### Page examples
