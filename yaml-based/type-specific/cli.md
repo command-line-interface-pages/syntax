@@ -351,6 +351,10 @@ examples:
 
 ## Best practices
 
+We encourage everyone committing to our official repositories to follow best
+practices listed below (while for your own repositories you free to decide how
+to write pages on your own):
+
 - Always add mnemonics when you know where to add them. When both long and short
   options or commands are presented add mnemonic just for a short option.
 - Constantly separate alternatives in descriptions with a pipe character
