@@ -451,7 +451,6 @@ examples:
         type: option
         values: [--solve, -s]
       expression:
-        type: string
         examples: ["2 + 5"]
 ```
 
@@ -475,10 +474,8 @@ examples:
     code: "sed 's/${search}/${replacement}/g'"
     annotations:
       search:
-        type: string
         examples: ["apple"]
       replacement:
-        type: string
         examples: ["mango"]
   
   Execute a specific script [f]ile:
@@ -498,7 +495,6 @@ examples:
         type: option
         values: [--regexp-extended, -E]
       search:
-        type: string
         examples: ["apple"]
 
   Display just a first line:
@@ -519,10 +515,8 @@ examples:
         type: option
         values: [--in-place, -i]
       search:
-        type: string
         examples: ["apple"]
       replacement:
-        type: string
         examples: ["mango"]
       file:
         type: file
