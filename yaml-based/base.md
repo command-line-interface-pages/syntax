@@ -148,13 +148,25 @@ The following command/directory singular value tags are supported:
   ```
 
 - `more-information: <link>`: link to a documentation  
-  **type**: *string*  
+  **type**: *string*, *object*  
   **required**: *true*  
   **example**:
 
   ```yaml
   summary:
       more-information: https://manned.org/mate-calc
+  ```
+
+  ```yaml
+  summary:
+      more-information:
+        manned: mate-calc # man page name, the end url is automatically generated
+  ```
+
+  ```yaml
+  summary:
+      more-information:
+        manrepository: mate-calc # man page name, the end url is automatically generated
   ```
 
 - `internal`: whether treat command/directory as not directly callable/used  
@@ -173,6 +185,29 @@ The following command/directory singular value tags are supported:
   **type**: *boolean*  
   **required**: *false*  
   **default**: *false*  
+  **note**: A default message to be shown when value is `true` is: `This command is deprecated and should not be used`  
+  **example**:
+
+  ```yaml
+  summary:
+      deprecated: true
+  ```
+
+- `section`: man page section  
+  **type**: *string*  
+  **required**: *false*  
+  **default**: *executable*  
+  **values**:
+  
+  - *system-executable* (8th section)
+  - *game-executable* (6th section)
+  - *regular-executable* (1st section, use as a fallback for executables)
+  - *system-call* (2nd section)
+  - *regular-call* (3rd section, use as a fallback for calls)
+  - *special-file* (4th section)
+  - *file-format* (5th section)
+  - *else* (7th section)
+  
   **note**: A default message to be shown when value is `true` is: `This command is deprecated and should not be used`  
   **example**:
 
