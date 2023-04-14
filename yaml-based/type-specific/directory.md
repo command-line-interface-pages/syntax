@@ -123,3 +123,111 @@ to write pages on your own):
   options or commands are presented add mnemonic just for a short option.
 - Constantly refer to existing CLI and other kinds of pages via `is` to provide
   file details.
+
+## Page examples
+
+[`/bin`](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html) will be
+written as:
+
+```yaml
+title: Essential user command binaries
+summary:
+  description: Commands that may be used by both the system administrator and by users, but which are required when no other filesystems are mounted
+  more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
+
+examples:
+  Utility to concatenate files to standard output:
+    name: cat
+  Utility to change file group ownership:
+    name: chgrp
+  Utility to change file access permissions:
+    name: chmod
+  Utility to change file owner and group:
+    name: chown
+  Utility to copy files and directories:
+    name: cp
+  Utility to print or set the system data and time:
+    name: date
+  Utility to convert and copy a file:
+    name: dd
+  Utility to report filesystem disk space usage:
+    name: df
+  Utility to print or control the kernel message buffer:
+    name: dmesg
+  Utility to display a line of text:
+    name: echo
+  Utility to do nothing, unsuccessfully:
+    name: "false"
+  Utility to show or set the system's host name:
+    name: hostname
+  Utility to send signals to processes:
+    name: kill
+  Utility to make links between files:
+    name: ln
+  Utility to begin a session on the system:
+    name: login
+  Utility to list directory contents:
+    name: ls
+  Utility to make directories:
+    name: mkdir
+  Utility to make block or character special files:
+    name: mknod
+  Utility to page through text:
+    name: more
+  Utility to mount a filesystem:
+    name: mount
+  Utility to move/rename files:
+    name: mv
+  Utility to report process status:
+    name: ps
+  Utility to print name of current working directory:
+    name: pwd
+  Utility to remove files or directories:
+    name: rm
+  Utility to remove empty directories:
+    name: rmdir
+  The `sed' stream editor:
+    name: sed
+  POSIX compatible command shell:
+    name: sh
+  Utility to change and print terminal line settings:
+    name: stty
+  Utility to change user ID:
+    name: su
+  Utility to flush filesystem buffer:
+    name: sync
+  Utility to do nothing, successfully:
+    name: "true"
+  Utility to unmount file systems:
+    name: umount
+  Utility to print system information:
+    name: uname
+
+  The C shell:
+    name: csh
+    optional: true
+  The `ed' editor:
+    name: ed
+    optional: true
+  The tar archiving utility:
+    name: tar
+    optional: true
+  The cpio archiving utility:
+    name: cpio
+    optional: true
+  The GNU compression utility:
+    name: gzip
+    optional: true
+  The GNU uncompression utility:
+    name: gunzip
+    optional: true
+  The GNU uncompression utility:
+    name: zcat
+    optional: true
+  The network statistics utility:
+    name: netstat
+    optional: true
+  The ICMP network test utility:
+    name: ping
+    optional: true
+```
