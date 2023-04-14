@@ -564,29 +564,11 @@
                                                 }
                                             },
                                             "if": {
-                                                "oneOf": [
-                                                    {
-                                                        "properties": {
-                                                            "type": {
-                                                                "const": "file"
-                                                            }
-                                                        }
-                                                    },
-                                                    {
-                                                        "properties": {
-                                                            "type": {
-                                                                "const": "directory"
-                                                            }
-                                                        }
-                                                    },
-                                                    {
-                                                        "properties": {
-                                                            "type": {
-                                                                "const": "path"
-                                                            }
-                                                        }
+                                                "properties": {
+                                                    "type": {
+                                                        "pattern": "^(file|directory|path)$"
                                                     }
-                                                ]
+                                                }
                                             },
                                             "then": {
                                                 "properties": {
@@ -616,6 +598,9 @@
                                                     },
                                                     "values": {
                                                         "$ref": "#/definitions/cli-annotations-values-property"
+                                                    },
+                                                    "examples": {
+                                                        "$ref": "#/definitions/cli-annotations-examples-property"
                                                     },
                                                     "path-type": {
                                                         "$ref": "#/definitions/cli-annotations-path-type-property"
