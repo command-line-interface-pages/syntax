@@ -299,6 +299,7 @@ command syntax and behavior, but the default assumption done for all commands.
 ### Summary and example descriptions
 
 - [CLI page best practices](./type-specific/cli.md#best-practices)
+- [Directory page best practices](./type-specific/directory.md#best-practices)
 
 ### Page examples
 
