@@ -114,6 +114,37 @@
                 "else"
             ]
         },
+        "see-also-property": {
+            "title": "see also",
+            "description": "Similar pages of the current page",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": false,
+            "items": {
+                "description": "A similar pages of the current page",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "sleep",
+                    "/usr/bin"
+                ]
+            }
+        },
+        "aliases-property": {
+            "title": "aliases",
+            "description": "Aliases or symbolic links of the current page",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": false,
+            "items": {
+                "description": "An aliase or symbolic link of the current page",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "gsleep"
+                ]
+            }
+        },
         "cli-compatible-property": {
             "title": "compatible",
             "description": "Syntax compatible commands of the current one",
@@ -204,6 +235,12 @@
                 },
                 "section": {
                     "$ref": "#/definitions/section-property"
+                },
+                "see-also": {
+                    "$ref": "#/definitions/see-also-property"
+                },
+                "aliases": {
+                    "$ref": "#/definitions/aliases-property"
                 }
             },
             "if": {
@@ -238,6 +275,12 @@
                     },
                     "section": {
                         "$ref": "#/definitions/section-property"
+                    },
+                    "see-also": {
+                        "$ref": "#/definitions/see-also-property"
+                    },
+                    "aliases": {
+                        "$ref": "#/definitions/aliases-property"
                     },
                     "compatible": {
                         "$ref": "#/definitions/cli-compatible-property"
@@ -276,6 +319,12 @@
                     },
                     "section": {
                         "$ref": "#/definitions/section-property"
+                    },
+                    "see-also": {
+                        "$ref": "#/definitions/see-also-property"
+                    },
+                    "aliases": {
+                        "$ref": "#/definitions/aliases-property"
                     },
                     "compatible": {
                         "$ref": "#/definitions/directory-compatible-property"
