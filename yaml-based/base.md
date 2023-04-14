@@ -47,14 +47,14 @@ Summary description is a command/directory description like:
 
 ```yaml
 summary:
-    description: Calculate specific mathematic expressions in MATE desktop environment
+  description: Calculate specific mathematic expressions in MATE desktop environment
 ```
 
 or:
 
 ```yaml
 summary:
-    description: Essential user command binaries (for use by all users)
+  description: Essential user command binaries (for use by all users)
 ```
 
 ### Mnemonics (`summary.description.<mnemonic>`)
@@ -67,14 +67,14 @@ names like:
 
 ```yaml
 summary:
-    description: GNU [b]ourne-[a]gain [sh]ell
+  description: GNU [b]ourne-[a]gain [sh]ell
 ```
 
 or:
 
 ```yaml
 summary:
-    description: /[bin]aries
+  description: /[bin]aries
 ```
 
 All mnemonics begin with a single opening square brace `[` and end with a
@@ -106,14 +106,14 @@ being explained like:
 
 ```yaml
 summary:
-    more-information: https://manned.org/mate-calc
+  more-information: https://manned.org/mate-calc
 ```
 
 or:
 
 ```yaml
 summary:
-    more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
+  more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
 ```
 
 #### Singular value tags (`summary.<singular-tag>`)
@@ -131,7 +131,7 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      type: directory
+    type: directory
   ```
 
 - `parent`: parent page path in the same repository  
@@ -142,7 +142,7 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      parent: coreutils
+    parent: coreutils
   ```
 
   **note**: All not explicitly set tags are inherited from the parent page. Circular
@@ -156,7 +156,7 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      fake: true
+    fake: true
   ```
 
 - `more-information: <link>`: link to a documentation  
@@ -166,25 +166,25 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      more-information: https://manned.org/mate-calc # official documentation is expected, not from manned or manrepository
+    more-information: https://manned.org/mate-calc # official documentation is expected, not from manned or manrepository
   ```
 
   ```yaml
   summary:
-      more-information:
-        official: mate-calc # official documentation, full url should be written
+    more-information:
+      official: mate-calc # official documentation, full url should be written
   ```
 
   ```yaml
   summary:
-      more-information:
-        manned: mate-calc # man page name, the end url is automatically generated
+    more-information:
+      manned: mate-calc # man page name, the end url is automatically generated
   ```
 
   ```yaml
   summary:
-      more-information:
-        manrepository: mate-calc # man page name, the end url is automatically generated
+    more-information:
+      manrepository: mate-calc # man page name, the end url is automatically generated
   ```
 
 - `internal`: whether treat command/directory as not directly callable/used  
@@ -196,7 +196,7 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      internal: true
+    internal: true
   ```
 
 - `deprecated`: whether treat commands/directories as deprecated  
@@ -208,7 +208,7 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      deprecated: true
+    deprecated: true
   ```
 
 - `section`: man page section  
@@ -231,7 +231,7 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      deprecated: true
+    deprecated: true
   ```
 
 #### List like tags (`summary.<array-tag>`)
@@ -249,7 +249,7 @@ The following command/directory list like tags are supported:
 
   ```yaml
   summary:
-      see-also: [awk, sed]
+    see-also: [awk, sed]
   ```
 
 - `aliases`: command aliases/symlinks  
@@ -262,7 +262,7 @@ The following command/directory list like tags are supported:
 
   ```yaml
   summary:
-      aliases: [egrep, fgrep]
+    aliases: [egrep, fgrep]
   ```
   
 - [CLI tags](./type-specific/cli.md#list-like-tags-summaryarray-tag)/[directory tags](./type-specific/directory.md#list-like-tags)
@@ -275,7 +275,7 @@ I/O streams are devices used to capture input or output from commands like:
 
 ```yaml
 examples:
-    description: Print file contents or error to stderr if it doesn't exist
+  description: Print file contents or error to stderr if it doesn't exist
 ```
 
 All I/O streams are unquoted and written as:

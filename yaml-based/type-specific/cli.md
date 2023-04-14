@@ -17,7 +17,7 @@ The following list like tags are supported:
 
   ```yaml
   summary:
-      compatible: [sh]
+    compatible: [sh]
   ```
 
   **note**: Command `<first-command>` considered syntax compatible with command
@@ -35,7 +35,7 @@ The following list like tags are supported:
 
   ```yaml
   summary:
-      help: [--help, -h]
+    help: [--help, -h]
   ```
 
 - `version`: version flags  
@@ -47,7 +47,7 @@ The following list like tags are supported:
 
   ```yaml
   summary:
-      version: [--version, -v]
+    version: [--version, -v]
   ```
 
 ## Code examples (`examples.<code-example>`)
