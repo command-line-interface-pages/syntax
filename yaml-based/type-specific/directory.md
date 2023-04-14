@@ -17,7 +17,7 @@ The following singular value tags are supported:
   **example**:
 
   ```yaml
-  examples:
+  files:
     The C shell:
       name: csh
       optional: true
@@ -29,7 +29,7 @@ The following singular value tags are supported:
   **example**:
 
   ```yaml
-  examples:
+  files:
     The C shell:
       name: csh
       optional: true
@@ -57,14 +57,14 @@ The following list like tags are supported:
 File examples are file descriptions and actual file names like:
 
 ```yaml
-examples:
+files:
   Utility to concatenate files to standard output: cat
 ```
 
 or:
 
 ```yaml
-examples:
+files:
   Utility to concatenate files to standard output:
     name: cat
 ```
@@ -135,7 +135,7 @@ summary:
   description: Commands that may be used by both the system administrator and by users, but which are required when no other filesystems are mounted
   more-information: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s04.html
 
-examples:
+files:
   Utility to concatenate files to standard output:
     name: cat
   Utility to change file group ownership:
