@@ -360,7 +360,11 @@ summary:
   aliases: [gsleep]
   version: [--version, -v]
   help: [--help, -h]
-  more-information: https://www.gnu.org/software/coreutils/sleep
+  section: regular-executable
+  more-information:
+    official: https://www.gnu.org/software/coreutils/sleep
+    manned: sleep
+    manrepository: sleep
 
 examples:
   Delay for specific amount of ([s]econds|[m]inutes|[h]ours|[d]ays):
@@ -384,7 +388,9 @@ summary:
   aliases: [mate-calculator]
   version: [--version, -v]
   help: [--help, -h]
-  more-information: https://manned.org/mate-calc
+  section: regular-executable
+  more-information:
+    manned: mate-calc
 
 examples:
   Start the calculator: mate-calc
@@ -408,7 +414,11 @@ summary:
   see-also: [awk, ed]
   version: [--version, -v]
   help: [--help, -h]
-  more-information: https://keith.github.io/xcode-man-pages/sed.1.html
+  section: regular-executable
+  more-information:
+    official: https://www.gnu.org/software/sed/manual/sed.html
+    manned: sed
+    manrepository: sed
 
 examples:
   Replace all "${search}" (basic regex) occurrences with "${replacement}" (basic regex) in all input lines:
