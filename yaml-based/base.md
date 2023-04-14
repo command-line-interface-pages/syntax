@@ -154,7 +154,13 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      more-information: https://manned.org/mate-calc
+      more-information: https://manned.org/mate-calc # official documentation is expected, not from manned or manrepository
+  ```
+
+  ```yaml
+  summary:
+      more-information:
+        official: mate-calc # official documentation, full url should be written
   ```
 
   ```yaml
