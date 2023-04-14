@@ -24,9 +24,8 @@ The following singular value tags are supported:
   ```
 
 - `is`: where to import details about file from  
-  **type**: *object*  
+  **type**: *string*  
   **required**: *false*  
-  **default**: *false*  
   **example**:
 
   ```yaml
