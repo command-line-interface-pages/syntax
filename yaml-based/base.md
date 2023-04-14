@@ -124,7 +124,7 @@ The following command/directory singular value tags are supported:
 
 - `type`: page type  
   **type**: *string*  
-  **required**: *true*  
+  **required**: *false*  
   **default**: *cli*  
   **values**: *cli*, *directory*
   **example**:
