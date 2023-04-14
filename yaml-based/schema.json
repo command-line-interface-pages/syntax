@@ -436,7 +436,10 @@
             "items": {
                 "description": "Path types of the current placeholder",
                 "type": "string",
-                "default": ["relative", "absolute"],
+                "default": [
+                    "relative",
+                    "absolute"
+                ],
                 "enum": [
                     "relative",
                     "absolute"
@@ -554,6 +557,9 @@
                                             },
                                             "path-type": {
                                                 "$ref": "#/definitions/cli-annotations-path-type-property"
+                                            },
+                                            "extension-required": {
+                                                "$ref": "#/definitions/cli-annotations-extension-required-property"
                                             }
                                         },
                                         "additionalProperties": false
