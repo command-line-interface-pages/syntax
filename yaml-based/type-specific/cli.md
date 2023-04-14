@@ -410,7 +410,7 @@ All CLI pages should be put in one of the following locations:
 - `<os>/<page>.yaml`
 - `<os>/<shell>/<page>.yaml`
 
-By default, `<os>` is **common** and shell is **bash**.
+By default, `<os>` is **common** and `<shell>` is **bash**.
 
 ## Page examples
 
