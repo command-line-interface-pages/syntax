@@ -313,3 +313,4 @@ to write pages on your own):
 ### Page examples
 
 - [CLI page examples](./type-specific/cli.md#page-examples)
+- [Directory page examples](./type-specific/directory.md#page-examples)
