@@ -176,12 +176,6 @@
                 ]
             }
         },
-        "directory-is-property": {
-            "title": "is",
-            "description": "A reference of the current file page",
-            "type": "string",
-            "minLength": 1
-        },
         "summary-property": {
             "title": "summary",
             "description": "A summary for the current page",
@@ -285,9 +279,6 @@
                     },
                     "compatible": {
                         "$ref": "#/definitions/directory-compatible-property"
-                    },
-                    "is": {
-                        "$ref": "#/definitions/directory-is-property"
                     }
                 },
                 "additionalProperties": false
@@ -607,6 +598,45 @@
                 }
             },
             "additionalProperties": false
+        },
+        "files-property": {
+            "title": "files",
+            "description": "Files of the current directory",
+            "type": "object",
+            "patternProperties": {
+                ".": {
+                    "title": "file",
+                    "description": "A file of the current directory",
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "cat"
+                            ]
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "optional": {
+                                    "title": "optional",
+                                    "description": "Whether a file of the current directory is optional",
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "is": {
+                                    "title": "is",
+                                    "description": "A file reference of the current directory",
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
         }
     },
     "title": "page",
@@ -657,7 +687,9 @@
             "summary": {
                 "$ref": "#/definitions/summary-property"
             },
-            "files": {}
+            "files": {
+                "$ref": "#/definitions/files-property"
+            }
         },
         "additionalProperties": false
     }
