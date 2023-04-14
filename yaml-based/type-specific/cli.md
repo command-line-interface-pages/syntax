@@ -385,9 +385,6 @@ to write pages on your own):
 
 - Never denote type of placeholder in its name like `${image-file}`, it's
   redundant. `annotations.type` property exists for this purpose.
-- Don't use annotations just to explicitly state their defaults assuming that
-  they can be changed. For instance never describe minimum and/or maximum
-  repetition count unless placeholder accepts more than one value.
 - Don't use `name` suffix explicitly, assume that when it's omitted object name
   or its identifier should be used. Here name and identifier are synonyms. For
   instance instead of `${package-name}` write `${package}`.

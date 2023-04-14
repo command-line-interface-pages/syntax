@@ -298,6 +298,13 @@ command syntax and behavior, but the default assumption done for all commands.
 
 ### Summary and example descriptions
 
+We encourage everyone committing to our official repositories to follow best
+practices listed below (while for your own repositories you free to decide how
+to write pages on your own):
+
+- Don't use properties just to explicitly state their defaults assuming that
+  they can be changed. For instance never describe minimum and/or maximum
+  repetition count unless placeholder accepts more than one value.
 - [CLI page best practices](./type-specific/cli.md#best-practices)
 - [Directory page best practices](./type-specific/directory.md#best-practices)
 
