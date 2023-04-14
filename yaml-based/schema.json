@@ -527,118 +527,143 @@
                                     "title": "annotations",
                                     "description": "Annotations of the current placeholder",
                                     "type": "object",
-                                    "properties": {
-                                        "type": {
-                                            "$ref": "#/definitions/cli-annotations-type-property"
-                                        },
-                                        "minimum": {
-                                            "$ref": "#/definitions/cli-annotations-minimum-property"
-                                        },
-                                        "maximum": {
-                                            "$ref": "#/definitions/cli-annotations-maximum-property"
-                                        },
-                                        "repeat-minimum": {
-                                            "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
-                                        },
-                                        "repeat-maximum": {
-                                            "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
-                                        },
-                                        "repeat-separator": {
-                                            "$ref": "#/definitions/cli-annotations-repeat-separator-property"
-                                        },
-                                        "alternative": {
-                                            "$ref": "#/definitions/cli-annotations-alternative-property"
-                                        },
-                                        "input": {
-                                            "$ref": "#/definitions/cli-annotations-input-property"
-                                        },
-                                        "values": {
-                                            "$ref": "#/definitions/cli-annotations-values-property"
-                                        },
-                                        "examples": {
-                                            "$ref": "#/definitions/cli-annotations-examples-property"
-                                        }
-                                    },
-                                    "if": {
-                                        "properties": {
-                                            "type": {
-                                                "pattern": "^(file|directory|path)$"
+                                    "patternProperties": {
+                                        ".": {
+                                            "description": "An annotation of the current placeholder",
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "$ref": "#/definitions/cli-annotations-type-property"
+                                                },
+                                                "minimum": {
+                                                    "$ref": "#/definitions/cli-annotations-minimum-property"
+                                                },
+                                                "maximum": {
+                                                    "$ref": "#/definitions/cli-annotations-maximum-property"
+                                                },
+                                                "repeat-minimum": {
+                                                    "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
+                                                },
+                                                "repeat-maximum": {
+                                                    "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
+                                                },
+                                                "repeat-separator": {
+                                                    "$ref": "#/definitions/cli-annotations-repeat-separator-property"
+                                                },
+                                                "alternative": {
+                                                    "$ref": "#/definitions/cli-annotations-alternative-property"
+                                                },
+                                                "input": {
+                                                    "$ref": "#/definitions/cli-annotations-input-property"
+                                                },
+                                                "values": {
+                                                    "$ref": "#/definitions/cli-annotations-values-property"
+                                                },
+                                                "examples": {
+                                                    "$ref": "#/definitions/cli-annotations-examples-property"
+                                                }
+                                            },
+                                            "if": {
+                                                "oneOf": [
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "const": "file"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "const": "directory"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "type": {
+                                                                "const": "path"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    "type": {
+                                                        "$ref": "#/definitions/cli-annotations-type-property"
+                                                    },
+                                                    "minimum": {
+                                                        "$ref": "#/definitions/cli-annotations-minimum-property"
+                                                    },
+                                                    "maximum": {
+                                                        "$ref": "#/definitions/cli-annotations-maximum-property"
+                                                    },
+                                                    "repeat-minimum": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
+                                                    },
+                                                    "repeat-maximum": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
+                                                    },
+                                                    "repeat-separator": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-separator-property"
+                                                    },
+                                                    "alternative": {
+                                                        "$ref": "#/definitions/cli-annotations-alternative-property"
+                                                    },
+                                                    "input": {
+                                                        "$ref": "#/definitions/cli-annotations-input-property"
+                                                    },
+                                                    "values": {
+                                                        "$ref": "#/definitions/cli-annotations-values-property"
+                                                    },
+                                                    "path-type": {
+                                                        "$ref": "#/definitions/cli-annotations-path-type-property"
+                                                    },
+                                                    "extension-required": {
+                                                        "$ref": "#/definitions/cli-annotations-extension-required-property"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            },
+                                            "else": {
+                                                "properties": {
+                                                    "type": {
+                                                        "$ref": "#/definitions/cli-annotations-type-property"
+                                                    },
+                                                    "minimum": {
+                                                        "$ref": "#/definitions/cli-annotations-minimum-property"
+                                                    },
+                                                    "maximum": {
+                                                        "$ref": "#/definitions/cli-annotations-maximum-property"
+                                                    },
+                                                    "repeat-minimum": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
+                                                    },
+                                                    "repeat-maximum": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
+                                                    },
+                                                    "repeat-separator": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-separator-property"
+                                                    },
+                                                    "alternative": {
+                                                        "$ref": "#/definitions/cli-annotations-alternative-property"
+                                                    },
+                                                    "input": {
+                                                        "$ref": "#/definitions/cli-annotations-input-property"
+                                                    },
+                                                    "values": {
+                                                        "$ref": "#/definitions/cli-annotations-values-property"
+                                                    },
+                                                    "examples": {
+                                                        "$ref": "#/definitions/cli-annotations-examples-property"
+                                                    }
+                                                },
+                                                "additionalProperties": false
                                             }
                                         }
                                     },
-                                    "then": {
-                                        "properties": {
-                                            "type": {
-                                                "$ref": "#/definitions/cli-annotations-type-property"
-                                            },
-                                            "minimum": {
-                                                "$ref": "#/definitions/cli-annotations-minimum-property"
-                                            },
-                                            "maximum": {
-                                                "$ref": "#/definitions/cli-annotations-maximum-property"
-                                            },
-                                            "repeat-minimum": {
-                                                "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
-                                            },
-                                            "repeat-maximum": {
-                                                "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
-                                            },
-                                            "repeat-separator": {
-                                                "$ref": "#/definitions/cli-annotations-repeat-separator-property"
-                                            },
-                                            "alternative": {
-                                                "$ref": "#/definitions/cli-annotations-alternative-property"
-                                            },
-                                            "input": {
-                                                "$ref": "#/definitions/cli-annotations-input-property"
-                                            },
-                                            "values": {
-                                                "$ref": "#/definitions/cli-annotations-values-property"
-                                            },
-                                            "path-type": {
-                                                "$ref": "#/definitions/cli-annotations-path-type-property"
-                                            },
-                                            "extension-required": {
-                                                "$ref": "#/definitions/cli-annotations-extension-required-property"
-                                            }
-                                        },
-                                        "additionalProperties": false
-                                    },
-                                    "else": {
-                                        "properties": {
-                                            "type": {
-                                                "$ref": "#/definitions/cli-annotations-type-property"
-                                            },
-                                            "minimum": {
-                                                "$ref": "#/definitions/cli-annotations-minimum-property"
-                                            },
-                                            "maximum": {
-                                                "$ref": "#/definitions/cli-annotations-maximum-property"
-                                            },
-                                            "repeat-minimum": {
-                                                "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
-                                            },
-                                            "repeat-maximum": {
-                                                "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
-                                            },
-                                            "repeat-separator": {
-                                                "$ref": "#/definitions/cli-annotations-repeat-separator-property"
-                                            },
-                                            "alternative": {
-                                                "$ref": "#/definitions/cli-annotations-alternative-property"
-                                            },
-                                            "input": {
-                                                "$ref": "#/definitions/cli-annotations-input-property"
-                                            },
-                                            "values": {
-                                                "$ref": "#/definitions/cli-annotations-values-property"
-                                            },
-                                            "examples": {
-                                                "$ref": "#/definitions/cli-annotations-examples-property"
-                                            }
-                                        },
-                                        "additionalProperties": false
-                                    }
+                                    "additionalProperties": false
                                 }
                             },
                             "additionalProperties": false
