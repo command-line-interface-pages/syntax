@@ -134,7 +134,7 @@ The following command/directory singular value tags are supported:
       type: directory
   ```
 
-- `parent-page`: parent page path in the same repository  
+- `parent`: parent page path in the same repository  
   **type**: *string*  
   **required**: *false*  
   **default**: *""*  
@@ -142,13 +142,13 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      parent-page: coreutils
+      parent: coreutils
   ```
 
   **note**: All not explicitly set tags are inherited from the parent page. Circular
   references are not allowed.
 
-- `fake-page`: whether not to render page and use as a tag store  
+- `fake`: whether not to render page and use as a tag store  
   **type**: *boolean*  
   **required**: *false*  
   **default**: *false*  
@@ -156,7 +156,7 @@ The following command/directory singular value tags are supported:
 
   ```yaml
   summary:
-      fake-page: true
+      fake: true
   ```
 
 - `more-information: <link>`: link to a documentation  
