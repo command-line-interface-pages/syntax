@@ -349,6 +349,56 @@ examples:
         examples: ["apple"]
 ```
 
+## Best practices
+
+- Always add mnemonics when you know where to add them. When both long and short
+  options or commands are presented add mnemonic just for a short option.
+- Constantly separate alternatives in descriptions with a pipe character
+  like `Test if a specific variable is equal|not equal to a string` instead of
+  `Test if a specific variable is equal or not equal to a string`.
+- Always prefer "display" verb when dealing with singular object instead of
+  "print", "get", "show", etc. For instance write `Display 10 numbers` instead
+  of `Show 10 numbers`.
+- Always use "list" verb for multiple objects of the same kind. For instance prefer
+  `List all files in a specific directory` instead of
+  `Show all files in a specific directory`.
+- Constantly explicitly mention that all available objects are handled like
+  `List all files in a specific directory` instead of
+  `List files in a specific directory` as in the second case it's not clear what
+  files are listed.
+- When explaining command moving or copying some data from one place to another
+  always explicitly use "source" or "destination" nouns to specify what placeholder
+  should be interpreted as a data source and what as a target.
+- Always explicitly note what object is local and what is remote when both kind
+  of things appears in a command example. For example write:
+
+  ```yaml
+  examples:
+    code: azcopy copy '${local-input}' 'https://${remote-storage-account}.blob.core.windows.net/${remote-container}/${blob}'
+    annotations:
+      local-input:
+        type: file
+  ```
+
+- Never denote type of placeholder in its name like `${image-file}`, it's
+  redundant. `annotations.type` property exists for this purpose.
+- Don't use annotations just to explicitly state their defaults assuming that
+  they can be changed. For instance never describe minimum and/or maximum
+  repetition count unless placeholder accepts more than one value.
+- Don't use `name` suffix explicitly, assume that when it's omitted object name
+  or its identifier should be used. Here name and identifier are synonyms. For
+  instance instead of `${package-name}` write `${package}`.
+  This rule doesn't apply when the object placeholder describes is itself a name
+  or an identifier like in this case:
+  
+  ```yaml
+  exmples:
+    Add a new package source: choco source add --name ${name} --source ${url}`
+  ```
+  
+- Always use double quotes in code examples unless they make code examples
+  longer than with single quotes.
+
 ## Page examples
 
 [`sleep`](https://github.com/tldr-pages/tldr/blob/main/pages/common/sleep.md) will be rewritten as:
