@@ -122,6 +122,18 @@ summary:
 
 The following command/directory singular value tags are supported:
 
+- `type`: page type  
+  **type**: *string*  
+  **required**: *true*  
+  **default**: *cli*  
+  **values**: *cli*, *directory*
+  **example**:
+
+  ```yaml
+  summary:
+      type: directory
+  ```
+
 - `parent-page`: parent page path in the same repository  
   **type**: *string*  
   **required**: *false*  

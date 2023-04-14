@@ -30,3 +30,4 @@
 {"rule":"WHITESPACE_RULE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q: placeholder example values array type: array of integer, array of number, array of string required: false default:  unique items: true example:\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q: a placeholder file/directory/path type type: array of string required: false default: relative, absolute unique items: true values: relative, absolute requires: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q to be one of file, directory, path\\E$"}
 {"rule":"WHITESPACE_RULE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q: all placeholder values array type: array of integer, array of number, array of string required: false default:  unique items: true example:\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q: page type type: string required: true default: cli values: cli, directory example:\\E$"}
