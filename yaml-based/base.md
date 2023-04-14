@@ -265,7 +265,7 @@ The following command/directory list like tags are supported:
     aliases: [egrep, fgrep]
   ```
   
-- [CLI tags](./type-specific/cli.md#list-like-tags-summaryarray-tag)/[directory tags](./type-specific/directory.md#list-like-tags)
+- [CLI tags](./type-specific/cli.md#list-like-tags-summaryarray-tag)/[directory tags](./type-specific/directory.md#list-like-tags-summaryarray-tag)
 
 ## Page examples (`examples`)
 

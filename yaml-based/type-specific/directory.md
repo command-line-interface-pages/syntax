@@ -4,38 +4,6 @@
 
 ### Tags (`summary.<tag>`)
 
-#### Singular value tags (`summary.<singular-tag>`)
-
-> :information_source: Required: dependent.
-
-The following singular value tags are supported:
-
-- `optional`: whether file can be absent or not  
-  **type**: *boolean*  
-  **required**: *false*  
-  **default**: *false*  
-  **example**:
-
-  ```yaml
-  files:
-    The C shell:
-      name: csh
-      optional: true
-  ```
-
-- `is`: where to import details about file from  
-  **type**: *string*  
-  **required**: *false*  
-  **example**:
-
-  ```yaml
-  files:
-    The C shell:
-      name: csh
-      optional: true
-      is: url-to-yaml-file-describing-file
-  ```
-
 #### List like tags (`summary.<array-tag>`)
 
 The following list like tags are supported:
@@ -100,6 +68,38 @@ When mnemonic is equal to the whole option or subcommand it looks like this:
 `[sync]`.
 
 Spaces and pipe characters are not allowed inside square brackets.
+
+### File properties (`summary.<file-example>.<property>`)
+
+> :information_source: Required: dependent.
+
+The following file properties are supported:
+
+- `optional`: whether file can be absent or not  
+  **type**: *boolean*  
+  **required**: *false*  
+  **default**: *false*  
+  **example**:
+
+  ```yaml
+  files:
+    The C shell:
+      name: csh
+      optional: true
+  ```
+
+- `is`: where to import details about file from  
+  **type**: *string*  
+  **required**: *false*  
+  **example**:
+
+  ```yaml
+  files:
+    The C shell:
+      name: csh
+      optional: true
+      is: url-to-yaml-file-describing-file
+  ```
 
 ## Page organization
 
