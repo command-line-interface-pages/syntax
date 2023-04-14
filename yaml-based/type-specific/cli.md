@@ -8,8 +8,7 @@
 
 The following list like tags are supported:
 
-- `syntax-compatible`: syntax compatible commands
-  array  
+- `compatible`: syntax compatible commands  
   **type**: *array of string*  
   **required**: *false*  
   **default**: *[]*  
@@ -18,7 +17,7 @@ The following list like tags are supported:
 
   ```yaml
   summary:
-      syntax-compatible: [sh]
+      compatible: [sh]
   ```
 
   **note**: Command `<first-command>` considered syntax compatible with command
