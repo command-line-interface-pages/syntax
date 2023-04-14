@@ -21,10 +21,10 @@ The following list like tags are supported:
   ```
 
   **note**: Command `<first-command>` considered syntax compatible with command
-  `<second-command>` when `<first-command>` support all syntax that `<second-command>` does.
-  It doesn't matter whether this happens by default or by enabling some emulation
-  mode like in `Zsh`. Deprecated syntax construct doesn't count while comparing
-  syntax compatibility.
+  `<second-command>` when `<first-command>` support all syntax that
+  `<second-command>` does. It doesn't matter whether this happens by default or
+  by enabling some emulation mode like in `Zsh`. Deprecated syntax constructs
+  don't count while comparing syntax compatibility.
 
 - `help`: help flags  
   **type**: *array of string*  
