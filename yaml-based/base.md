@@ -214,7 +214,7 @@ The following command/directory singular value tags are supported:
 - `section`: man page section  
   **type**: *string*  
   **required**: *false*  
-  **default**: *executable*  
+  **default**: *regular-executable*  
   **values**:
   
   - *system-executable* (8th section)
