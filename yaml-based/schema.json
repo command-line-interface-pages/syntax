@@ -297,6 +297,7 @@
             "title": "type",
             "description": "A type of the current placeholder",
             "type": "string",
+            "default": "string",
             "enum": [
                 "bool",
                 "int",
