@@ -113,6 +113,74 @@
                 "file-format",
                 "else"
             ]
+        },
+        "cli-compatible-property": {
+            "title": "compatible",
+            "description": "Syntax compatible commands of the current one",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A syntax compatible command of the current one",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "sleep"
+                ]
+            }
+        },
+        "cli-help-property": {
+            "title": "help",
+            "description": "Help flags of the current command",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A help flag of the current command",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "--help",
+                    "-h"
+                ]
+            }
+        },
+        "cli-version-property": {
+            "title": "version",
+            "description": "Version flags of the current command",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A version flag of the current command",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "--version",
+                    "-v"
+                ]
+            }
+        },
+        "directory-compatible-property": {
+            "title": "compatible",
+            "description": "Structure compatible directories of the current one",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A structure compatible directory of the current one",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "/usr/bin"
+                ]
+            }
+        },
+        "directory-is-property": {
+            "title": "is",
+            "description": "A reference of the current file page",
+            "type": "string",
+            "minLength": 1
         }
     },
     "title": "page",
@@ -155,6 +223,86 @@
                 "section": {
                     "$ref": "#/definitions/section-property"
                 }
+            },
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "cli"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "description": {
+                        "$ref": "#/definitions/description-property"
+                    },
+                    "type": {
+                        "$ref": "#/definitions/type-property"
+                    },
+                    "page": {
+                        "$ref": "#/definitions/parent-property"
+                    },
+                    "fake": {
+                        "$ref": "#/definitions/fake-property"
+                    },
+                    "more-information": {
+                        "$ref": "#/definitions/more-information-property"
+                    },
+                    "internal": {
+                        "$ref": "#/definitions/internal-property"
+                    },
+                    "deprecated": {
+                        "$ref": "#/definitions/deprecated-property"
+                    },
+                    "section": {
+                        "$ref": "#/definitions/section-property"
+                    },
+                    "compatible": {
+                        "$ref": "#/definitions/cli-compatible-property"
+                    },
+                    "help": {
+                        "$ref": "#/definitions/cli-help-property"
+                    },
+                    "version": {
+                        "$ref": "#/definitions/cli-version-property"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "else": {
+                "properties": {
+                    "description": {
+                        "$ref": "#/definitions/description-property"
+                    },
+                    "type": {
+                        "$ref": "#/definitions/type-property"
+                    },
+                    "page": {
+                        "$ref": "#/definitions/parent-property"
+                    },
+                    "fake": {
+                        "$ref": "#/definitions/fake-property"
+                    },
+                    "more-information": {
+                        "$ref": "#/definitions/more-information-property"
+                    },
+                    "internal": {
+                        "$ref": "#/definitions/internal-property"
+                    },
+                    "deprecated": {
+                        "$ref": "#/definitions/deprecated-property"
+                    },
+                    "section": {
+                        "$ref": "#/definitions/section-property"
+                    },
+                    "compatible": {
+                        "$ref": "#/definitions/directory-compatible-property"
+                    },
+                    "is": {
+                        "$ref": "#/definitions/directory-is-property"
+                    }
+                },
+                "additionalProperties": false
             }
         }
     }
