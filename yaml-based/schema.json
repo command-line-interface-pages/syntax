@@ -1,0 +1,755 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "title-property": {
+            "title": "title",
+            "description": "A title of the current page",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "sleep",
+                "Essential user command binaries"
+            ]
+        },
+        "description-property": {
+            "title": "description",
+            "description": "A description of the current page",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "Delay for a specific amount of time",
+                "Commands that may be used by both the system administrator and by users, but which are required when no other filesystems are mounted"
+            ]
+        },
+        "type-property": {
+            "title": "type",
+            "description": "A type of the current page",
+            "type": "string",
+            "default": "cli",
+            "enum": [
+                "cli",
+                "directory"
+            ]
+        },
+        "parent-property": {
+            "title": "parent",
+            "description": "A parent of the current page",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "common/coreutils.yaml"
+            ]
+        },
+        "fake-property": {
+            "title": "fake",
+            "description": "Whether the current page is fake",
+            "type": "boolean",
+            "default": false
+        },
+        "more-information-property": {
+            "title": "more information",
+            "description": "Links of the current page",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                        "https://www.gnu.org/software/coreutils/sleep"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "official": {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "https://www.gnu.org/software/coreutils/sleep"
+                            ]
+                        },
+                        "manned": {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "sleep"
+                            ]
+                        },
+                        "manrepository": {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "sleep"
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "internal-property": {
+            "title": "internal",
+            "description": "Whether the current page is internal",
+            "type": "boolean",
+            "default": false
+        },
+        "deprecated-property": {
+            "title": "deprecated",
+            "description": "Whether the current page is deprecated",
+            "type": "boolean",
+            "default": false
+        },
+        "section-property": {
+            "title": "section",
+            "description": "A man page section of the current page",
+            "type": "string",
+            "default": "regular-executable",
+            "enum": [
+                "system-executable",
+                "game-executable",
+                "regular-executable",
+                "system-call",
+                "regular-call",
+                "special-file",
+                "file-format",
+                "else"
+            ]
+        },
+        "see-also-property": {
+            "title": "see also",
+            "description": "Similar pages of the current page",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": false,
+            "items": {
+                "description": "A similar pages of the current page",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "sleep",
+                    "/usr/bin"
+                ]
+            }
+        },
+        "aliases-property": {
+            "title": "aliases",
+            "description": "Aliases or symbolic links of the current page",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": false,
+            "items": {
+                "description": "An aliase or symbolic link of the current page",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "gsleep"
+                ]
+            }
+        },
+        "cli-compatible-property": {
+            "title": "compatible",
+            "description": "Syntax compatible commands of the current one",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A syntax compatible command of the current one",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "sleep"
+                ]
+            }
+        },
+        "cli-help-property": {
+            "title": "help",
+            "description": "Help flags of the current command",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A help flag of the current command",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "--help",
+                    "-h"
+                ]
+            }
+        },
+        "cli-version-property": {
+            "title": "version",
+            "description": "Version flags of the current command",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A version flag of the current command",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "--version",
+                    "-v"
+                ]
+            }
+        },
+        "directory-compatible-property": {
+            "title": "compatible",
+            "description": "Structure compatible directories of the current one",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A structure compatible directory of the current one",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                    "/usr/bin"
+                ]
+            }
+        },
+        "summary-property": {
+            "title": "summary",
+            "description": "A summary for the current page",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "$ref": "#/definitions/description-property"
+                },
+                "type": {
+                    "$ref": "#/definitions/type-property"
+                },
+                "page": {
+                    "$ref": "#/definitions/parent-property"
+                },
+                "fake": {
+                    "$ref": "#/definitions/fake-property"
+                },
+                "more-information": {
+                    "$ref": "#/definitions/more-information-property"
+                },
+                "internal": {
+                    "$ref": "#/definitions/internal-property"
+                },
+                "deprecated": {
+                    "$ref": "#/definitions/deprecated-property"
+                },
+                "section": {
+                    "$ref": "#/definitions/section-property"
+                },
+                "see-also": {
+                    "$ref": "#/definitions/see-also-property"
+                },
+                "aliases": {
+                    "$ref": "#/definitions/aliases-property"
+                }
+            },
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "cli"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "description": {
+                        "$ref": "#/definitions/description-property"
+                    },
+                    "type": {
+                        "$ref": "#/definitions/type-property"
+                    },
+                    "page": {
+                        "$ref": "#/definitions/parent-property"
+                    },
+                    "fake": {
+                        "$ref": "#/definitions/fake-property"
+                    },
+                    "more-information": {
+                        "$ref": "#/definitions/more-information-property"
+                    },
+                    "internal": {
+                        "$ref": "#/definitions/internal-property"
+                    },
+                    "deprecated": {
+                        "$ref": "#/definitions/deprecated-property"
+                    },
+                    "section": {
+                        "$ref": "#/definitions/section-property"
+                    },
+                    "see-also": {
+                        "$ref": "#/definitions/see-also-property"
+                    },
+                    "aliases": {
+                        "$ref": "#/definitions/aliases-property"
+                    },
+                    "compatible": {
+                        "$ref": "#/definitions/cli-compatible-property"
+                    },
+                    "help": {
+                        "$ref": "#/definitions/cli-help-property"
+                    },
+                    "version": {
+                        "$ref": "#/definitions/cli-version-property"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "else": {
+                "properties": {
+                    "description": {
+                        "$ref": "#/definitions/description-property"
+                    },
+                    "type": {
+                        "$ref": "#/definitions/type-property"
+                    },
+                    "page": {
+                        "$ref": "#/definitions/parent-property"
+                    },
+                    "fake": {
+                        "$ref": "#/definitions/fake-property"
+                    },
+                    "more-information": {
+                        "$ref": "#/definitions/more-information-property"
+                    },
+                    "internal": {
+                        "$ref": "#/definitions/internal-property"
+                    },
+                    "deprecated": {
+                        "$ref": "#/definitions/deprecated-property"
+                    },
+                    "section": {
+                        "$ref": "#/definitions/section-property"
+                    },
+                    "see-also": {
+                        "$ref": "#/definitions/see-also-property"
+                    },
+                    "aliases": {
+                        "$ref": "#/definitions/aliases-property"
+                    },
+                    "compatible": {
+                        "$ref": "#/definitions/directory-compatible-property"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "cli-annotations-type-property": {
+            "title": "type",
+            "description": "A type of the current placeholder",
+            "type": "string",
+            "default": "string",
+            "enum": [
+                "bool",
+                "int",
+                "float",
+                "char",
+                "string",
+                "command",
+                "subcommand",
+                "option",
+                "file",
+                "directory",
+                "path",
+                "any"
+            ]
+        },
+        "cli-annotations-minimum-property": {
+            "title": "minimum",
+            "description": "A minimum value of the current placeholder",
+            "oneOf": [
+                {
+                    "type": [
+                        "integer",
+                        "number"
+                    ]
+                },
+                {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1
+                }
+            ],
+            "examples": [
+                2
+            ]
+        },
+        "cli-annotations-maximum-property": {
+            "title": "maximum",
+            "description": "A maximum value of the current placeholder",
+            "oneOf": [
+                {
+                    "type": [
+                        "integer",
+                        "number"
+                    ]
+                },
+                {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1
+                }
+            ],
+            "examples": [
+                2
+            ]
+        },
+        "cli-annotations-repeat-minimum-property": {
+            "title": "repeat minimum",
+            "description": "A minimum repetition count of the current placeholder",
+            "type": "integer",
+            "minimum": 0,
+            "examples": [
+                2
+            ]
+        },
+        "cli-annotations-repeat-maximum-property": {
+            "title": "repeat maximum",
+            "description": "A maximum repetition count of the current placeholder",
+            "type": "integer",
+            "minimum": 0,
+            "examples": [
+                2
+            ]
+        },
+        "cli-annotations-repeat-separator-property": {
+            "title": "repeat separator",
+            "description": "A repetition separator of the current placeholder",
+            "type": "string",
+            "default": " ",
+            "examples": [
+                ":"
+            ]
+        },
+        "cli-annotations-alternative-property": {
+            "title": "alternative",
+            "description": "Whether correlate values of the current placeholder with an alternative",
+            "type": "boolean",
+            "default": false
+        },
+        "cli-annotations-input-property": {
+            "title": "input",
+            "description": "Whether consider the first example of the current placeholder as an input",
+            "type": "boolean",
+            "default": false
+        },
+        "cli-annotations-values-property": {
+            "title": "values",
+            "description": "Values of the current placeholder",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "A values of the current placeholder",
+                "type": [
+                    "boolean",
+                    "integer",
+                    "number",
+                    "string"
+                ]
+            }
+        },
+        "cli-annotations-examples-property": {
+            "title": "examples",
+            "description": "Example values of the current placeholder",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "An example value of the current placeholder",
+                "type": [
+                    "boolean",
+                    "integer",
+                    "number",
+                    "string"
+                ],
+                "examples": [
+                    "~/.bashrc"
+                ]
+            }
+        },
+        "cli-annotations-path-type-property": {
+            "title": "path type",
+            "description": "Path types of the current placeholder",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "description": "Path types of the current placeholder",
+                "type": "string",
+                "default": [
+                    "relative",
+                    "absolute"
+                ],
+                "enum": [
+                    "relative",
+                    "absolute"
+                ]
+            }
+        },
+        "cli-annotations-extension-required-property": {
+            "title": "extension required",
+            "description": "Whether an extension is required for the current placeholder",
+            "type": "boolean",
+            "default": false
+        },
+        "examples-property": {
+            "title": "examples",
+            "description": "Code examples of the current command",
+            "type": "object",
+            "patternProperties": {
+                ".": {
+                    "title": "example",
+                    "description": "A code example of the current command",
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "sleep ${seconds}${suffix}"
+                            ]
+                        },
+                        {
+                            "type": "object",
+                            "required": [
+                                "code"
+                            ],
+                            "properties": {
+                                "code": {
+                                    "title": "code",
+                                    "description": "An example code of the current command",
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "examples": [
+                                        "sleep ${seconds}${suffix}"
+                                    ]
+                                },
+                                "annotations": {
+                                    "title": "annotations",
+                                    "description": "Annotations of the current placeholder",
+                                    "type": "object",
+                                    "patternProperties": {
+                                        ".": {
+                                            "description": "An annotation of the current placeholder",
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "$ref": "#/definitions/cli-annotations-type-property"
+                                                },
+                                                "minimum": {
+                                                    "$ref": "#/definitions/cli-annotations-minimum-property"
+                                                },
+                                                "maximum": {
+                                                    "$ref": "#/definitions/cli-annotations-maximum-property"
+                                                },
+                                                "repeat-minimum": {
+                                                    "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
+                                                },
+                                                "repeat-maximum": {
+                                                    "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
+                                                },
+                                                "repeat-separator": {
+                                                    "$ref": "#/definitions/cli-annotations-repeat-separator-property"
+                                                },
+                                                "alternative": {
+                                                    "$ref": "#/definitions/cli-annotations-alternative-property"
+                                                },
+                                                "input": {
+                                                    "$ref": "#/definitions/cli-annotations-input-property"
+                                                },
+                                                "values": {
+                                                    "$ref": "#/definitions/cli-annotations-values-property"
+                                                },
+                                                "examples": {
+                                                    "$ref": "#/definitions/cli-annotations-examples-property"
+                                                }
+                                            },
+                                            "if": {
+                                                "properties": {
+                                                    "type": {
+                                                        "pattern": "^(file|directory|path)$"
+                                                    }
+                                                }
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    "type": {
+                                                        "$ref": "#/definitions/cli-annotations-type-property"
+                                                    },
+                                                    "minimum": {
+                                                        "$ref": "#/definitions/cli-annotations-minimum-property"
+                                                    },
+                                                    "maximum": {
+                                                        "$ref": "#/definitions/cli-annotations-maximum-property"
+                                                    },
+                                                    "repeat-minimum": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
+                                                    },
+                                                    "repeat-maximum": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
+                                                    },
+                                                    "repeat-separator": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-separator-property"
+                                                    },
+                                                    "alternative": {
+                                                        "$ref": "#/definitions/cli-annotations-alternative-property"
+                                                    },
+                                                    "input": {
+                                                        "$ref": "#/definitions/cli-annotations-input-property"
+                                                    },
+                                                    "values": {
+                                                        "$ref": "#/definitions/cli-annotations-values-property"
+                                                    },
+                                                    "examples": {
+                                                        "$ref": "#/definitions/cli-annotations-examples-property"
+                                                    },
+                                                    "path-type": {
+                                                        "$ref": "#/definitions/cli-annotations-path-type-property"
+                                                    },
+                                                    "extension-required": {
+                                                        "$ref": "#/definitions/cli-annotations-extension-required-property"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            },
+                                            "else": {
+                                                "properties": {
+                                                    "type": {
+                                                        "$ref": "#/definitions/cli-annotations-type-property"
+                                                    },
+                                                    "minimum": {
+                                                        "$ref": "#/definitions/cli-annotations-minimum-property"
+                                                    },
+                                                    "maximum": {
+                                                        "$ref": "#/definitions/cli-annotations-maximum-property"
+                                                    },
+                                                    "repeat-minimum": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-minimum-property"
+                                                    },
+                                                    "repeat-maximum": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-maximum-property"
+                                                    },
+                                                    "repeat-separator": {
+                                                        "$ref": "#/definitions/cli-annotations-repeat-separator-property"
+                                                    },
+                                                    "alternative": {
+                                                        "$ref": "#/definitions/cli-annotations-alternative-property"
+                                                    },
+                                                    "input": {
+                                                        "$ref": "#/definitions/cli-annotations-input-property"
+                                                    },
+                                                    "values": {
+                                                        "$ref": "#/definitions/cli-annotations-values-property"
+                                                    },
+                                                    "examples": {
+                                                        "$ref": "#/definitions/cli-annotations-examples-property"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "files-property": {
+            "title": "files",
+            "description": "Files of the current directory",
+            "type": "object",
+            "patternProperties": {
+                ".": {
+                    "title": "file",
+                    "description": "A file of the current directory",
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "cat"
+                            ]
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "optional": {
+                                    "title": "optional",
+                                    "description": "Whether a file of the current directory is optional",
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "is": {
+                                    "title": "is",
+                                    "description": "A file reference of the current directory",
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "title": "page",
+    "description": "A page",
+    "type": "object",
+    "required": [
+        "title",
+        "summary"
+    ],
+    "properties": {
+        "title": {
+            "$ref": "#/definitions/title-property"
+        },
+        "summary": {
+            "$ref": "#/definitions/summary-property"
+        }
+    },
+    "if": {
+        "properties": {
+            "summary": {
+                "properties": {
+                    "type": {
+                        "const": "cli"
+                    }
+                }
+            }
+        }
+    },
+    "then": {
+        "properties": {
+            "title": {
+                "$ref": "#/definitions/title-property"
+            },
+            "summary": {
+                "$ref": "#/definitions/summary-property"
+            },
+            "examples": {
+                "$ref": "#/definitions/examples-property"
+            }
+        },
+        "additionalProperties": false
+    },
+    "else": {
+        "properties": {
+            "title": {
+                "$ref": "#/definitions/title-property"
+            },
+            "summary": {
+                "$ref": "#/definitions/summary-property"
+            },
+            "files": {
+                "$ref": "#/definitions/files-property"
+            }
+        },
+        "additionalProperties": false
+    }
+}

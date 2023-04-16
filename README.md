@@ -1,3 +1,3 @@
 # Syntax
 
-Syntax [definition](./base.md) and highlighting for different editors.
+Syntax [definition](./yaml-based/base.md) and highlighting for different editors.
