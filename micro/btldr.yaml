@@ -1,0 +1,31 @@
+filetype: btldr
+detect:
+  filename: \\.btldr$
+  header: "^# "
+
+rules:
+  - comment.line:
+      start: "^# "
+      end: $
+      rules:
+        - identifier.callable: "[a-zA-Z]+"
+
+  - comment.line:
+      start: "^> "
+      end: $
+      rules:
+        - type.keyword: "\\b(Aliases|See also|More information)\\b"
+        - constant.string.url: "\\bhttps://.+\\b"
+
+  - comment.line:
+      start: "^- "
+      end: $
+      rules:
+        - identifier.builtin: "\\bstd(in|out|err)\\b"
+
+  - statement:
+      start: "^`"
+      end: "`$"
+      rules:
+        - type.keyword: "\\b(bool|int|float|char|string|command|file|directory|path)\\b"
+
